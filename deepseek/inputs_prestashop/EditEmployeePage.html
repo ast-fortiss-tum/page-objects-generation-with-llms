@@ -1,0 +1,451 @@
+<div class="card">
+    <h3 class="card-header">
+        Employees
+    </h3>
+    <div class="card-block row">
+        <div class="card-text">
+
+
+            <div class="form-group row type-text ">
+
+
+                <label for="employee_firstname" class="form-control-label ">
+                    <span class="text-danger">*</span>
+                    First name
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <input type="text" id="employee_firstname" name="employee[firstname]" required="required"
+                           class="form-control" aria-label="employee_firstname input" value="Dario">
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row type-text ">
+
+
+                <label for="employee_lastname" class="form-control-label ">
+                    <span class="text-danger">*</span>
+                    Last name
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <input type="text" id="employee_lastname" name="employee[lastname]" required="required"
+                           class="form-control" aria-label="employee_lastname input" value="Olianas">
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row type-file ">
+
+
+                <label for="employee_avatarUrl" class="form-control-label ">
+                    Avatar
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <style>
+                        .custom-file-label:after {
+                            content: "Browse";
+                        }
+                    </style>
+                    <div class="custom-file">
+
+                        <input type="file" id="employee_avatarUrl" name="employee[avatarUrl]"
+                               accept="gif,jpg,jpeg,jpe,png" class="custom-file-input"
+                               data-multiple-files-text="%count% file(s)" data-locale="en">
+
+
+                        <label class="custom-file-label" for="employee_avatarUrl">
+                            Choose file(s)
+                        </label>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="form-control-label"></label>
+                <div class="col-sm">
+                    <img class="img-thumbnail clickable-avatar" src="http://localhost:8080/img/pr/default.jpg" alt="">
+                </div>
+            </div>
+
+
+            <div class="form-group row type-choice ">
+
+
+                <label for="employee_has_enabled_gravatar" class="form-control-label ">
+                    Enable gravatar
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <div class="input-group"><span class="ps-switch"><input id="employee_has_enabled_gravatar_0"
+                                                                            class=""
+                                                                            name="employee[has_enabled_gravatar]"
+                                                                            value="0" checked="" type="radio"
+                                                                            aria-label="No"><label
+                            for="employee_has_enabled_gravatar_0">No</label><input id="employee_has_enabled_gravatar_1"
+                                                                                   class=""
+                                                                                   name="employee[has_enabled_gravatar]"
+                                                                                   value="1" type="radio"
+                                                                                   aria-label="Yes"><label
+                            for="employee_has_enabled_gravatar_1">Yes</label><span class="slide-button"></span></span>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row type-text ">
+
+
+                <label for="employee_email" class="form-control-label ">
+                    <span class="text-danger">*</span>
+                    Email address
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <input type="email" id="employee_email" name="employee[email]" required="required"
+                           class="form-control" value="admin@prestashop.com">
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="form-control-label">
+                    Password
+                </label>
+                <div class="col-sm">
+                    <button type="button" id="employee_change_password_change_password_button"
+                            name="employee[change_password][change_password_button]"
+                            class="btn-outline-secondary js-change-password btn">Change password...
+                    </button>
+
+                    <div class="card card-body js-change-password-block d-none">
+
+                        <div class="form-group row type-text ">
+
+
+                            <label for="employee_change_password_old_password" class="form-control-label ">
+                                <span class="text-danger">*</span>
+                                Current password
+
+                            </label>
+
+                            <div class="col-sm">
+
+
+                                <input type="password" id="employee_change_password_old_password"
+                                       name="employee[change_password][old_password]" class="form-control"
+                                       disabled="disabled">
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="employee_change_password_new_password_first" class="form-control-label ">
+                                <span class="text-danger">*</span>
+
+                                New password
+
+                                <span class="help-box" data-toggle="popover" data-trigger="hover" data-html="true"
+                                      data-content="Password should be at least 8 characters long."
+                                      data-original-title="" title="">
+ </span>
+
+                            </label>
+
+                            <p class="sr-only">Password should be at least 8 characters long.</p>
+
+                            <div class="col-sm">
+
+
+                                <input type="password" id="employee_change_password_new_password_first"
+                                       name="employee[change_password][new_password][first]"
+                                       data-password-too-short="This field cannot be shorter than 8 characters"
+                                       data-password-too-long="This field cannot be longer than 255 characters"
+                                       class="form-control" disabled="disabled"><span></span>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row type-text ">
+
+
+                            <label for="employee_change_password_new_password_second" class="form-control-label ">
+                                <span class="text-danger">*</span>
+                                Confirm password
+
+                            </label>
+
+                            <div class="col-sm">
+
+
+                                <input type="password" id="employee_change_password_new_password_second"
+                                       name="employee[change_password][new_password][second]"
+                                       data-invalid-password="Invalid password confirmation" class="form-control"
+                                       disabled="disabled">
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="form-control-label"></label>
+                            <div class="col-sm">
+
+                                <input type="text" id="employee_change_password_generated_password"
+                                       name="employee[change_password][generated_password]" disabled="disabled"
+                                       aria-label="employee_change_password_generated_password input"
+                                       class="form-control">
+
+
+                            </div>
+                            <div class="col-sm">
+                                <button type="button" id="employee_change_password_generate_password_button"
+                                        name="employee[change_password][generate_password_button]"
+                                        class="btn-outline-secondary btn">Generate password
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row type-_employee_change_password_cancel_button ">
+
+
+                            <div class="col-sm">
+
+
+                                <button type="button" id="employee_change_password_cancel_button"
+                                        name="employee[change_password][cancel_button]"
+                                        class="btn-outline-secondary js-change-password-cancel btn">Cancel
+                                </button>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="js-password-strength-feedback d-none">
+                            <span class="strength-low">Invalid</span>
+                            <span class="strength-medium">Okay</span>
+                            <span class="strength-high">Good</span>
+                            <span class="strength-extreme">Fabulous</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="form-control-label">
+                    PrestaShop Addons
+                </label>
+                <div class="col-sm">
+
+                    <div>
+
+                        <button type="button" id="employee_prestashop_addons" name="employee[prestashop_addons]"
+                                class="btn-outline-secondary btn" data-toggle="modal"
+                                data-target="#module-modal-addons-connect">Sign in
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group row type-choice ">
+
+
+                <label for="employee_language" class="form-control-label ">
+                    <span class="text-danger">*</span>
+                    Language
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <select id="employee_language" name="employee[language]" class="custom-select"
+                            aria-label="employee_language input">
+                        <option value="1" selected="selected">English (English)</option>
+                    </select>
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row type-choice ">
+
+
+                <label for="employee_default_page" class="form-control-label ">
+                    <span class="text-danger">*</span>
+                    Default page
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <select id="employee_default_page" name="employee[default_page]" data-minimumresultsforsearch="7"
+                            data-toggle="select2" class="custom-select select2-hidden-accessible"
+                            aria-label="employee_default_page input" data-select2-id="employee_default_page"
+                            tabindex="-1" aria-hidden="true">
+                        <option value="1" selected="selected" data-select2-id="2">Dashboard</option>
+                        <optgroup label="Sell">
+                            <option value="4">Orders</option>
+                            <option value="5">Invoices</option>
+                            <option value="6">Credit Slips</option>
+                            <option value="7">Delivery Slips</option>
+                            <option value="8">Shopping Carts</option>
+                            <option value="10">Products</option>
+                            <option value="11">Categories</option>
+                            <option value="12">Monitoring</option>
+                            <option value="13">Attributes &amp; Features</option>
+                            <option value="16">Brands &amp; Suppliers</option>
+                            <option value="19">Files</option>
+                            <option value="20">Discounts</option>
+                            <option value="23">Stock</option>
+                            <option value="25">Customers</option>
+                            <option value="26">Addresses</option>
+                            <option value="27">Outstanding</option>
+                            <option value="29">Customer Service</option>
+                            <option value="30">Order Messages</option>
+                            <option value="31">Merchandise Returns</option>
+                            <option value="145">Stats</option>
+                            <option value="146">PrestaShop Metrics</option>
+                            <option value="34">Warehouses</option>
+                            <option value="35">Stock Management</option>
+                            <option value="40">Supply orders</option>
+                            <option value="41">Configuration</option>
+                        </optgroup>
+                        <optgroup label="Improve">
+                            <option value="48">Marketplace</option>
+                            <option value="44">Module Manager</option>
+                            <option value="124">Wishlist Module</option>
+                            <option value="54">Theme Catalog</option>
+                            <option value="130">Theme &amp; Logo</option>
+                            <option value="55">Email Theme</option>
+                            <option value="57">Pages</option>
+                            <option value="58">Positions</option>
+                            <option value="59">Image Settings</option>
+                            <option value="129">Link List</option>
+                            <option value="61">Carriers</option>
+                            <option value="65">Preferences</option>
+                            <option value="64">Payment Methods</option>
+                            <option value="67">Localization</option>
+                            <option value="72">Locations</option>
+                            <option value="76">Taxes</option>
+                            <option value="79">Translations</option>
+                            <option value="148">Facebook &amp; Instagram</option>
+                            <option value="150">Google</option>
+                        </optgroup>
+                        <optgroup label="Configure">
+                            <option value="82">General</option>
+                            <option value="85">Order Settings</option>
+                            <option value="88">Product Settings</option>
+                            <option value="89">Customer Settings</option>
+                            <option value="93">Contact</option>
+                            <option value="96">Traffic &amp; SEO</option>
+                            <option value="100">Search</option>
+                            <option value="134">Merchant Expertise</option>
+                            <option value="104">Information</option>
+                            <option value="105">Performance</option>
+                            <option value="106">Administration</option>
+                            <option value="107">E-mail</option>
+                            <option value="108">Import</option>
+                            <option value="109">Team</option>
+                            <option value="113">Database</option>
+                            <option value="116">Logs</option>
+                            <option value="117">Webservice</option>
+                            <option value="119">Multistore</option>
+                            <option value="120">Experimental Features</option>
+                        </optgroup>
+                        <option value="122">More</option>
+                        <option value="133">Welcome</option>
+                        <option value="152">AdminBlockListing</option>
+                        <option value="153">AdminAjaxPsAccounts (PrestaShop Account)</option>
+                        <option value="154">AdminDebugPsAccounts (PrestaShop Account)</option>
+                        <option value="155">AdminOAuth2PsAccounts (PrestaShop Account)</option>
+                        <option value="156">AdminLoginPsAccounts (PrestaShop Account)</option>
+                        <option value="157">AdminLogin</option>
+                        <option value="158">SfAdminOAuth2PsAccounts</option>
+                        <option value="159">SfAdminLoginPsAccounts</option>
+                    </select><span class="select2 select2-container select2-container--bootstrap" dir="ltr"
+                                   data-select2-id="1" style="width: auto;"><span class="selection"><span
+                        class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
+                        aria-expanded="false" tabindex="0" aria-disabled="false"
+                        aria-labelledby="select2-employee_default_page-container"><span
+                        class="select2-selection__rendered" id="select2-employee_default_page-container" role="textbox"
+                        aria-readonly="true" title="Dashboard">Dashboard</span><span class="select2-selection__arrow"
+                                                                                     role="presentation"><b
+                        role="presentation"></b></span></span></span><span class="dropdown-wrapper"
+                                                                           aria-hidden="true"></span></span>
+
+                    <small class="form-text">This page will be displayed just after login.</small>
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group row type-hidden ">
+
+
+                <label for="employee__token" class="form-control-label ">
+
+
+                </label>
+
+                <div class="col-sm">
+
+
+                    <input type="hidden" id="employee__token" name="employee[_token]" class="form-control"
+                           value="I758IGI76QB6X1TzjNgJoCfOcDeURMHUncK5NdbPzBU">
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="/administrator/index.php/configure/advanced/employees/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+           class="btn btn-outline-secondary" id="cancel-link">
+            Cancel
+        </a>
+        <button class="btn btn-primary float-right" id="save-button">
+            Save
+        </button>
+    </div>
+</div>

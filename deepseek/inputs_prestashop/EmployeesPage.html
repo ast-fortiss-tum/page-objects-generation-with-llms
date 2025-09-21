@@ -1,0 +1,645 @@
+<div class="title-row">
+
+    <h1 class="title">
+        Employees </h1>
+
+
+    <div class="toolbar-icons">
+        <div class="wrapper">
+
+            <a class="btn btn-primary pointer" id="page-header-desc-configuration-add"
+               href="/administrator/index.php/configure/advanced/employees/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+               title="Add new employee">
+                <i class="material-icons">add_circle_outline</i> Add new employee
+            </a>
+
+
+            <a class="btn btn-outline-secondary btn-help btn-sidebar" href="#" title="Help" data-toggle="sidebar"
+               data-target="#right-sidebar"
+               data-url="/administrator/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fen%252Fdoc%252FAdminEmployees%253Fversion%253D1.7.8.5%2526country%253Den/Help?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+               id="product_form_open_help">
+                Help
+            </a>
+        </div>
+    </div>
+
+    <div id="main-div">
+
+        <div class="content-div  with-tabs">
+
+
+            <div class="row ">
+                <div class="col-sm-12">
+                    <div id="ajax_confirmation" class="alert alert-success" style="display: none;"></div>
+
+
+                    <div class="row">
+                        <div class="col">
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="card js-grid-panel" id="employee_grid_panel" data-hook-name="Employees">
+                                <div class="card-header js-grid-header">
+                                    <h3 class="d-inline-block card-header-title">
+                                        Employees (1)
+                                    </h3>
+                                    <div class="d-inline-block float-right">
+
+                                        <div class="dropdown text-right">
+                                            <button class="btn btn-text dropdown-toggle tool-button"
+                                                    id="employee-grid-actions-button" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false" title="Settings">
+                                                <span class="sr-only">Settings</span>
+                                            </button>
+
+                                            <div class="dropdown-menu dropdown-menu-right"
+                                                 aria-labelledby="employee-grid-actions-button"
+                                                 id="employee-grid-actions-dropdown-menu">
+
+                                                <button type="button" id="employee_grid_action_common_refresh_list"
+                                                        class="dropdown-item js-common_refresh_list-grid-action">
+                                                    <i class="material-icons">refresh</i>
+                                                    Refresh list
+                                                </button>
+
+
+                                                <button type="button" id="employee_grid_action_common_show_query"
+                                                        class="dropdown-item js-common_show_query-grid-action">
+                                                    <i class="material-icons">code</i>
+                                                    Show SQL query
+                                                </button>
+
+
+                                                <button type="button"
+                                                        id="employee_grid_action_common_export_sql_manager"
+                                                        class="dropdown-item js-common_export_sql_manager-grid-action">
+                                                    <i class="material-icons">storage</i>
+                                                    Export to SQL Manager
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal fade" id="employee_grid_common_show_query_modal"
+                                                 tabindex="-1">
+                                                <div class="modal-dialog ">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">SQL query</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">×
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <form method="post"
+                                                                  action="/administrator/index.php/configure/advanced/sql-requests/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                  id="employee_common_show_query_modal_form">
+                                                                <div class="form-group">
+                                                                    <textarea name="sql" rows="10" cols="65" title=""
+                                                                              class="form-control"></textarea>
+                                                                    <input type="hidden" name="name" value="">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+
+                                                        <div class="modal-footer">
+                                                            <button type="button"
+                                                                    class="btn btn-outline-secondary btn-lg"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                            <button type="button" value="sql_manager"
+                                                                    class="btn btn-primary btn-lg btn-sql-submit">
+                                                                Export to SQL Manager
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    var closable = true;
+                                                    $('#employee_grid_common_show_query_modal').modal({
+                                                        backdrop: (closable ? true : 'static'),
+                                                        keyboard: closable,
+                                                        closable: closable,
+                                                        show: false
+                                                    });
+                                                });
+                                            </script>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="row grid js-grid" id="employee_grid" data-grid-id="employee">
+                                        <div class="col-sm">
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <div class="row">
+                                                        <div class="col-sm">
+
+                                                            <div class="btn-group">
+                                                                <button class="btn btn-outline-secondary dropdown-toggle js-bulk-actions-btn"
+                                                                        data-toggle="dropdown" disabled="">
+                                                                    Bulk actions
+                                                                    <i class="icon-caret-up"></i>
+                                                                </button>
+
+                                                                <div class="dropdown-menu">
+
+                                                                    <button id="employee_grid_bulk_action_enable_selection"
+                                                                            class="dropdown-item js-bulk-action-submit-btn"
+                                                                            type="button"
+                                                                            data-form-url="/administrator/index.php/configure/advanced/employees/bulk-enable-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                            data-form-method="POST"
+                                                                            data-confirm-message="">
+                                                                        Enable selection
+                                                                    </button>
+
+
+                                                                    <button id="employee_grid_bulk_action_disable_selection"
+                                                                            class="dropdown-item js-bulk-action-submit-btn"
+                                                                            type="button"
+                                                                            data-form-url="/administrator/index.php/configure/advanced/employees/bulk-disable-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                            data-form-method="POST"
+                                                                            data-confirm-message="">
+                                                                        Disable selection
+                                                                    </button>
+
+
+                                                                    <button id="employee_grid_bulk_action_delete_selection"
+                                                                            class="dropdown-item js-bulk-action-submit-btn"
+                                                                            type="button"
+                                                                            data-form-url="/administrator/index.php/configure/advanced/employees/bulk-delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                            data-form-method="POST"
+                                                                            data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                            data-close-button-label="Close"
+                                                                            data-confirm-title="Delete selection"
+                                                                            data-confirm-button-class="btn-danger"
+                                                                            data-confirm-button-label="Delete">
+                                                                        Delete selected
+                                                                    </button>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm">
+
+
+                                                    <form name="employee" method="post" action=""
+                                                          id="employee_filter_form"
+                                                          class="table-responsive form-horizontal">
+
+                                                        <table class="grid-table js-grid-table table  "
+                                                               id="employee_grid_table"
+                                                               data-query="SELECT e.*, pl.name as profile_name FROM ps_employee e LEFT JOIN ps_profile_lang pl ON e.id_profile = pl.id_profile AND pl.id_lang = 1 WHERE EXISTS (SELECT 1 FROM ps_employee_shop es WHERE (e.id_employee = es.id_employee) AND (es.id_shop IN ('1'))) ORDER BY id_employee asc LIMIT 50">
+                                                            <thead class="thead-default">
+
+                                                            <tr class="column-headers ">
+                                                                <th scope="col">
+
+
+                                                                </th>
+                                                                <th scope="col">
+
+
+                                                                    <div class="ps-sortable-column"
+                                                                         data-sort-col-name="id_employee"
+                                                                         data-sort-prefix="" data-sort-is-current="true"
+                                                                         data-sort-direction="asc">
+                                                                        <span role="columnheader">ID</span>
+                                                                        <span role="button" class="ps-sort"
+                                                                              aria-label="Sort by"></span>
+                                                                    </div>
+                                                                </th>
+
+
+                                                                <th scope="col">
+
+
+                                                                    <div class="ps-sortable-column"
+                                                                         data-sort-col-name="firstname"
+                                                                         data-sort-prefix="">
+                                                                        <span role="columnheader">First name</span>
+                                                                        <span role="button" class="ps-sort"
+                                                                              aria-label="Sort by"></span>
+                                                                    </div>
+                                                                </th>
+
+
+                                                                <th scope="col">
+
+
+                                                                    <div class="ps-sortable-column"
+                                                                         data-sort-col-name="lastname"
+                                                                         data-sort-prefix="">
+                                                                        <span role="columnheader">Last name</span>
+                                                                        <span role="button" class="ps-sort"
+                                                                              aria-label="Sort by"></span>
+                                                                    </div>
+                                                                </th>
+
+
+                                                                <th scope="col">
+
+
+                                                                    <div class="ps-sortable-column"
+                                                                         data-sort-col-name="email" data-sort-prefix="">
+                                                                        <span role="columnheader">Email address</span>
+                                                                        <span role="button" class="ps-sort"
+                                                                              aria-label="Sort by"></span>
+                                                                    </div>
+                                                                </th>
+
+
+                                                                <th scope="col">
+
+
+                                                                    <div class="ps-sortable-column"
+                                                                         data-sort-col-name="profile"
+                                                                         data-sort-prefix="">
+                                                                        <span role="columnheader">Profile</span>
+                                                                        <span role="button" class="ps-sort"
+                                                                              aria-label="Sort by"></span>
+                                                                    </div>
+                                                                </th>
+
+
+                                                                <th scope="col">
+
+
+                                                                    <div class="ps-sortable-column"
+                                                                         data-sort-col-name="active"
+                                                                         data-sort-prefix="">
+                                                                        <span role="columnheader">Active</span>
+                                                                        <span role="button" class="ps-sort"
+                                                                              aria-label="Sort by"></span>
+                                                                    </div>
+                                                                </th>
+
+
+                                                                <th scope="col">
+                                                                    <div class="grid-actions-header-text">
+                                                                        <span>Actions</span>
+                                                                    </div>
+
+                                                                </th>
+                                                            </tr>
+
+
+                                                            <tr class="column-filters">
+                                                                <td>
+
+                                                                    <div class="md-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox"
+                                                                                   class="js-bulk-action-select-all"
+                                                                                   id="employee_grid_bulk_action_select_all">
+                                                                            <i class="md-checkbox-control grid_bulk_action_select_all"></i>
+                                                                        </label>
+                                                                    </div>
+
+
+                                                                </td>
+                                                                <td>
+
+                                                                    <input type="text" id="employee_id_employee"
+                                                                           name="employee[id_employee]"
+                                                                           placeholder="Search ID"
+                                                                           class="js-comma-transformer form-control">
+
+                                                                </td>
+                                                                <td>
+
+
+                                                                    <input type="text" id="employee_firstname"
+                                                                           name="employee[firstname]"
+                                                                           placeholder="Search first name"
+                                                                           aria-label="employee_firstname input"
+                                                                           class="form-control">
+
+
+                                                                </td>
+                                                                <td>
+
+
+                                                                    <input type="text" id="employee_lastname"
+                                                                           name="employee[lastname]"
+                                                                           placeholder="Search last name"
+                                                                           aria-label="employee_lastname input"
+                                                                           class="form-control">
+
+
+                                                                </td>
+                                                                <td>
+
+
+                                                                    <input type="text" id="employee_email"
+                                                                           name="employee[email]"
+                                                                           placeholder="Search email"
+                                                                           aria-label="employee_email input"
+                                                                           class="form-control">
+
+
+                                                                </td>
+                                                                <td>
+
+                                                                    <select id="employee_profile"
+                                                                            name="employee[profile]"
+                                                                            class="custom-select"
+                                                                            aria-label="employee_profile input">
+                                                                        <option value=""></option>
+                                                                        <option value="1">SuperAdmin</option>
+                                                                        <option value="2">Logistician</option>
+                                                                        <option value="3">Translator</option>
+                                                                        <option value="4">Salesman</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+
+                                                                    <select id="employee_active" name="employee[active]"
+                                                                            class="custom-select"
+                                                                            aria-label="employee_active input">
+                                                                        <option value=""></option>
+                                                                        <option value="1">Yes</option>
+                                                                        <option value="0">No</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+
+                                                                    <button type="submit"
+                                                                            class="btn btn-primary grid-search-button d-block float-right"
+                                                                            title="Search"
+                                                                            name="employee[actions][search]"
+                                                                            disabled=""><i
+                                                                            class="material-icons">search</i>
+                                                                        Search
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="bulk_action-type column-employee_bulk">
+
+                                                                    <div class="md-checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" title=""
+                                                                                   class="js-bulk-action-checkbox"
+                                                                                   name="employee_employee_bulk[]"
+                                                                                   value="1">
+                                                                            <i class="md-checkbox-control"></i>
+                                                                        </label>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td class="data-type column-id_employee clickable cursor-pointer">
+
+                                                                    1
+
+                                                                </td>
+                                                                <td class="data-type column-firstname clickable cursor-pointer">
+
+                                                                    Dario
+
+                                                                </td>
+                                                                <td class="data-type column-lastname clickable cursor-pointer">
+
+                                                                    Olianas
+
+                                                                </td>
+                                                                <td class="data-type column-email clickable cursor-pointer">
+
+                                                                    admin@prestashop.com
+
+                                                                </td>
+                                                                <td class="data-type column-profile clickable cursor-pointer">
+
+                                                                    SuperAdmin
+
+                                                                </td>
+                                                                <td class="toggle-type column-active">
+
+
+                                                                    <div class="text-center">
+                                                                        <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center ps-togglable-row"
+                                                                             data-toggle-url="/administrator/index.php/configure/advanced/employees/1/toggle-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                            <input type="radio"
+                                                                                   name="input-admin_employees_toggle_status-1"
+                                                                                   id="input-false-admin_employees_toggle_status-1"
+                                                                                   value="0">
+                                                                            <label for="input-false-admin_employees_toggle_status-1">Off</label>
+                                                                            <input type="radio"
+                                                                                   name="input-admin_employees_toggle_status-1"
+                                                                                   id="input-true-admin_employees_toggle_status-1"
+                                                                                   value="1" checked="">
+                                                                            <label for="input-true-admin_employees_toggle_status-1">On</label>
+                                                                            <span class="slide-button"></span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td class="action-type column-actions">
+
+
+                                                                    <div class="btn-group-action text-right">
+
+                                                                        <div class="btn-group">
+
+
+                                                                            <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                               href="/administrator/index.php/configure/advanced/employees/1/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-confirm-message=""
+                                                                               data-toggle="pstooltip"
+                                                                               data-placement="top"
+                                                                               data-original-title="Edit"
+                                                                               data-clickable-row="1">
+                                                                                <i class="material-icons">edit</i>
+                                                                            </a>
+
+
+                                                                            <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                               data-toggle="dropdown"
+                                                                               aria-haspopup="true"
+                                                                               aria-expanded="false">
+                                                                            </a>
+
+                                                                            <div class="dropdown-menu dropdown-menu-right">
+
+
+                                                                                <a class="btn tooltip-link js-submit-row-action dropdown-item grid-delete-row-link"
+                                                                                   href="#"
+                                                                                   data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                                   data-url="/administrator/index.php/configure/advanced/employees/1/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                                   data-method="POST"
+                                                                                   data-title="Delete selection"
+                                                                                   data-confirm-button-label="Delete"
+                                                                                   data-confirm-button-class="btn-danger"
+                                                                                   data-close-button-label="Cancel">
+                                                                                    <i class="material-icons">delete</i>
+                                                                                    Delete
+                                                                                </a>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+
+                                                        <div class="form-group row type-hidden ">
+
+
+                                                            <label for="employee__token" class="form-control-label ">
+
+
+                                                            </label>
+
+                                                            <div class="col-sm">
+
+
+                                                                <input type="hidden" id="employee__token"
+                                                                       name="employee[_token]" class="form-control"
+                                                                       value="I758IGI76QB6X1TzjNgJoCfOcDeURMHUncK5NdbPzBU">
+
+
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <form name="form" method="post"
+                          action="/administrator/index.php/configure/advanced/employees/save-options?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                          class="form-horizontal">
+                        <div class="card">
+                            <h3 class="card-header">
+                                <i class="material-icons">settings</i>
+                                Employee options
+                            </h3>
+                            <div class="card-block row">
+                                <div class="card-text">
+                                    <div class="form-group row">
+                                        <label for="form_password_change_time" class="form-control-label">
+                                            Password regeneration
+                                        </label>
+
+                                        <div class="col-sm">
+
+                                            <div class="input-group"><input type="text" id="form_password_change_time"
+                                                                            name="form[password_change_time]"
+                                                                            class="js-comma-transformer form-control"
+                                                                            value="360">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">minutes</span>
+                                                </div>
+                                            </div>
+
+                                            <small class="form-text">
+                                                Security: Minimum time to wait between two password changes.
+                                            </small>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="form_allow_employee_specific_language" class="form-control-label">
+                                            Memorize the language used in Admin panel forms
+                                        </label>
+
+                                        <div class="col-sm">
+
+                                            <div class="input-group"><span class="ps-switch"><input
+                                                    id="form_allow_employee_specific_language_0" class="ps-switch"
+                                                    name="form[allow_employee_specific_language]" value="0" checked=""
+                                                    type="radio" aria-label="No"><label
+                                                    for="form_allow_employee_specific_language_0">No</label><input
+                                                    id="form_allow_employee_specific_language_1" class="ps-switch"
+                                                    name="form[allow_employee_specific_language]" value="1" type="radio"
+                                                    aria-label="Yes"><label
+                                                    for="form_allow_employee_specific_language_1">Yes</label><span
+                                                    class="slide-button"></span></span></div>
+
+                                            <small class="form-text">
+                                                Allow employees to select a specific language for the Admin panel form.
+                                            </small>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row type-hidden ">
+
+
+                                        <label for="form__token" class="form-control-label ">
+
+
+                                        </label>
+
+                                        <div class="col-sm">
+
+
+                                            <input type="hidden" id="form__token" name="form[_token]"
+                                                   class="form-control"
+                                                   value="pSxNIyf2CR0qbGyOIDmEgMKIuNOABvZxkQW6AARWYIg">
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-primary pull-right">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,450 @@
+<div id="main">
+    <div id="content" class="bootstrap with-tabs">
+        <div class="bootstrap">
+            <div class="page-head with-tabs">
+                <div class="wrapper clearfix">
+
+                    <ul class="breadcrumb page-breadcrumb">
+                        <li class="breadcrumb-container">
+                            Attributes &amp; Features
+                        </li>
+
+                        <li class="breadcrumb-current">
+                            <a href="http://localhost:8080/administrator/index.php?controller=AdminFeatures&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+                                Features
+                            </a></li>
+
+                    </ul>
+
+
+                    <h1 class="page-title">
+                        Features </h1>
+
+
+                    <div class="page-bar toolbarBox">
+                        <div class="btn-toolbar">
+                            <a href="#" class="toolbar_btn dropdown-toolbar navbar-toggle" data-toggle="collapse"
+                               data-target="#toolbar-nav"><i class="process-icon-dropdown"></i>
+                                <div>Menu</div>
+                            </a>
+                            <ul id="toolbar-nav" class="nav nav-pills pull-right collapse navbar-collapse">
+
+                                <li>
+                                    <a id="page-header-desc-feature-new_feature" class="toolbar_btn  pointer"
+                                       href="index.php?controller=AdminFeatures&amp;addfeature&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10"
+                                       title="Add new feature">
+                                        <i class="process-icon-new"></i>
+                                        <div>Add new feature</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="page-header-desc-feature-new_feature_value" class="toolbar_btn  pointer"
+                                       href="index.php?controller=AdminFeatures&amp;addfeature_value&amp;id_feature=0&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10"
+                                       title="Add new feature value">
+                                        <i class="process-icon-new"></i>
+                                        <div>Add new feature value</div>
+                                    </a>
+                                </li>
+                                <li id="recommended-modules-button-container">
+                                    <a id="recommended-modules-button"
+                                       class="toolbar_btn pointer mbo-modules-recommended-button "
+                                       href="/administrator/index.php/modules/addons/modules/recommended?tabClassName=AdminFeatures&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                       title="Optimize product creation">
+                                        <i class="material-icons mi-extension">extension</i>
+                                        <div>Optimize product creation</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="toolbar_btn btn-help"
+                                       href="https://help.prestashop.com/en/doc/AdminFeatures?version=1.7.8.5&amp;country=en"
+                                       title="Help">
+                                        <i class="process-icon-help"></i>
+                                        <div>Help</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="page-head-tabs" id="head_tabs">
+                    <ul class="nav">
+                        <li>
+                            <a href="http://localhost:8080/administrator/index.php?controller=AdminAttributesGroups&amp;token=da51f97df958e51b220a867d9b02cea3"
+                               id="subtab-AdminAttributesGroups" data-submenu="14">
+                                Attributes
+                                <span class="notification-container">
+                          <span class="notification-counter"></span>
+                        </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:8080/administrator/index.php?controller=AdminFeatures&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10"
+                               id="subtab-AdminFeatures" class="current" data-submenu="15">
+                                Features
+                                <span class="notification-container">
+                          <span class="notification-counter"></span>
+                        </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modules_list_container">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title">Optimize product creation</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modules_list_container_tab_modal" style="display:none;"></div>
+                        <div id="modules_list_loader"><i class="icon-refresh icon-spin"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.fancybox-quick-view').fancybox({
+                    type: 'ajax',
+                    autoDimensions: false,
+                    autoSize: false,
+                    width: 600,
+                    height: 'auto',
+                    helpers: {
+                        overlay: {
+                            locked: false
+                        }
+                    }
+                });
+            });
+        </script>
+
+
+        <div id="ajax_confirmation" class="alert alert-success hide"></div>
+        <div id="ajaxBox" style="display:none"></div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-warning" id="feature-empty-filters-alert" style="display:none;">Please fill at
+                    least one field to perform a search in this list.
+                </div>
+                <form id="sql_form_feature"
+                      action="/administrator/index.php/configure/advanced/sql-requests/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                      method="post" class="hide">
+                    <input type="hidden" id="sql_query_feature" name="sql" value="SELECT SQL_CALC_FOUND_ROWS b.*, a.*
+
+FROM `ps_feature` a
+LEFT JOIN `ps_feature_lang` b
+                ON (b.`id_feature` = a.`id_feature` AND b.`id_lang` = 1)
+
+ WHERE 1
+
+ ORDER BY a.`position` ASC  LIMIT 0, 50">
+                    <input type="hidden" id="sql_name_feature" name="name" value="">
+                </form>
+
+
+                <form method="post"
+                      action="index.php?controller=AdminFeatures&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10#feature"
+                      class="form-horizontal clearfix" id="form-feature">
+
+
+                    <input type="hidden" id="submitFilterfeature" name="submitFilterfeature" value="0">
+                    <input type="hidden" name="page" value="1">
+                    <input type="hidden" name="selected_pagination" value="50">
+
+
+                    <div class="panel col-lg-12">
+                        <div class="panel-heading">
+
+                            Features
+
+                            <span class="badge">2</span>
+                            <span class="panel-heading-action">
+															<a id="desc-feature-new" class="list-toolbar-btn"
+                                                               href="index.php?controller=AdminFeatures&amp;addfeature&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+							<span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="Add new"
+                                  data-html="true" data-placement="top">
+								<i class="process-icon-new"></i>
+							</span>
+						</a>
+														<a class="list-toolbar-btn"
+                                                           href="javascript:location.reload();">
+						<span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="Refresh list"
+                              data-html="true" data-placement="top">
+							<i class="process-icon-refresh"></i>
+						</span>
+					</a>
+
+											<a class="list-toolbar-btn" href="javascript:void(0);"
+                                               onclick="$('.leadin').first().append('<div class=\'alert alert-info\'>' + $('#sql_query_feature').val() + '</div>'); $(this).attr('onclick', '');">
+							<span class="label-tooltip" data-toggle="tooltip" data-original-title="Show SQL query"
+                                  data-html="true" data-placement="top">
+								<i class="process-icon-terminal"></i>
+							</span>
+						</a>
+						<a class="list-toolbar-btn" href="javascript:void(0);"
+                           onclick="$('#sql_name_feature').val(createSqlQueryName()); $('#sql_query_feature').val($('#sql_query_feature').val().replace(/\s+limit\s+[0-9,\s]+$/ig, '').trim()); $('#sql_form_feature').submit();">
+							<span class="label-tooltip" data-toggle="tooltip"
+                                  data-original-title="Export to SQL Manager" data-html="true" data-placement="top">
+								<i class="process-icon-database"></i>
+							</span>
+						</a>
+													</span>
+                        </div>
+                        <script type="text/javascript">
+                            //<![CDATA[
+                            var submited = false;
+                            $(function () {
+                                //get reference on save link
+                                btn_save = $('i[class~="process-icon-save"]').parent();
+                                //get reference on form submit button
+                                btn_submit = $('#feature_form_submit_btn');
+                                if (btn_save.length > 0 && btn_submit.length > 0) {
+                                    //get reference on save and stay link
+                                    btn_save_and_stay = $('i[class~="process-icon-save-and-stay"]').parent();
+                                    //get reference on current save link label
+                                    lbl_save = $('#desc-feature-save div');
+                                    //override save link label with submit button value
+                                    if (btn_submit.val().length > 0) {
+                                        lbl_save.html(btn_submit.attr("value"));
+                                    }
+                                    if (btn_save_and_stay.length > 0) {
+                                        //get reference on current save link label
+                                        lbl_save_and_stay = $('#desc-feature-save-and-stay div');
+                                        //override save and stay link label with submit button value
+                                        if (btn_submit.val().length > 0 && lbl_save_and_stay && !lbl_save_and_stay.hasClass('locked')) {
+                                            lbl_save_and_stay.html(btn_submit.val() + " and stay ");
+                                        }
+                                    }
+                                    //hide standard submit button
+                                    btn_submit.hide();
+                                    //bind enter key press to validate form
+                                    $('#feature_form').keypress(function (e) {
+                                        if (e.which == 13 && e.target.localName != 'textarea') {
+                                            $('#desc-feature-save').click();
+                                        }
+                                    });
+                                    //submit the form
+
+                                    btn_save.click(function () {
+                                        // Avoid double click
+                                        if (submited) {
+                                            return false;
+                                        }
+                                        submited = true;
+                                        //add hidden input to emulate submit button click when posting the form -> field name posted
+                                        btn_submit.before('<input type="hidden" name="' + btn_submit.attr("name") + '" value="1" />');
+                                        $('#feature_form').submit();
+                                        return false;
+                                    });
+                                    if (btn_save_and_stay) {
+                                        btn_save_and_stay.click(function () {
+                                            //add hidden input to emulate submit button click when posting the form -> field name posted
+                                            btn_submit.before('<input type="hidden" name="' + btn_submit.attr("name") + 'AndStay" value="1" />');
+                                            $('#feature_form').submit();
+                                            return false;
+                                        });
+                                    }
+
+                                }
+                            });
+                            //]]>
+                        </script>
+
+
+                        <style>
+                            @media (max-width: 992px) {
+                                .table-responsive-row td:nth-of-type(2):before {
+                                    content: "ID";
+                                }
+
+                                .table-responsive-row td:nth-of-type(3):before {
+                                    content: "Name";
+                                }
+
+                                .table-responsive-row td:nth-of-type(4):before {
+                                    content: "Values";
+                                }
+
+                                .table-responsive-row td:nth-of-type(5):before {
+                                    content: "Position";
+                                }
+                            }
+                        </style>
+
+
+                        <div class="table-responsive-row clearfix">
+                            <table id="table-feature" class="table tableDnD feature">
+                                <thead>
+                                <tr class="nodrag nodrop">
+                                    <th class="center fixed-width-xs"></th>
+                                    <th class="fixed-width-xs center">
+						<span class="title_box">
+															ID
+																						<a class="desc-sort-column-id_feature-link"
+                                                                                           href="index.php?controller=AdminFeatures&amp;featureOrderby=id_feature&amp;featureOrderway=desc&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+									<i class="icon-caret-down"></i>
+								</a>
+								<a class="asc-sort-column-id_feature-link"
+                                   href="index.php?controller=AdminFeatures&amp;featureOrderby=id_feature&amp;featureOrderway=asc&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+									<i class="icon-caret-up"></i>
+								</a>
+													</span>
+                                    </th>
+                                    <th class="">
+						<span class="title_box">
+															Name
+																						<a class="desc-sort-column-name-link"
+                                                                                           href="index.php?controller=AdminFeatures&amp;featureOrderby=name&amp;featureOrderway=desc&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+									<i class="icon-caret-down"></i>
+								</a>
+								<a class="asc-sort-column-name-link"
+                                   href="index.php?controller=AdminFeatures&amp;featureOrderby=name&amp;featureOrderway=asc&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+									<i class="icon-caret-up"></i>
+								</a>
+													</span>
+                                    </th>
+                                    <th class="fixed-width-xs center">
+						<span class="title_box">
+															Values
+																				</span>
+                                    </th>
+                                    <th class="fixed-width-xs center">
+						<span class="title_box active">
+															Position
+																						<a class="desc-sort-column-position-link"
+                                                                                           href="index.php?controller=AdminFeatures&amp;featureOrderby=position&amp;featureOrderway=desc&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+									<i class="icon-caret-down"></i>
+								</a>
+								<a class="asc-sort-column-position-link active"
+                                   href="index.php?controller=AdminFeatures&amp;featureOrderby=position&amp;featureOrderway=asc&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10">
+									<i class="icon-caret-up"></i>
+								</a>
+													</span>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                                <tr class="nodrag nodrop filter row_hover">
+                                    <th class="text-center">
+                                        --
+                                    </th>
+                                    <th class="center">
+                                        <input type="text" class="filter" name="featureFilter_id_feature" value="">
+                                    </th>
+                                    <th>
+                                        <input type="text" class="filter" name="featureFilter_b!name" value="">
+                                    </th>
+                                    <th class="center">
+                                        --
+                                    </th>
+                                    <th class="center">
+                                        <input type="text" class="filter" name="featureFilter_a!position" value="">
+                                    </th>
+
+                                    <th class="actions">
+														<span class="pull-right">
+																<button type="submit" id="submitFilterButtonfeature"
+                                                                        name="submitFilter" class="btn btn-default"
+                                                                        data-list-id="feature">
+									<i class="icon-search"></i> Search
+								</button>
+															</span>
+                                    </th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr id="tr_2_1_0" class=" odd">
+                                    <td class="row-selector text-center">
+                                        <input type="checkbox" name="featureBox[]" value="1" class="noborder">
+                                    </td>
+
+                                    <td class="pointer column-id_feature fixed-width-xs center"
+                                        onclick="document.location = 'index.php?controller=AdminFeatures&amp;viewfeature=&amp;id_feature=1&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10'">
+
+
+                                        1
+
+
+                                    </td>
+
+
+                                    <td class="pointer column-name"
+                                        onclick="document.location = 'index.php?controller=AdminFeatures&amp;viewfeature=&amp;id_feature=1&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10'">
+
+
+                                        Composition
+
+
+                                    </td>
+
+
+                                    <td class="pointer column-value fixed-width-xs center"
+                                        onclick="document.location = 'index.php?controller=AdminFeatures&amp;viewfeature=&amp;id_feature=1&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10'">
+
+
+                                        6
+
+
+                                    </td>
+
+
+                                    <td id="td_2_1" class="pointer column-position dragHandle fixed-width-xs center">
+
+
+                                        <div class="dragGroup">
+                                            <div class="positions">
+                                                1
+                                            </div>
+                                        </div>
+
+
+                                    </td>
+
+
+                                    <td class="text-right">
+                                        <div class="btn-group-action">
+                                            <div class="btn-group pull-right">
+                                                <a href="index.php?controller=AdminFeatures&amp;viewfeature=&amp;id_feature=1&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10"
+                                                   class="btn btn-default" title="View">
+                                                    <i class="icon-search-plus"></i> View
+                                                </a>
+
+                                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-caret-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="index.php?controller=AdminFeatures&amp;updatefeature=&amp;id_feature=1&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10"
+                                                           title="Edit" class="edit">
+                                                            <i class="icon-pencil"></i> Edit
+                                                        </a>
+                                                    </li>
+                                                    <li class="divider">
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="Delete" class="delete"
+                                                           onclick="confirm_link('', 'Delete selected item?\n\nName: Composition', 'Yes', 'No', 'index.php?controller=AdminFeatures&amp;id_feature=1&amp;deletefeature&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10', '#')">
+                                                            <i class="icon-trash"></i> Delete
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

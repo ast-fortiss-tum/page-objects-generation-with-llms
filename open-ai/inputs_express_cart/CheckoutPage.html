@@ -1,0 +1,191 @@
+<div class="container-fluid content-body h-100" id="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 col-sm-12">
+            <div class="row">
+                <div class="col-12 col-md-5 bottom-pad-15">
+                    <div class="card top-marg-15">
+                        <div class="card-body customer-details-login">
+                            <h5 class="card-heading">Customer details</h5>
+                            <div class="row bottom-marg-15">
+                                <div class="col-sm-12">
+                                    <button id="customerLogout"
+                                            class="btn btn-primary float-right">Change customer
+                                    </button>
+                                </div>
+                            </div>
+                            <form id="shipping-form" class="shipping-form" role="form" data-toggle="validator"
+                                  novalidate="false">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control customerDetails" id="shipEmail"
+                                                   name="shipEmail" minlength="5" placeholder="Email address"
+                                                   value="test@gmail.com" required>
+                                            <div class="invalid-feedback">
+                                                Please enter a valid email address
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipCompany"
+                                                   name="shipCompany" placeholder="Company name" value="test">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipFirstname"
+                                                   name="shipFirstname" placeholder="First name" value="test" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipLastname"
+                                                   name="shipLastname" placeholder="Last name" value="test" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipAddr1"
+                                                   name="shipAddr1" placeholder="Address 1" value="test" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipAddr2"
+                                                   name="shipAddr2" placeholder="Address 2 (optional)" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <select class="form-control" id="shipCountry" name="shipCountry" required>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipState"
+                                                   name="shipState" placeholder="State" value="Bayern" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control customerDetails" id="shipPostcode"
+                                                   name="shipPostcode" placeholder="Post code" value="80796" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control customerDetails"
+                                                   id="shipPhoneNumber" name="shipPhoneNumber"
+                                                   placeholder="Phone number" value="1786325899" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control customerDetails" placeholder="Order comment"
+                                                      id="orderComment" name="orderComment"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <a href="/checkout/cart" class="btn btn-primary float-left">Return to cart</a>
+                                        <a href="/checkout/shipping" id="checkoutInformation"
+                                           class="btn btn-primary float-right">Continue to shipping</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 d-none d-sm-block" id="cart">
+                    <div class="card top-marg-15 bottom-marg-15">
+                        <div class="card-body cart-body">
+                            <h5 class="card-title">Cart contents</h5>
+                            <div class="cartBodyWrapper">
+                                <div class="d-flex flex-row bottom-pad-15">
+                                    <div class="p-2 cart-product">
+                                        <div class="row h-200">
+                                            <div class="col-4 col-md-3 no-pad-left">
+                                                <img class="img-fluid" src="/uploads/placeholder.png"
+                                                     alt="5 Panel Camp Cap product image">
+                                            </div>
+                                            <div class="col-8 col-md-9">
+                                                <div class="row">
+                                                    <div class="col-12 no-pad-left mt-md-4">
+                                                        <h6><a href="/product/5-panel-camp-cap">5 Panel Camp Cap</a>
+                                                        </h6>
+                                                    </div>
+                                                    <div class="col-12 col-md-6 no-pad-left mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <button class="btn btn-primary btn-qty-minus"
+                                                                        type="button">-
+                                                                </button>
+                                                            </div>
+                                                            <input type="number"
+                                                                   class="form-control cart-product-quantity text-center"
+                                                                   data-cartid="6801fa3e8e00d0003234cf5d"
+                                                                   data-id="6801fa3e8e00d0003234cf5d"
+                                                                   maxlength="2"
+                                                                   value="1"
+                                                            >
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-primary btn-qty-add"
+                                                                        type="button">+
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 col-md-2 no-pad-left">
+                                                        <button class="btn btn-danger btn-delete-from-cart"
+                                                                data-cartid="6801fa3e8e00d0003234cf5d" type="button">
+                                                            <svg
+                                                                    width="16"
+                                                                    height="16"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="2"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                    class="feather feather-trash-2"
+                                                            >
+                                                                <use xlink:href="/dist/feather-sprite.svg#trash-2"/>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-8 col-md-4 align-self-center text-right">
+                                                        <strong class="my-auto">£48.00</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cartTotalsWrapper">
+                                <div class="d-flex flex-row">
+                                    <div class="cart-contents-shipping col-md-12 no-pad-right">
+                                        <div class="text-right">
+                                            International shipping: <strong id="shipping-amount">£25.00</strong>
+                                        </div>
+                                        <div class="text-right">
+                                            Total:
+                                            <strong id="total-cart-amount">£73.00</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12  cart-buttons">
+                            <button class="btn btn-danger float-right" id="empty-cart" type="button">Empty cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

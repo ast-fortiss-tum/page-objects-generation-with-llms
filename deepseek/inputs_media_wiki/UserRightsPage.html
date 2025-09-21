@@ -1,0 +1,200 @@
+<div id="bodyContent" class="vector-body">
+
+    <div id="contentSub">
+        <div id="mw-content-subtitle"></div>
+    </div>
+    <div id="contentSub2"></div>
+
+    <div id="jump-to-nav"></div>
+    <a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+    <a class="mw-jump-link" href="#searchInput">Jump to search</a>
+    <div id="mw-content-text" class="mw-body-content">
+        <form method="get" action="/index.php" name="uluser" id="mw-userrights-form1"><input type="hidden"
+                                                                                             value="Special:UserRights"
+                                                                                             name="title">
+            <fieldset>
+                <legend>Select a user</legend>
+                <label for="username" class="mw-autocomplete-user" autocomplete="off">Enter a
+                    username:</label>&nbsp;<input name="user" size="30" value="Admin" id="username"
+                                                  class="mw-autocomplete-user" autocomplete="off"> <input type="submit"
+                                                                                                          value="Load user groups">
+            </fieldset>
+        </form>
+        <form method="post" action="/index.php/Special:UserRights" name="editGroup" id="mw-userrights-form2"><input
+                type="hidden" value="Admin" name="user"><input type="hidden"
+                                                               value="d630217f6a4b7997a9777cff64c66b05680d0514+\"
+                                                               name="wpEditToken"><input type="hidden"
+                                                                                         value="bureaucrat,interface-admin,sysop"
+                                                                                         name="conflictcheck-originalgroups">
+            <fieldset>
+                <legend>Edit user groups</legend>
+                Changing user groups of user <strong><a href="/index.php?title=User:Admin&amp;action=edit&amp;redlink=1"
+                                                        class="new"
+                                                        title="User:Admin (page does not exist)">Admin</a></strong>
+                <span class="mw-usertoollinks">(<a href="/index.php?title=User_talk:Admin&amp;action=edit&amp;redlink=1"
+                                                   class="new mw-usertoollinks-talk"
+                                                   title="User talk:Admin (page does not exist)">talk</a> | <a
+                        href="/index.php/Special:Contributions/Admin" class="mw-usertoollinks-contribs"
+                        title="Special:Contributions/Admin">contribs</a> | <a href="/index.php/Special:Block/Admin"
+                                                                              class="mw-usertoollinks-block"
+                                                                              title="Special:Block/Admin">block</a>)</span>
+                <p>You may alter the groups this user is in:
+                </p>
+                <ul>
+                    <li>A checked box means the user is in that group.</li>
+                    <li>An unchecked box means the user is not in that group.</li>
+                    <li>A * indicates that you cannot remove the group once you have added it, or vice versa.</li>
+                    <li>A # indicates that you can only put back the expiration time of this group membership; you
+                        cannot bring it forward.
+                    </li>
+                </ul>
+                <p>Member of: <a href="/index.php?title=E2E_Web_Testing_wiki:Bureaucrats&amp;action=edit&amp;redlink=1"
+                                 class="new"
+                                 title="E2E Web Testing wiki:Bureaucrats (page does not exist)">Bureaucrats</a>, <a
+                        href="/index.php?title=E2E_Web_Testing_wiki:Interface_administrators&amp;action=edit&amp;redlink=1"
+                        class="new" title="E2E Web Testing wiki:Interface administrators (page does not exist)">Interface
+                    administrators</a>, <a
+                        href="/index.php?title=E2E_Web_Testing_wiki:Administrators&amp;action=edit&amp;redlink=1"
+                        class="new" title="E2E Web Testing wiki:Administrators (page does not exist)">Administrators</a>
+                </p>
+                <p>Implicit member of: <a
+                        href="/index.php?title=E2E_Web_Testing_wiki:Autoconfirmed_users&amp;action=edit&amp;redlink=1"
+                        class="new" title="E2E Web Testing wiki:Autoconfirmed users (page does not exist)">Autoconfirmed
+                    users</a></p>
+                <table class="mw-userrights-groups">
+                    <tbody>
+                    <tr>
+                        <th>Groups you can change</th>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:top;">
+                            <div><input name="wpGroup-bot" type="checkbox" value="1" id="wpGroup-bot"
+                                        class="mw-userrights-groupcheckbox">&nbsp;<label for="wpGroup-bot"
+                                                                                         class="mw-userrights-groupcheckbox">bot</label>
+                                <div id="mw-userrights-nested-wpGroup-bot" class="mw-userrights-nested">
+                                    <span>Expires:</span><span><select name="wpExpiry-bot" id="mw-input-wpExpiry-bot"><option
+                                        value="infinite" selected="">Does not expire</option>
+<option value="other">Other time:</option>
+<option value="1 day">1 day</option>
+<option value="1 week">1 week</option>
+<option value="1 month">1 month</option>
+<option value="3 months">3 months</option>
+<option value="6 months">6 months</option>
+<option value="1 year">1 year</option></select><br><input name="wpExpiry-bot-other" size="30" value=""
+                                                          id="mw-input-wpExpiry-bot-other"
+                                                          class="mw-userrights-expiryfield"></span></div>
+                            </div>
+                            <div><input name="wpGroup-sysop" type="checkbox" value="1" checked="checked"
+                                        id="wpGroup-sysop" class="mw-userrights-groupcheckbox">&nbsp;<label
+                                    for="wpGroup-sysop" class="mw-userrights-groupcheckbox">administrator</label>
+                                <div id="mw-userrights-nested-wpGroup-sysop" class="mw-userrights-nested">
+                                    <span>Expires:</span><span><select name="wpExpiry-sysop"
+                                                                       id="mw-input-wpExpiry-sysop"><option
+                                        value="infinite" selected="">Does not expire</option>
+<option value="other">Other time:</option>
+<option value="1 day">1 day</option>
+<option value="1 week">1 week</option>
+<option value="1 month">1 month</option>
+<option value="3 months">3 months</option>
+<option value="6 months">6 months</option>
+<option value="1 year">1 year</option></select><br><input name="wpExpiry-sysop-other" size="30" value=""
+                                                          id="mw-input-wpExpiry-sysop-other"
+                                                          class="mw-userrights-expiryfield"></span></div>
+                            </div>
+                            <div><input name="wpGroup-interface-admin" type="checkbox" value="1" checked="checked"
+                                        id="wpGroup-interface-admin" class="mw-userrights-groupcheckbox">&nbsp;<label
+                                    for="wpGroup-interface-admin" class="mw-userrights-groupcheckbox">interface
+                                administrator</label>
+                                <div id="mw-userrights-nested-wpGroup-interface-admin" class="mw-userrights-nested">
+                                    <span>Expires:</span><span><select name="wpExpiry-interface-admin"
+                                                                       id="mw-input-wpExpiry-interface-admin"><option
+                                        value="infinite" selected="">Does not expire</option>
+<option value="other">Other time:</option>
+<option value="1 day">1 day</option>
+<option value="1 week">1 week</option>
+<option value="1 month">1 month</option>
+<option value="3 months">3 months</option>
+<option value="6 months">6 months</option>
+<option value="1 year">1 year</option></select><br><input name="wpExpiry-interface-admin-other" size="30" value=""
+                                                          id="mw-input-wpExpiry-interface-admin-other"
+                                                          class="mw-userrights-expiryfield"></span></div>
+                            </div>
+                            <div><input name="wpGroup-bureaucrat" type="checkbox" value="1" checked="checked"
+                                        id="wpGroup-bureaucrat" class="mw-userrights-groupcheckbox">&nbsp;<label
+                                    for="wpGroup-bureaucrat" class="mw-userrights-groupcheckbox">bureaucrat</label>
+                                <div id="mw-userrights-nested-wpGroup-bureaucrat" class="mw-userrights-nested"><span>Expires:</span><span><select
+                                        name="wpExpiry-bureaucrat" id="mw-input-wpExpiry-bureaucrat"><option
+                                        value="infinite" selected="">Does not expire</option>
+<option value="other">Other time:</option>
+<option value="1 day">1 day</option>
+<option value="1 week">1 week</option>
+<option value="1 month">1 month</option>
+<option value="3 months">3 months</option>
+<option value="6 months">6 months</option>
+<option value="1 year">1 year</option></select><br><input name="wpExpiry-bureaucrat-other" size="30" value=""
+                                                          id="mw-input-wpExpiry-bureaucrat-other"
+                                                          class="mw-userrights-expiryfield"></span></div>
+                            </div>
+                            <div><input name="wpGroup-suppress" type="checkbox" value="1" id="wpGroup-suppress"
+                                        class="mw-userrights-groupcheckbox">&nbsp;<label for="wpGroup-suppress"
+                                                                                         class="mw-userrights-groupcheckbox">suppressor</label>
+                                <div id="mw-userrights-nested-wpGroup-suppress" class="mw-userrights-nested"><span>Expires:</span><span><select
+                                        name="wpExpiry-suppress" id="mw-input-wpExpiry-suppress"><option
+                                        value="infinite" selected="">Does not expire</option>
+<option value="other">Other time:</option>
+<option value="1 day">1 day</option>
+<option value="1 week">1 week</option>
+<option value="1 month">1 month</option>
+<option value="3 months">3 months</option>
+<option value="6 months">6 months</option>
+<option value="1 year">1 year</option></select><br><input name="wpExpiry-suppress-other" size="30" value=""
+                                                          id="mw-input-wpExpiry-suppress-other"
+                                                          class="mw-userrights-expiryfield"></span></div>
+                            </div>
+                            <div><input name="wpGroup-push-subscription-manager" type="checkbox" value="1"
+                                        id="wpGroup-push-subscription-manager" class="mw-userrights-groupcheckbox">&nbsp;<label
+                                    for="wpGroup-push-subscription-manager" class="mw-userrights-groupcheckbox">push
+                                subscription manager</label>
+                                <div id="mw-userrights-nested-wpGroup-push-subscription-manager"
+                                     class="mw-userrights-nested"><span>Expires:</span><span><select
+                                        name="wpExpiry-push-subscription-manager"
+                                        id="mw-input-wpExpiry-push-subscription-manager"><option value="infinite"
+                                                                                                 selected="">Does not expire</option>
+<option value="other">Other time:</option>
+<option value="1 day">1 day</option>
+<option value="1 week">1 week</option>
+<option value="1 month">1 month</option>
+<option value="3 months">3 months</option>
+<option value="6 months">6 months</option>
+<option value="1 year">1 year</option></select><br><input name="wpExpiry-push-subscription-manager-other" size="30"
+                                                          value=""
+                                                          id="mw-input-wpExpiry-push-subscription-manager-other"
+                                                          class="mw-userrights-expiryfield"></span></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table id="mw-userrights-table-outer">
+                    <tbody>
+                    <tr>
+                        <td class="mw-label"><label for="wpReason">Reason:</label></td>
+                        <td class="mw-input"><input name="user-reason" size="60" id="wpReason"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="mw-submit"><input name="saveusergroups" title="[s] [ctrl-option-s]" accesskey="s"
+                                                     type="submit" value="Save user groups"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </form>
+        <h2>User rights log</h2>
+        <div class="mw-warning-logempty">No matching items in log.</div>
+        <div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr"
+                                                                      href="http://localhost:8080/index.php/Special:UserRights">http://localhost:8080/index.php/Special:UserRights</a>"
+        </div>
+    </div>
+    <div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+</div>

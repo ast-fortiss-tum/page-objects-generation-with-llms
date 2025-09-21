@@ -1,0 +1,70 @@
+<section class="page">
+    <section id="main">
+        <section class="sidebar-container" id="config-section">
+            <div class="sidebar-content">
+                <div class="page-header">
+                    <h2>Currency rates</h2>
+                    <ul>
+                        <li>
+                            <a href="/?controller=CurrencyController&amp;action=create" class="js-modal-medium"
+                               title=''><i class="fa fa-plus fa-fw js-modal-medium" aria-hidden="true"></i>Add or change
+                                currency rate</a></li>
+                        <li>
+                            <a href="/?controller=CurrencyController&amp;action=change" class="js-modal-medium"
+                               title=''><i class="fa fa-edit fa-fw js-modal-medium" aria-hidden="true"></i>Change
+                                reference currency</a></li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <strong>Reference currency: USD</strong>
+                </div>
+
+            </div>
+        </section>
+    </section>
+    <div id="modal-box" style="width: 1024px;">
+        <div id="modal-header"><a href="#" id="modal-close-button"><i class="fa fa-times"></i></a></div>
+        <div id="modal-content">
+            <div class="page-header">
+                <h2>Add or change currency rate</h2>
+            </div>
+            <form method="post" action="/?controller=CurrencyController&amp;action=save" autocomplete="off">
+                <input type="hidden" name="csrf_token"
+                       value="da7f4cc003fe4de51f00c3932b2dbd850625bd2216597662e82e85170aaf"> <label for="form-currency">Currency</label>
+                <select name="currency" id="form-currency" class="">
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="CHF">CHF - Swiss Francs</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="NZD">NZD - New Zealand Dollar</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="RSD">RSD - Serbian dinar</option>
+                    <option value="DKK">DKK - Danish Krona</option>
+                    <option value="SEK">SEK - Swedish Krona</option>
+                    <option value="NOK">NOK - Norwegian Krone</option>
+                    <option value="BAM">BAM - Konvertible Mark</option>
+                    <option value="RUB">RUB - Russian Ruble</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                    <option value="TRL">TRL - Turkish Lira</option>
+                    <option value="HRK">HRK - Kuna</option>
+                    <option value="ARS">ARS - Argentine Peso</option>
+                    <option value="COP">COP - Colombian Peso</option>
+                    <option value="BRL">BRL - Brazilian Real</option>
+                    <option value="VBL">VES - Venezuelan Bolívar</option>
+                    <option value="XBT">XBT - bitcoin</option>
+                </select> <label for="form-rate">Rate</label> <input type="text" name="rate" id="form-rate"
+                                                                     class="form-numeric" autofocus="">
+                <div class="js-submit-buttons-rendered"
+                     data-params="{&quot;submitLabel&quot;:&quot;Save&quot;,&quot;orLabel&quot;:&quot;or&quot;,&quot;cancelLabel&quot;:&quot;cancel&quot;,&quot;color&quot;:&quot;blue&quot;,&quot;tabindex&quot;:null,&quot;disabled&quot;:false}">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-blue">Save</button>
+                        or <a href="#">cancel</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

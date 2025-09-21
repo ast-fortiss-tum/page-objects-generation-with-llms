@@ -1,0 +1,40 @@
+<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="nav-security-tab">
+    <h6 class="mt-4 mb-2 pb-2 border-bottom text-uppercase">Password</h6>
+    <div class="form-group">
+        <a href="/admin/user-password/admin" class="btn btn-primary mr-2">Change password</a>
+    </div>
+    <h6 class="mt-4 mb-2 pb-2 border-bottom text-uppercase">Authentication Token</h6>
+    <div class="form-group row">
+        <label for="jstokenAuth" class="col-sm-2 col-form-label">Token</label>
+        <div class="col-sm-10">
+            <input class="form-control " id="jstokenAuth" name="tokenAuth"
+                   value="7d9cfc74ac65371db410e1050f5b7b9b" placeholder="" type="text">
+            <small class="form-text text-muted">This token is similar to a password, it should not
+                be shared.</small>
+        </div>
+    </div>
+    <h6 class="mt-4 mb-2 pb-2 border-bottom text-uppercase">Status</h6>
+    <div class="form-group row">
+        <label for="jsstatus" class="col-sm-2 col-form-label">Current status</label>
+        <div class="col-sm-10">
+            <input class="form-control " id="jsstatus" name="status" value="Enabled" placeholder=""
+                   type="text" disabled>
+            <small class="form-text text-muted"></small>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-warning mr-2" id="jsdisableUser"
+                    name="disableUser">Disable user
+            </button>
+            <button type="submit" class="btn btn-danger mr-2" id="jsdeleteUserAndKeepContent"
+                    name="deleteUserAndKeepContent">Delete user and keep content
+            </button>
+            <button type="submit" class="btn btn-danger mr-2" id="jsdeleteUserAndDeleteContent"
+                    name="deleteUserAndDeleteContent">Delete user and delete content (Warning)
+            </button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+<div class="front front_login panel">
+    <h4 id="shop_name">E2E Web Testing store</h4>
+    <form action="#" id="login_form" method="post" novalidate="novalidate">
+        <input type="hidden" name="redirect" id="redirect"
+               value="http://localhost:8080/administrator/index.php?controller=AdminDashboard&amp;token=bbda18e2866aaa5506eba904107045f8">
+        <div class="form-group">
+            <label class="control-label" for="email">Email address</label>
+            <input name="email" type="email" id="email" class="form-control" value="" autofocus="autofocus" tabindex="1"
+                   placeholder=" test@example.com">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="passwd">
+                Password
+            </label>
+            <input name="passwd" type="password" id="passwd" class="form-control" value="" tabindex="2"
+                   placeholder=" Password">
+        </div>
+        <div class="form-group row-padding-top">
+            <button id="submit_login" name="submitLogin" type="submit" tabindex="4"
+                    class="btn btn-primary btn-lg btn-block ladda-button" data-style="slide-up"
+                    data-spinner-color="white">
+							<span class="ladda-label">
+								Log in
+							</span>
+            </button>
+        </div>
+        <div class="form-group row">
+            <div id="remind-me" class="checkbox col-xs-6">
+                <label for="stay_logged_in">
+                    <input name="stay_logged_in" type="checkbox" id="stay_logged_in" value="1" tabindex="3">
+                    Stay logged in
+                </label>
+            </div>
+            <a href="#" id="forgot-password-link" class="show-forgot-password col-xs-6 text-right">
+                I forgot my password
+            </a>
+        </div>
+    </form>
+</div>

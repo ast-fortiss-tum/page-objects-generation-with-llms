@@ -1,0 +1,165 @@
+<div class="sidebar-content">
+
+    <section id="task-summary">
+        <h2>test task</h2>
+
+
+        <div class="task-summary-container color-yellow">
+            <div class="task-summary-columns">
+                <div class="task-summary-column">
+                    <ul class="no-bullet">
+                        <li>
+                            <strong>Status:</strong>
+                            <span>
+                                                    open                                                </span>
+                        </li>
+                        <li>
+                            <strong>Priority:</strong> <span>0</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="task-summary-column">
+                    <ul class="no-bullet">
+                        <li>
+                            <strong>Swimlane:</strong>
+                            <span>Default swimlane</span>
+                        </li>
+                        <li>
+                            <strong>Column:</strong>
+                            <span>Backlog</span>
+                        </li>
+                        <li>
+                            <strong>Position:</strong>
+                            <span>1</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="task-summary-column">
+                    <ul class="no-bullet">
+                        <li>
+                            <strong>Assignee:</strong>
+                            <span>
+                                                    admin                                                </span>
+                        </li>
+                        <li>
+                            <strong>Creator:</strong>
+                            <span>admin</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="task-summary-column">
+                    <ul class="no-bullet">
+                        <li>
+                            <strong>Started:</strong>
+                            <span><a
+                                    href="/?controller=TaskModificationController&amp;action=start&amp;task_id=1&amp;project_id=1"
+                                    class="" title="">Start now</a></span>
+                        </li>
+                        <li>
+                            <strong>Created:</strong>
+                            <span>04/26/2025 10:51</span>
+                        </li>
+                        <li>
+                            <strong>Modified:</strong>
+                            <span>04/26/2025 10:51</span>
+                        </li>
+                        <li>
+                            <strong>Moved:</strong>
+                            <span>04/26/2025 10:51</span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <details class="accordion-section">
+        <summary class="accordion-title">Description</summary>
+        <div class="accordion-content">
+            <article class="markdown">
+            </article>
+        </div>
+    </details>
+
+    <details class="accordion-section">
+        <summary class="accordion-title">Sub-Tasks</summary>
+        <div class="accordion-content">
+        </div>
+    </details>
+
+    <details class="accordion-section">
+        <summary class="accordion-title">Internal links</summary>
+        <div class="accordion-content">
+        </div>
+    </details>
+
+    <details class="accordion-section">
+        <summary class="accordion-title">External links</summary>
+        <div class="accordion-content">
+        </div>
+    </details>
+
+    <details class="accordion-section">
+        <summary class="accordion-title">Attachments</summary>
+        <div class="accordion-content">
+        </div>
+    </details>
+
+    <details class="accordion-section">
+        <summary class="accordion-title">Comments</summary>
+        <div class="accordion-content comments" id="comments">
+            <div class="comment-sorting">
+                <small>
+                    <a href="/?controller=CommentController&amp;action=toggleSorting&amp;task_id=1&amp;project_id=1"
+                       class="" title=""><i class="fa fa-fw fa-sort" aria-hidden="true"></i>Change sorting</a> <a
+                        href="/?controller=CommentMailController&amp;action=create&amp;task_id=1&amp;project_id=1"
+                        class="js-modal-medium" title=""><i class="fa fa-paper-plane fa-fw js-modal-medium"
+                                                            aria-hidden="true"></i>Send by email</a> </small>
+            </div>
+
+            <form method="post" action="/?controller=CommentController&amp;action=save&amp;task_id=1&amp;project_id=1"
+                  autocomplete="off">
+                <input type="hidden" name="csrf_token"
+                       value="37e7c219a18e9cf27aecb67e378a8e73904ac3728382a98fc57f6c7ae8e5"> <input type="hidden"
+                                                                                                    name="task_id"
+                                                                                                    id="form-task_id"
+                                                                                                    value="1"> <input
+                    type="hidden" name="user_id" id="form-user_id" value="1">
+                <div class="js-text-editor-rendered"
+                     data-params="{&quot;name&quot;:&quot;comment&quot;,&quot;css&quot;:&quot;&quot;,&quot;required&quot;:true,&quot;tabindex&quot;:&quot;-1&quot;,&quot;labelPreview&quot;:&quot;Preview&quot;,&quot;previewUrl&quot;:&quot;\/?controller=TaskAjaxController&amp;action=preview&quot;,&quot;labelWrite&quot;:&quot;Write&quot;,&quot;labelTitle&quot;:&quot;Title&quot;,&quot;placeholder&quot;:&quot;Write your text in Markdown&quot;,&quot;autofocus&quot;:false,&quot;suggestOptions&quot;:{&quot;triggers&quot;:{&quot;#&quot;:&quot;\/?controller=TaskAjaxController&amp;action=suggest&amp;search=SEARCH_TERM&quot;,&quot;@&quot;:&quot;\/?controller=UserAjaxController&amp;action=mention&amp;project_id=1&amp;search=SEARCH_TERM&quot;}}}">
+                    <script type="text/template"></script>
+                    <div class="text-editor">
+                        <div class="text-editor-view-mode" style="display: none;">
+                            <div class="text-editor-toolbar"><a href="#"><i class="fa fa-pencil-square-o fa-fw"></i>
+                                Write</a></div>
+                            <div class="text-editor-preview-area markdown"></div>
+                        </div>
+                        <div class="text-editor-write-mode">
+                            <div class="text-editor-toolbar"><a href="#"><i class="fa fa-eye fa-fw"></i> Preview</a><a
+                                    href="#"><i class="fa fa-bold fa-fw"></i></a><a href="#"><i
+                                    class="fa fa-italic fa-fw"></i></a><a href="#"><i
+                                    class="fa fa-strikethrough fa-fw"></i></a><a href="#"><i
+                                    class="fa fa-link fa-fw"></i></a><a href="#"><i class="fa fa-quote-right fa-fw"></i></a><a
+                                    href="#"><i class="fa fa-list-ul fa-fw"></i></a><a href="#"><i
+                                    class="fa fa-code fa-fw"></i></a></div>
+                            <textarea name="comment" tabindex="-1" required="required"
+                                      placeholder="Write your text in Markdown"></textarea></div>
+                    </div>
+                </div>
+                <div class="js-submit-buttons-rendered"
+                     data-params="{&quot;submitLabel&quot;:&quot;Save&quot;,&quot;orLabel&quot;:&quot;or&quot;,&quot;cancelLabel&quot;:&quot;cancel&quot;,&quot;color&quot;:&quot;blue&quot;,&quot;tabindex&quot;:null,&quot;disabled&quot;:false}">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-blue">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </details>
+
+</div>

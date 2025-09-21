@@ -1,0 +1,1114 @@
+<div id="main-div">
+
+    <div class="content-div  ">
+
+
+        <div class="row ">
+            <div class="col-sm-12">
+                <div id="ajax_confirmation" class="alert alert-success" style="display: none;"></div>
+
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="card js-grid-panel" id="address_grid_panel" data-hook-name="Addresses">
+                            <div class="card-header js-grid-header">
+                                <h3 class="d-inline-block card-header-title">
+                                    Addresses (3)
+                                </h3>
+                                <div class="d-inline-block float-right">
+
+                                    <div class="dropdown text-right">
+                                        <button class="btn btn-text dropdown-toggle tool-button"
+                                                id="address-grid-actions-button" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false" title="Settings">
+                                            <span class="sr-only">Settings</span>
+                                        </button>
+
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                             aria-labelledby="address-grid-actions-button"
+                                             id="address-grid-actions-dropdown-menu">
+
+                                            <button type="button" id="address_grid_action_common_refresh_list"
+                                                    class="dropdown-item js-common_refresh_list-grid-action">
+                                                <i class="material-icons">refresh</i>
+                                                Refresh list
+                                            </button>
+
+
+                                            <button type="button" id="address_grid_action_common_show_query"
+                                                    class="dropdown-item js-common_show_query-grid-action">
+                                                <i class="material-icons">code</i>
+                                                Show SQL query
+                                            </button>
+
+
+                                            <button type="button" id="address_grid_action_common_export_sql_manager"
+                                                    class="dropdown-item js-common_export_sql_manager-grid-action">
+                                                <i class="material-icons">storage</i>
+                                                Export to SQL Manager
+                                            </button>
+
+                                        </div>
+
+                                        <div class="modal fade" id="address_grid_common_show_query_modal" tabindex="-1">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">SQL query</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">×
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form method="post"
+                                                              action="/administrator/index.php/configure/advanced/sql-requests/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                              id="address_common_show_query_modal_form">
+                                                            <div class="form-group">
+                                                                <textarea name="sql" rows="10" cols="65" title=""
+                                                                          class="form-control"></textarea>
+                                                                <input type="hidden" name="name" value="">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline-secondary btn-lg"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="button" value="sql_manager"
+                                                                class="btn btn-primary btn-lg btn-sql-submit">
+                                                            Export to SQL Manager
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function () {
+                                                var closable = true;
+                                                $('#address_grid_common_show_query_modal').modal({
+                                                    backdrop: (closable ? true : 'static'),
+                                                    keyboard: closable,
+                                                    closable: closable,
+                                                    show: false
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="row grid js-grid" id="address_grid" data-grid-id="address">
+                                    <div class="col-sm">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="row">
+                                                    <div class="col-sm">
+
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-outline-secondary dropdown-toggle js-bulk-actions-btn"
+                                                                    data-toggle="dropdown" disabled="">
+                                                                Bulk actions
+                                                                <i class="icon-caret-up"></i>
+                                                            </button>
+
+                                                            <div class="dropdown-menu">
+
+                                                                <button id="address_grid_bulk_action_delete_selection"
+                                                                        class="dropdown-item js-bulk-action-submit-btn"
+                                                                        type="button"
+                                                                        data-form-url="/administrator/index.php/sell/addresses/delete-bulk?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        data-form-method="POST"
+                                                                        data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                        data-close-button-label="Close"
+                                                                        data-confirm-title="Delete selection"
+                                                                        data-confirm-button-class="btn-danger"
+                                                                        data-confirm-button-label="Delete">
+                                                                    Delete selected
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm">
+
+
+                                                <form name="address" method="post" action="" id="address_filter_form"
+                                                      class="table-responsive form-horizontal">
+
+                                                    <table class="grid-table js-grid-table table  "
+                                                           id="address_grid_table"
+                                                           data-query="SELECT a.`id_address`, a.`firstname`, a.`lastname`, a.`address1`, a.`postcode`, a.`city`, cl.`name` as country_name FROM ps_address a LEFT JOIN ps_country c ON a.`id_country` = c.`id_country` LEFT JOIN ps_customer customer ON a.`id_customer` = customer.`id_customer` LEFT JOIN ps_country_lang cl ON c.`id_country` = cl.`id_country` AND cl.`id_lang` = 1 WHERE (a.`id_customer` != 0) AND (a.`deleted` = 0) AND (customer.id_shop IN ('1')) ORDER BY id_address asc LIMIT 50">
+                                                        <thead class="thead-default">
+
+                                                        <tr class="column-headers ">
+                                                            <th scope="col">
+
+
+                                                            </th>
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="id_address"
+                                                                     data-sort-prefix="address"
+                                                                     data-sort-is-current="true"
+                                                                     data-sort-direction="asc">
+                                                                    <span role="columnheader">ID</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="firstname"
+                                                                     data-sort-prefix="address">
+                                                                    <span role="columnheader">First name</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="lastname"
+                                                                     data-sort-prefix="address">
+                                                                    <span role="columnheader">Last name</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="address1"
+                                                                     data-sort-prefix="address">
+                                                                    <span role="columnheader">Address</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="postcode"
+                                                                     data-sort-prefix="address">
+                                                                    <span role="columnheader">Zip/Postal code</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="city"
+                                                                     data-sort-prefix="address">
+                                                                    <span role="columnheader">City</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="country_name"
+                                                                     data-sort-prefix="address">
+                                                                    <span role="columnheader">Country</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+                                                                <div class="grid-actions-header-text">
+                                                                    <span>Actions</span>
+                                                                </div>
+
+                                                            </th>
+                                                        </tr>
+
+
+                                                        <tr class="column-filters">
+                                                            <td>
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox"
+                                                                               class="js-bulk-action-select-all"
+                                                                               id="address_grid_bulk_action_select_all">
+                                                                        <i class="md-checkbox-control grid_bulk_action_select_all"></i>
+                                                                    </label>
+                                                                </div>
+
+
+                                                            </td>
+                                                            <td>
+
+                                                                <input type="text" id="address_id_address"
+                                                                       name="address[id_address]"
+                                                                       placeholder="Search ID"
+                                                                       class="js-comma-transformer form-control">
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="address_firstname"
+                                                                       name="address[firstname]"
+                                                                       placeholder="Search first name"
+                                                                       aria-label="address_firstname input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="address_lastname"
+                                                                       name="address[lastname]"
+                                                                       placeholder="Search last name"
+                                                                       aria-label="address_lastname input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="address_address1"
+                                                                       name="address[address1]"
+                                                                       placeholder="Search address"
+                                                                       aria-label="address_address1 input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="address_postcode"
+                                                                       name="address[postcode]"
+                                                                       placeholder="Search post code"
+                                                                       aria-label="address_postcode input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="address_city"
+                                                                       name="address[city]" placeholder="Search city"
+                                                                       aria-label="address_city input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+                                                                <select id="address_id_country"
+                                                                        name="address[id_country]" class="custom-select"
+                                                                        aria-label="address_id_country input">
+                                                                    <option value="" selected="selected">--</option>
+                                                                    <option value="229">Afghanistan</option>
+                                                                    <option value="241">Åland Islands</option>
+                                                                    <option value="228">Albania</option>
+                                                                    <option value="38">Algeria</option>
+                                                                    <option value="39">American Samoa</option>
+                                                                    <option value="40">Andorra</option>
+                                                                    <option value="41">Angola</option>
+                                                                    <option value="42">Anguilla</option>
+                                                                    <option value="230">Antarctica</option>
+                                                                    <option value="43">Antigua &amp; Barbuda</option>
+                                                                    <option value="44">Argentina</option>
+                                                                    <option value="45">Armenia</option>
+                                                                    <option value="46">Aruba</option>
+                                                                    <option value="24">Australia</option>
+                                                                    <option value="2">Austria</option>
+                                                                    <option value="47">Azerbaijan</option>
+                                                                    <option value="48">Bahamas</option>
+                                                                    <option value="49">Bahrain</option>
+                                                                    <option value="50">Bangladesh</option>
+                                                                    <option value="51">Barbados</option>
+                                                                    <option value="52">Belarus</option>
+                                                                    <option value="3">Belgium</option>
+                                                                    <option value="53">Belize</option>
+                                                                    <option value="54">Benin</option>
+                                                                    <option value="55">Bermuda</option>
+                                                                    <option value="56">Bhutan</option>
+                                                                    <option value="34">Bolivia</option>
+                                                                    <option value="231">Bosnia &amp; Herzegovina
+                                                                    </option>
+                                                                    <option value="57">Botswana</option>
+                                                                    <option value="58">Brazil</option>
+                                                                    <option value="232">British Indian Ocean Territory
+                                                                    </option>
+                                                                    <option value="221">British Virgin Islands</option>
+                                                                    <option value="59">Brunei</option>
+                                                                    <option value="233">Bulgaria</option>
+                                                                    <option value="60">Burkina Faso</option>
+                                                                    <option value="62">Burundi</option>
+                                                                    <option value="63">Cambodia</option>
+                                                                    <option value="64">Cameroon</option>
+                                                                    <option value="4">Canada</option>
+                                                                    <option value="65">Cape Verde</option>
+                                                                    <option value="234">Cayman Islands</option>
+                                                                    <option value="66">Central African Republic</option>
+                                                                    <option value="67">Chad</option>
+                                                                    <option value="68">Chile</option>
+                                                                    <option value="5">China</option>
+                                                                    <option value="235">Christmas Island</option>
+                                                                    <option value="236">Cocos (Keeling) Islands</option>
+                                                                    <option value="69">Colombia</option>
+                                                                    <option value="70">Comoros</option>
+                                                                    <option value="72">Congo - Brazzaville</option>
+                                                                    <option value="71">Congo - Kinshasa</option>
+                                                                    <option value="237">Cook Islands</option>
+                                                                    <option value="73">Costa Rica</option>
+                                                                    <option value="32">Côte d’Ivoire</option>
+                                                                    <option value="74">Croatia</option>
+                                                                    <option value="75">Cuba</option>
+                                                                    <option value="76">Cyprus</option>
+                                                                    <option value="16">Czechia</option>
+                                                                    <option value="20">Denmark</option>
+                                                                    <option value="77">Djibouti</option>
+                                                                    <option value="78">Dominica</option>
+                                                                    <option value="79">Dominican Republic</option>
+                                                                    <option value="81">Ecuador</option>
+                                                                    <option value="82">Egypt</option>
+                                                                    <option value="83">El Salvador</option>
+                                                                    <option value="84">Equatorial Guinea</option>
+                                                                    <option value="85">Eritrea</option>
+                                                                    <option value="86">Estonia</option>
+                                                                    <option value="199">Eswatini</option>
+                                                                    <option value="87">Ethiopia</option>
+                                                                    <option value="88">Falkland Islands</option>
+                                                                    <option value="89">Faroe Islands</option>
+                                                                    <option value="90">Fiji</option>
+                                                                    <option value="7">Finland</option>
+                                                                    <option value="8">France</option>
+                                                                    <option value="238">French Guiana</option>
+                                                                    <option value="239">French Polynesia</option>
+                                                                    <option value="240">French Southern Territories
+                                                                    </option>
+                                                                    <option value="91">Gabon</option>
+                                                                    <option value="92">Gambia</option>
+                                                                    <option value="93">Georgia</option>
+                                                                    <option value="1">Germany</option>
+                                                                    <option value="94">Ghana</option>
+                                                                    <option value="97">Gibraltar</option>
+                                                                    <option value="9">Greece</option>
+                                                                    <option value="96">Greenland</option>
+                                                                    <option value="95">Grenada</option>
+                                                                    <option value="98">Guadeloupe</option>
+                                                                    <option value="99">Guam</option>
+                                                                    <option value="100">Guatemala</option>
+                                                                    <option value="101">Guernsey</option>
+                                                                    <option value="102">Guinea</option>
+                                                                    <option value="103">Guinea-Bissau</option>
+                                                                    <option value="104">Guyana</option>
+                                                                    <option value="105">Haiti</option>
+                                                                    <option value="107">Honduras</option>
+                                                                    <option value="22">Hong Kong SAR China</option>
+                                                                    <option value="142">Hungary</option>
+                                                                    <option value="108">Iceland</option>
+                                                                    <option value="109">India</option>
+                                                                    <option value="110">Indonesia</option>
+                                                                    <option value="111">Iran</option>
+                                                                    <option value="112">Iraq</option>
+                                                                    <option value="26">Ireland</option>
+                                                                    <option value="113">Isle of Man</option>
+                                                                    <option value="29">Israel</option>
+                                                                    <option value="10">Italy</option>
+                                                                    <option value="114">Jamaica</option>
+                                                                    <option value="11">Japan</option>
+                                                                    <option value="115">Jersey</option>
+                                                                    <option value="116">Jordan</option>
+                                                                    <option value="117">Kazakhstan</option>
+                                                                    <option value="118">Kenya</option>
+                                                                    <option value="119">Kiribati</option>
+                                                                    <option value="121">Kuwait</option>
+                                                                    <option value="122">Kyrgyzstan</option>
+                                                                    <option value="123">Laos</option>
+                                                                    <option value="124">Latvia</option>
+                                                                    <option value="125">Lebanon</option>
+                                                                    <option value="126">Lesotho</option>
+                                                                    <option value="127">Liberia</option>
+                                                                    <option value="128">Libya</option>
+                                                                    <option value="129">Liechtenstein</option>
+                                                                    <option value="130">Lithuania</option>
+                                                                    <option value="12">Luxembourg</option>
+                                                                    <option value="131">Macao SAR China</option>
+                                                                    <option value="133">Madagascar</option>
+                                                                    <option value="134">Malawi</option>
+                                                                    <option value="135">Malaysia</option>
+                                                                    <option value="136">Maldives</option>
+                                                                    <option value="137">Mali</option>
+                                                                    <option value="138">Malta</option>
+                                                                    <option value="139">Marshall Islands</option>
+                                                                    <option value="140">Martinique</option>
+                                                                    <option value="141">Mauritania</option>
+                                                                    <option value="35">Mauritius</option>
+                                                                    <option value="143">Mayotte</option>
+                                                                    <option value="144">Mexico</option>
+                                                                    <option value="145">Micronesia</option>
+                                                                    <option value="146">Moldova</option>
+                                                                    <option value="147">Monaco</option>
+                                                                    <option value="148">Mongolia</option>
+                                                                    <option value="149">Montenegro</option>
+                                                                    <option value="150">Montserrat</option>
+                                                                    <option value="151">Morocco</option>
+                                                                    <option value="152">Mozambique</option>
+                                                                    <option value="61">Myanmar (Burma)</option>
+                                                                    <option value="153">Namibia</option>
+                                                                    <option value="154">Nauru</option>
+                                                                    <option value="155">Nepal</option>
+                                                                    <option value="13">Netherlands</option>
+                                                                    <option value="156">New Caledonia</option>
+                                                                    <option value="27">New Zealand</option>
+                                                                    <option value="157">Nicaragua</option>
+                                                                    <option value="158">Niger</option>
+                                                                    <option value="31">Nigeria</option>
+                                                                    <option value="159">Niue</option>
+                                                                    <option value="160">Norfolk Island</option>
+                                                                    <option value="120">North Korea</option>
+                                                                    <option value="132">North Macedonia</option>
+                                                                    <option value="161">Northern Mariana Islands
+                                                                    </option>
+                                                                    <option value="23">Norway</option>
+                                                                    <option value="162">Oman</option>
+                                                                    <option value="163">Pakistan</option>
+                                                                    <option value="164">Palau</option>
+                                                                    <option value="165">Palestinian Territories</option>
+                                                                    <option value="166">Panama</option>
+                                                                    <option value="167">Papua New Guinea</option>
+                                                                    <option value="168">Paraguay</option>
+                                                                    <option value="169">Peru</option>
+                                                                    <option value="170">Philippines</option>
+                                                                    <option value="171">Pitcairn Islands</option>
+                                                                    <option value="14">Poland</option>
+                                                                    <option value="15">Portugal</option>
+                                                                    <option value="172">Puerto Rico</option>
+                                                                    <option value="173">Qatar</option>
+                                                                    <option value="174">Réunion</option>
+                                                                    <option value="36">Romania</option>
+                                                                    <option value="175">Russia</option>
+                                                                    <option value="176">Rwanda</option>
+                                                                    <option value="183">Samoa</option>
+                                                                    <option value="184">San Marino</option>
+                                                                    <option value="185">São Tomé &amp; Príncipe</option>
+                                                                    <option value="186">Saudi Arabia</option>
+                                                                    <option value="187">Senegal</option>
+                                                                    <option value="188">Serbia</option>
+                                                                    <option value="189">Seychelles</option>
+                                                                    <option value="190">Sierra Leone</option>
+                                                                    <option value="25">Singapore</option>
+                                                                    <option value="37">Slovakia</option>
+                                                                    <option value="191">Slovenia</option>
+                                                                    <option value="192">Solomon Islands</option>
+                                                                    <option value="193">Somalia</option>
+                                                                    <option value="30">South Africa</option>
+                                                                    <option value="194">South Georgia &amp; South
+                                                                        Sandwich Islands
+                                                                    </option>
+                                                                    <option value="28">South Korea</option>
+                                                                    <option value="6">Spain</option>
+                                                                    <option value="195">Sri Lanka</option>
+                                                                    <option value="177">St. Barthélemy</option>
+                                                                    <option value="178">St. Kitts &amp; Nevis</option>
+                                                                    <option value="179">St. Lucia</option>
+                                                                    <option value="180">St. Martin</option>
+                                                                    <option value="181">St. Pierre &amp; Miquelon
+                                                                    </option>
+                                                                    <option value="182">St. Vincent &amp; Grenadines
+                                                                    </option>
+                                                                    <option value="196">Sudan</option>
+                                                                    <option value="197">Suriname</option>
+                                                                    <option value="198">Svalbard &amp; Jan Mayen
+                                                                    </option>
+                                                                    <option value="18">Sweden</option>
+                                                                    <option value="19">Switzerland</option>
+                                                                    <option value="200">Syria</option>
+                                                                    <option value="201">Taiwan</option>
+                                                                    <option value="202">Tajikistan</option>
+                                                                    <option value="203">Tanzania</option>
+                                                                    <option value="204">Thailand</option>
+                                                                    <option value="80">Timor-Leste</option>
+                                                                    <option value="33">Togo</option>
+                                                                    <option value="205">Tokelau</option>
+                                                                    <option value="206">Tonga</option>
+                                                                    <option value="207">Trinidad &amp; Tobago</option>
+                                                                    <option value="208">Tunisia</option>
+                                                                    <option value="209">Turkey</option>
+                                                                    <option value="210">Turkmenistan</option>
+                                                                    <option value="211">Turks &amp; Caicos Islands
+                                                                    </option>
+                                                                    <option value="212">Tuvalu</option>
+                                                                    <option value="222">U.S. Virgin Islands</option>
+                                                                    <option value="213">Uganda</option>
+                                                                    <option value="214">Ukraine</option>
+                                                                    <option value="215">United Arab Emirates</option>
+                                                                    <option value="17">United Kingdom</option>
+                                                                    <option value="21">United States</option>
+                                                                    <option value="216">Uruguay</option>
+                                                                    <option value="217">Uzbekistan</option>
+                                                                    <option value="218">Vanuatu</option>
+                                                                    <option value="106">Vatican City</option>
+                                                                    <option value="219">Venezuela</option>
+                                                                    <option value="220">Vietnam</option>
+                                                                    <option value="223">Wallis &amp; Futuna</option>
+                                                                    <option value="224">Western Sahara</option>
+                                                                    <option value="225">Yemen</option>
+                                                                    <option value="226">Zambia</option>
+                                                                    <option value="227">Zimbabwe</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+
+                                                                <button type="submit"
+                                                                        class="btn btn-primary grid-search-button d-block float-right"
+                                                                        title="Search" name="address[actions][search]">
+                                                                    <i class="material-icons">search</i>
+                                                                    Search
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="bulk_action-type column-addresses_bulk">
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" title=""
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="address_addresses_bulk[]"
+                                                                               value="1">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="data-type column-id_address clickable">
+
+                                                                1
+
+                                                            </td>
+                                                            <td class="data-type column-firstname clickable">
+
+                                                                Anonymous
+
+                                                            </td>
+                                                            <td class="data-type column-lastname clickable">
+
+                                                                Anonymous
+
+                                                            </td>
+                                                            <td class="data-type column-address1 clickable">
+
+                                                                Anonymous
+
+                                                            </td>
+                                                            <td class="data-type column-postcode clickable">
+
+                                                                00000
+
+                                                            </td>
+                                                            <td class="data-type column-city clickable">
+
+                                                                Anonymous
+
+                                                            </td>
+                                                            <td class="data-type column-country_name clickable">
+
+                                                                United States
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                           href="/administrator/index.php/sell/addresses/1/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="Edit"
+                                                                           data-clickable-row="">
+                                                                            <i class="material-icons">edit</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+
+
+                                                                            <a class="btn tooltip-link js-submit-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#"
+                                                                               data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                               data-url="/administrator/index.php/sell/addresses/1/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-method="DELETE"
+                                                                               data-title="Delete selection"
+                                                                               data-confirm-button-label="Delete"
+                                                                               data-confirm-button-class="btn-danger"
+                                                                               data-close-button-label="Cancel">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bulk_action-type column-addresses_bulk">
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" title=""
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="address_addresses_bulk[]"
+                                                                               value="2">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="data-type column-id_address clickable">
+
+                                                                2
+
+                                                            </td>
+                                                            <td class="data-type column-firstname clickable">
+
+                                                                John
+
+                                                            </td>
+                                                            <td class="data-type column-lastname clickable">
+
+                                                                DOE
+
+                                                            </td>
+                                                            <td class="data-type column-address1 clickable">
+
+                                                                16, Main street
+
+                                                            </td>
+                                                            <td class="data-type column-postcode clickable">
+
+                                                                75002
+
+                                                            </td>
+                                                            <td class="data-type column-city clickable">
+
+                                                                Paris
+
+                                                            </td>
+                                                            <td class="data-type column-country_name clickable">
+
+                                                                France
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                           href="/administrator/index.php/sell/addresses/2/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="Edit"
+                                                                           data-clickable-row="">
+                                                                            <i class="material-icons">edit</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+
+
+                                                                            <a class="btn tooltip-link js-submit-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#"
+                                                                               data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                               data-url="/administrator/index.php/sell/addresses/2/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-method="DELETE"
+                                                                               data-title="Delete selection"
+                                                                               data-confirm-button-label="Delete"
+                                                                               data-confirm-button-class="btn-danger"
+                                                                               data-close-button-label="Cancel">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bulk_action-type column-addresses_bulk">
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" title=""
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="address_addresses_bulk[]"
+                                                                               value="5">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="data-type column-id_address clickable">
+
+                                                                5
+
+                                                            </td>
+                                                            <td class="data-type column-firstname clickable">
+
+                                                                John
+
+                                                            </td>
+                                                            <td class="data-type column-lastname clickable">
+
+                                                                DOE
+
+                                                            </td>
+                                                            <td class="data-type column-address1 clickable">
+
+                                                                16, Main street
+
+                                                            </td>
+                                                            <td class="data-type column-postcode clickable">
+
+                                                                33133
+
+                                                            </td>
+                                                            <td class="data-type column-city clickable">
+
+                                                                Miami
+
+                                                            </td>
+                                                            <td class="data-type column-country_name clickable">
+
+                                                                United States
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                           href="/administrator/index.php/sell/addresses/5/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="Edit"
+                                                                           data-clickable-row="">
+                                                                            <i class="material-icons">edit</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+
+
+                                                                            <a class="btn tooltip-link js-submit-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#"
+                                                                               data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                               data-url="/administrator/index.php/sell/addresses/5/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-method="DELETE"
+                                                                               data-title="Delete selection"
+                                                                               data-confirm-button-label="Delete"
+                                                                               data-confirm-button-class="btn-danger"
+                                                                               data-close-button-label="Cancel">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+
+
+                                                    <div class="form-group row type-hidden ">
+
+
+                                                        <label for="address__token" class="form-control-label ">
+
+
+                                                        </label>
+
+                                                        <div class="col-sm">
+
+
+                                                            <input type="hidden" id="address__token"
+                                                                   name="address[_token]" class="form-control"
+                                                                   value="C90QCsMv2bkXgJct4QqzsS7_sOplV6LTiB6Brvdi2QA">
+
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                    data-target="#addressRequiredFieldsContainer" aria-expanded="false"
+                                    aria-controls="addressRequiredFieldsContainer">
+                                <i class="material-icons">add_circle</i>
+                                Set required fields for this section
+                            </button>
+                        </p>
+                    </div>
+
+                    <div class="col-md-12">
+
+
+                        <div class="collapse" id="addressRequiredFieldsContainer">
+                            <form name="required_fields_address" method="post"
+                                  action="/administrator/index.php/sell/addresses/save-required-fields?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                  class="form-horizontal">
+                                <div class="card">
+                                    <h3 class="card-header">
+                                        Required Fields
+                                    </h3>
+                                    <div class="card-body">
+                                        <div class="alert alert-info" role="alert">
+                                            <div class="alert-text">
+                                                <p>
+                                                    Required fields apply to the customer's registration form, you
+                                                    should check the address formats in <a
+                                                        href="http://localhost:8080/administrator/index.php?controller=AdminCountries&amp;token=b295fa461e42ef5e441d3f2b66b68dcf">International
+                                                    &gt; Locations &gt; Countries</a> before.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="choice-table">
+                                            <table class="table table-bordered mb-0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="checkbox">
+                                                        <div class="md-checkbox"><label><input type="checkbox"
+                                                                                               class="js-choice-table-select-all"><i
+                                                                class="md-checkbox-control"></i>
+                                                            Select all
+                                                        </label></div>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_0"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="company"><i
+                                                                    class="md-checkbox-control"></i>company</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_1"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="address2"><i
+                                                                    class="md-checkbox-control"></i>address2</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_2"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="postcode"><i
+                                                                    class="md-checkbox-control"></i>postcode</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_3"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="other"><i
+                                                                    class="md-checkbox-control"></i>other</label></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_4"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="phone"><i
+                                                                    class="md-checkbox-control"></i>phone</label></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_5"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="phone_mobile"><i
+                                                                    class="md-checkbox-control"></i>phone_mobile</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_6"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="vat_number"><i
+                                                                    class="md-checkbox-control"></i>vat_number</label>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-radio form-checkbox">
+                                                            <div class="md-checkbox md-checkbox-inline"><label><input
+                                                                    type="checkbox"
+                                                                    id="required_fields_address_required_fields_7"
+                                                                    name="required_fields_address[required_fields][]"
+                                                                    class="form-check-input" value="dni"><i
+                                                                    class="md-checkbox-control"></i>dni</label></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-primary">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="required_fields_address__token"
+                                       name="required_fields_address[_token]"
+                                       value="wygpKDjSDZYrgtcoFmGW2gjJawc8olPz0ba4CuZMrqY">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <nav id="right-sidebar" role="navigation"
+                     class="col-lg-3 sidebar sidebar-right sidebar-animate text-sm-center">
+                    <img src="/administrator/themes/default/img/bundle/dashboard_loading.gif?1.7.8.5"
+                         style="margin-top: 10em;" alt="Loading...">
+                </nav>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
