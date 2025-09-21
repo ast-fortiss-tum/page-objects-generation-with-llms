@@ -1,0 +1,569 @@
+<div id="bodyContent" class="vector-body">
+
+    <div id="contentSub">
+        <div id="mw-content-subtitle"></div>
+    </div>
+    <div id="contentSub2"></div>
+
+    <div id="jump-to-nav"></div>
+    <a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+    <a class="mw-jump-link" href="#searchInput">Jump to search</a>
+    <div id="mw-content-text" class="mw-body-content">Use the form below to block write access from a specific IP
+        address or username.
+        This should be done only to prevent vandalism, and in accordance with <a
+                href="/index.php?title=E2E_Web_Testing_wiki:Policy&amp;action=edit&amp;redlink=1" class="new"
+                title="E2E Web Testing wiki:Policy (page does not exist)">policy</a>.
+        Fill in a specific reason below (for example, citing particular pages that were vandalized).
+        You can block IP address ranges using the <a rel="nofollow" class="external text"
+                                                     href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
+        syntax; the largest allowed range is /16 for IPv4 and /19 for IPv6.
+        <div class="mw-htmlform-ooui-wrapper oo-ui-layout oo-ui-panelLayout">
+            <form action="/index.php/Special:Block/Admin" method="post" enctype="application/x-www-form-urlencoded"
+                  class="mw-htmlform mw-htmlform-ooui oo-ui-layout oo-ui-formLayout"><input type="hidden"
+                                                                                            value="Special:Block/Admin"
+                                                                                            name="title">
+                <div class="mw-htmlform-ooui-header oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top">
+                    <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-header"><label id="ooui-php-29"
+                                                                                                      class="oo-ui-labelElement-label"></label></span>
+                        <div class="oo-ui-fieldLayout-field"><label aria-labelledby="ooui-php-29"
+                                                                    class="oo-ui-widget oo-ui-widget-enabled oo-ui-labelElement-label oo-ui-labelElement oo-ui-labelWidget">
+                            <div class="oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top">
+                                <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-header"><label
+                                        id="ooui-php-1" class="oo-ui-labelElement-label"></label></span>
+                                    <div class="oo-ui-fieldLayout-field">
+                                        <div aria-labelledby="ooui-php-1"
+                                             class="oo-ui-widget oo-ui-widget-enabled"></div>
+                                    </div>
+                                </div>
+                                <div class="oo-ui-fieldLayout-messages">
+                                    <div role="alert"
+                                         class="oo-ui-widget oo-ui-widget-enabled oo-ui-labelElement oo-ui-flaggedElement-error oo-ui-iconElement oo-ui-messageWidget">
+                                        <span class="oo-ui-iconElement-icon oo-ui-icon-error oo-ui-image-error"></span><span
+                                            class="oo-ui-labelElement-label">You are about to block yourself! Are you sure you want to do that?</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label></div>
+                    </div>
+                </div>
+                <div class="oo-ui-layout oo-ui-panelLayout oo-ui-panelLayout-padded oo-ui-panelLayout-framed">
+                    <fieldset class="oo-ui-layout oo-ui-labelElement oo-ui-fieldsetLayout">
+                        <legend class="oo-ui-fieldsetLayout-header"><span
+                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                class="oo-ui-labelElement-label">Username, IP address, or IP range:</span></legend>
+                        <div class="oo-ui-fieldsetLayout-group">
+                            <div class="oo-ui-widget oo-ui-widget-enabled">
+                                <div id="mw-htmlform-target">
+                                    <div class="mw-htmlform-field-HTMLUserTextField mw-htmlform-autoinfuse oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top"
+                                         id="ooui-php-3" data-ooui="">
+                                        <div class="oo-ui-fieldLayout-body"><span
+                                                class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label"
+                                                                                        for="ooui-php-2"></label></span>
+                                            <div class="oo-ui-fieldLayout-field">
+                                                <div id="mw-bi-target"
+                                                     class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-indicatorElement oo-ui-textInputWidget oo-ui-textInputWidget-type-text oo-ui-lookupElement mw-widget-userInputWidget"
+                                                     data-ooui=""><input type="text" tabindex="0" name="wpTarget"
+                                                                         value="Admin" required=""
+                                                                         placeholder="UserName, 1.1.1.42, or 1.1.1.42/16"
+                                                                         autofocus="autofocus" id="ooui-php-2"
+                                                                         class="oo-ui-inputWidget-input"
+                                                                         autocomplete="off" aria-expanded="false"
+                                                                         role="combobox" aria-autocomplete="list"><span
+                                                        class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                                        class="oo-ui-indicatorElement-indicator oo-ui-indicator-required"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="oo-ui-layout oo-ui-panelLayout oo-ui-panelLayout-padded oo-ui-panelLayout-framed">
+                    <fieldset class="oo-ui-layout oo-ui-labelElement oo-ui-fieldsetLayout">
+                        <legend class="oo-ui-fieldsetLayout-header"><span
+                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                class="oo-ui-labelElement-label">Block type</span></legend>
+                        <div class="oo-ui-fieldsetLayout-group">
+                            <div class="oo-ui-widget oo-ui-widget-enabled">
+                                <div id="mw-htmlform-actions">
+                                    <div id="ooui-php-9"
+                                         class="mw-htmlform-field-HTMLRadioField mw-block-editing-restriction oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top"
+                                         data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpEditingRestriction&quot;},&quot;align&quot;:&quot;top&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLRadioField&quot;,&quot;mw-block-editing-restriction&quot;]}">
+                                        <div class="oo-ui-fieldLayout-body"><span
+                                                class="oo-ui-fieldLayout-header"><label id="ooui-php-6"
+                                                                                        class="oo-ui-labelElement-label"></label></span>
+                                            <div class="oo-ui-fieldLayout-field">
+                                                <div id="mw-input-wpEditingRestriction"
+                                                     class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-radioSelectInputWidget"
+                                                     data-ooui=""><input
+                                                        class="oo-ui-element-hidden oo-ui-inputWidget-input"
+                                                        name="wpEditingRestriction" value="sitewide">
+                                                    <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-selectWidget oo-ui-selectWidget-unpressed oo-ui-radioSelectWidget"
+                                                         role="radiogroup" tabindex="0" aria-activedescendant="ooui-9">
+                                                        <label class="oo-ui-widget oo-ui-widget-enabled oo-ui-labelElement oo-ui-optionWidget oo-ui-radioOptionWidget oo-ui-optionWidget-selected"
+                                                               aria-checked="true" tabindex="-1" role="radio"
+                                                               id="ooui-9"><span
+                                                                class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-radioInputWidget"><input
+                                                                type="radio" tabindex="-1"
+                                                                class="oo-ui-inputWidget-input" value="sitewide"
+                                                                role="presentation"><span></span></span><span
+                                                                class="oo-ui-labelElement-label">Sitewide<label
+                                                                class="oo-ui-inline-help oo-ui-widget oo-ui-widget-enabled oo-ui-labelElement-label oo-ui-labelElement oo-ui-labelWidget">Blocks editing on all pages and namespaces. Also blocks default actions (<a
+                                                                class="external text"
+                                                                href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Blocking_users">See help</a>)</label></span></label><label
+                                                            class="oo-ui-widget oo-ui-widget-enabled oo-ui-labelElement oo-ui-optionWidget oo-ui-radioOptionWidget"
+                                                            aria-checked="false" tabindex="-1" role="radio"><span
+                                                            class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-radioInputWidget"><input
+                                                            type="radio" tabindex="-1" class="oo-ui-inputWidget-input"
+                                                            value="partial"
+                                                            role="presentation"><span></span></span><span
+                                                            class="oo-ui-labelElement-label">Partial<label
+                                                            class="oo-ui-inline-help oo-ui-widget oo-ui-widget-enabled oo-ui-labelElement-label oo-ui-labelElement oo-ui-labelWidget">Allows you to select pages and namespaces to block. Doesn’t block default actions but lets you block certain specific actions.</label></span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mw-htmlform-field-HTMLTitlesMultiselectField mw-htmlform-checkradio-indent mw-block-partial-restriction mw-htmlform-autoinfuse oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-top oo-ui-fieldLayout-disabled"
+                                         id="ooui-php-10" data-ooui="">
+                                        <div class="oo-ui-fieldLayout-body"><span
+                                                class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label"
+                                                                                        for="ooui-3">Pages</label></span>
+                                            <div class="oo-ui-fieldLayout-field">
+                                                <div class="mw-htmlform-autoinfuse oo-ui-widget oo-ui-draggableGroupElement oo-ui-tagMultiselectWidget oo-ui-tagMultiselectWidget-inlined oo-ui-menuTagMultiselectWidget mw-widget-titleWidget mw-widgets-titlesMultiselectWidget oo-ui-widget-disabled"
+                                                     id="mw-input-wpPageRestrictions" data-ooui="" aria-disabled="true">
+                                                    <div class="oo-ui-tagMultiselectWidget-handle"><span
+                                                            class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span><span
+                                                            class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span>
+                                                        <div class="oo-ui-tagMultiselectWidget-content">
+                                                            <div class="oo-ui-tagMultiselectWidget-group"><input
+                                                                    type="text" tabindex="-1"
+                                                                    class="oo-ui-inputWidget-input" value=""
+                                                                    placeholder="Add more..." autocomplete="off"
+                                                                    id="ooui-3" aria-disabled="true" disabled=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <textarea class="oo-ui-element-hidden"
+                                                              name="wpPageRestrictions"></textarea></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mw-htmlform-field-HTMLNamespacesMultiselectField mw-htmlform-checkradio-indent mw-block-partial-restriction mw-htmlform-autoinfuse oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-top oo-ui-fieldLayout-disabled"
+                                         id="ooui-php-11" data-ooui="">
+                                        <div class="oo-ui-fieldLayout-body"><span
+                                                class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label"
+                                                                                        for="ooui-4">Namespaces</label></span>
+                                            <div class="oo-ui-fieldLayout-field">
+                                                <div class="mw-htmlform-autoinfuse oo-ui-widget oo-ui-draggableGroupElement oo-ui-tagMultiselectWidget oo-ui-tagMultiselectWidget-inlined oo-ui-menuTagMultiselectWidget mw-widgets-namespacesMultiselectWidget oo-ui-widget-disabled"
+                                                     id="mw-input-wpNamespaceRestrictions" data-ooui=""
+                                                     aria-disabled="true">
+                                                    <div class="oo-ui-tagMultiselectWidget-handle"><span
+                                                            class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span><span
+                                                            class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span>
+                                                        <div class="oo-ui-tagMultiselectWidget-content">
+                                                            <div class="oo-ui-tagMultiselectWidget-group"><input
+                                                                    type="text" tabindex="-1"
+                                                                    class="oo-ui-inputWidget-input" value=""
+                                                                    placeholder="Add more..." autocomplete="off"
+                                                                    id="ooui-4" aria-disabled="true" disabled=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <textarea class="oo-ui-element-hidden"
+                                                              name="wpNamespaceRestrictions"></textarea></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="oo-ui-layout oo-ui-panelLayout oo-ui-panelLayout-padded oo-ui-panelLayout-framed">
+                    <fieldset class="oo-ui-layout oo-ui-labelElement oo-ui-fieldsetLayout">
+                        <legend class="oo-ui-fieldsetLayout-header"><span
+                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                class="oo-ui-labelElement-label">Block details</span></legend>
+                        <div class="oo-ui-fieldsetLayout-group">
+                            <div class="oo-ui-widget oo-ui-widget-enabled">
+                                <div id="mw-htmlform-details">
+                                    <div id="ooui-php-14"
+                                         class="mw-htmlform-field-HTMLCheckField mw-block-restriction oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-inline"
+                                         data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpCreateAccount&quot;},&quot;align&quot;:&quot;inline&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;label&quot;:{&quot;html&quot;:&quot;Account creation&quot;},&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLCheckField&quot;,&quot;mw-block-restriction&quot;]}">
+                                        <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-field"><span
+                                                class="mw-block-restriction oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget"
+                                                id="mw-input-wpCreateAccount" data-ooui=""><input type="checkbox"
+                                                                                                  tabindex="0"
+                                                                                                  name="wpCreateAccount"
+                                                                                                  value="1" checked=""
+                                                                                                  id="ooui-php-12"
+                                                                                                  class="oo-ui-inputWidget-input"><span
+                                                class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert"></span></span></span><span
+                                                class="oo-ui-fieldLayout-header"><label for="ooui-php-12"
+                                                                                        class="oo-ui-labelElement-label">Account creation</label></span>
+                                        </div>
+                                    </div>
+                                    <div id="ooui-php-15"
+                                         class="mw-htmlform-field-HTMLCheckField mw-block-restriction oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-inline"
+                                         data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpDisableUTEdit&quot;},&quot;align&quot;:&quot;inline&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;label&quot;:{&quot;html&quot;:&quot;Editing their own talk page&quot;},&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLCheckField&quot;,&quot;mw-block-restriction&quot;]}">
+                                        <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-field"><span
+                                                class="mw-block-restriction oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget"
+                                                id="mw-input-wpDisableUTEdit" data-ooui=""><input type="checkbox"
+                                                                                                  tabindex="0"
+                                                                                                  name="wpDisableUTEdit"
+                                                                                                  value="1"
+                                                                                                  id="ooui-php-13"
+                                                                                                  class="oo-ui-inputWidget-input"><span
+                                                class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert"></span></span></span><span
+                                                class="oo-ui-fieldLayout-header"><label for="ooui-php-13"
+                                                                                        class="oo-ui-labelElement-label">Editing their own talk page</label></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="oo-ui-layout oo-ui-panelLayout oo-ui-panelLayout-padded oo-ui-panelLayout-framed">
+                    <fieldset class="oo-ui-layout oo-ui-labelElement oo-ui-fieldsetLayout">
+                        <legend class="oo-ui-fieldsetLayout-header"><span
+                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                class="oo-ui-labelElement-label">Expiration:</span></legend>
+                        <div class="oo-ui-fieldsetLayout-group">
+                            <div class="oo-ui-widget oo-ui-widget-enabled">
+                                <div id="mw-htmlform-expiry">
+                                    <div class="mw-htmlform-field-HTMLExpiryField mw-htmlform-autoinfuse oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top"
+                                         id="ooui-php-17" data-ooui="">
+                                        <div class="oo-ui-fieldLayout-body"><span
+                                                class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label"
+                                                                                        id="ooui-7"></label></span>
+                                            <div class="oo-ui-fieldLayout-field">
+                                                <div id="mw-input-wpExpiry"
+                                                     class="oo-ui-widget oo-ui-widget-enabled mw-widget-ExpiryWidget mw-widget-ExpiryWidget-hasDatePicker"
+                                                     data-ooui="" aria-labelledby="ooui-7">
+                                                    <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-selectWidget oo-ui-selectWidget-unpressed oo-ui-buttonSelectWidget"
+                                                         role="listbox" aria-multiselectable="false" tabindex="-1"
+                                                         aria-activedescendant="ooui-6">
+                                                        <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-optionWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-iconElement oo-ui-buttonOptionWidget oo-ui-optionWidget-selected oo-ui-buttonElement-active"
+                                                             aria-selected="true" tabindex="-1" role="option"
+                                                             id="ooui-6"><a class="oo-ui-buttonElement-button"
+                                                                            role="button"><span
+                                                                class="oo-ui-iconElement-icon oo-ui-icon-edit oo-ui-image-invert"></span><span
+                                                                class="oo-ui-labelElement-label"></span><span
+                                                                class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert"></span></a>
+                                                        </div>
+                                                        <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-optionWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-iconElement oo-ui-buttonOptionWidget"
+                                                             aria-selected="false" tabindex="-1" role="option"><a
+                                                                class="oo-ui-buttonElement-button" role="button"><span
+                                                                class="oo-ui-iconElement-icon oo-ui-icon-calendar"></span><span
+                                                                class="oo-ui-labelElement-label"></span><span
+                                                                class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-flaggedElement-invalid mw-widgets-datetime-dateTimeInputWidget-empty mw-widgets-datetime-dateTimeInputWidget oo-ui-element-hidden">
+                                                        <input type="hidden" tabindex="-1"
+                                                               class="oo-ui-inputWidget-input" value=""><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-handle"><span
+                                                            class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                                            class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-fields"><span
+                                                            tabindex="-1"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 3.75ch;">___</span><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"> </span><input
+                                                            type="text" tabindex="0" size="2" maxlength="2"
+                                                            placeholder="__"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-editField mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 2ch;"><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"> </span><input
+                                                            type="text" tabindex="0" size="3" maxlength="3"
+                                                            placeholder="___"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-editField mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 3.75ch;"><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"> </span><input
+                                                            type="text" tabindex="0" size="4" maxlength="4"
+                                                            placeholder="____"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-editField mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 4ch;"><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"> </span><input
+                                                            type="text" tabindex="0" size="2" maxlength="2"
+                                                            placeholder="__"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-editField mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 2ch;"><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field">:</span><input
+                                                            type="text" tabindex="0" size="2" maxlength="2"
+                                                            placeholder="__"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-editField mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 2ch;"><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field">:</span><input
+                                                            type="text" tabindex="0" size="2" maxlength="2"
+                                                            placeholder="__"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-editField mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 2ch;"><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"> </span><span
+                                                            tabindex="-1"
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field"
+                                                            style="width: 1.25ch;">_</span><span
+                                                            class="mw-widgets-datetime-dateTimeInputWidget-field mw-widgets-datetime-dateTimeInputWidget-clearButton oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-frameless oo-ui-iconElement oo-ui-buttonWidget"><a
+                                                            class="oo-ui-buttonElement-button" role="button"
+                                                            tabindex="0" rel="nofollow"><span
+                                                            class="oo-ui-iconElement-icon oo-ui-icon-clear"></span><span
+                                                            class="oo-ui-labelElement-label"></span><span
+                                                            class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></a></span></span></span>
+                                                        <div class="oo-ui-widget oo-ui-widget-enabled mw-widgets-datetime-calendarWidget mw-widgets-datetime-calendarWidget-dependent oo-ui-element-hidden"
+                                                             tabindex="0">
+                                                            <div class="mw-widgets-datetime-calendarWidget-heading">
+                                                                <span class="mw-widgets-datetime-calendarWidget-previous oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-frameless oo-ui-iconElement oo-ui-buttonWidget"><a
+                                                                        class="oo-ui-buttonElement-button" role="button"
+                                                                        tabindex="-1" rel="nofollow"><span
+                                                                        class="oo-ui-iconElement-icon oo-ui-icon-previous"></span><span
+                                                                        class="oo-ui-labelElement-label"></span><span
+                                                                        class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></a></span><span
+                                                                    class="mw-widgets-datetime-calendarWidget-next oo-ui-widget oo-ui-widget-enabled oo-ui-buttonElement oo-ui-buttonElement-frameless oo-ui-iconElement oo-ui-buttonWidget"><a
+                                                                    class="oo-ui-buttonElement-button" role="button"
+                                                                    tabindex="-1" rel="nofollow"><span
+                                                                    class="oo-ui-iconElement-icon oo-ui-icon-next"></span><span
+                                                                    class="oo-ui-labelElement-label"></span><span
+                                                                    class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span></a></span><span></span>
+                                                            </div>
+                                                            <table class="mw-widgets-datetime-calendarWidget-grid">
+                                                                <colgroup>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                </colgroup>
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>S</th>
+                                                                    <th>M</th>
+                                                                    <th>T</th>
+                                                                    <th>W</th>
+                                                                    <th>T</th>
+                                                                    <th>F</th>
+                                                                    <th>S</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mw-htmlform-select-or-other oo-ui-widget oo-ui-widget-enabled mw-widget-selectWithInputWidget mw-widget-ExpiryWidget-relative">
+                                                        <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-dropdownInputWidget">
+                                                            <select name="wpExpiry" required=""
+                                                                    class="oo-ui-inputWidget-input oo-ui-indicator-down">
+                                                                <option value="2 hours">2 hours</option>
+                                                                <option value="1 day">1 day</option>
+                                                                <option value="3 days">3 days</option>
+                                                                <option value="1 week">1 week</option>
+                                                                <option value="2 weeks">2 weeks</option>
+                                                                <option value="1 month">1 month</option>
+                                                                <option value="3 months">3 months</option>
+                                                                <option value="6 months">6 months</option>
+                                                                <option value="1 year">1 year</option>
+                                                                <option value="infinite">indefinite</option>
+                                                                <option value="other" selected="">Other time:</option>
+                                                            </select>
+                                                            <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-indicatorElement oo-ui-dropdownWidget oo-ui-labelElement">
+                                                                <span tabindex="0" aria-expanded="false"
+                                                                      class="oo-ui-dropdownWidget-handle"
+                                                                      role="combobox" aria-autocomplete="list"
+                                                                      aria-haspopup="true"
+                                                                      aria-labelledby="ooui-5"><span
+                                                                        class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                                                        class="oo-ui-labelElement-label" id="ooui-5"
+                                                                        role="textbox"
+                                                                        aria-readonly="true">Other time:</span><span
+                                                                        class="oo-ui-indicatorElement-indicator oo-ui-indicator-down"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-textInputWidget oo-ui-textInputWidget-type-text oo-ui-indicatorElement">
+                                                            <input type="text" tabindex="0" name="wpExpiry-other"
+                                                                   value="" class="oo-ui-inputWidget-input" required=""><span
+                                                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                                                class="oo-ui-indicatorElement-indicator oo-ui-indicator-required"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="oo-ui-layout oo-ui-panelLayout oo-ui-panelLayout-padded oo-ui-panelLayout-framed">
+                    <fieldset class="oo-ui-layout oo-ui-labelElement oo-ui-fieldsetLayout">
+                        <legend class="oo-ui-fieldsetLayout-header"><span
+                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                class="oo-ui-labelElement-label">Reason:</span></legend>
+                        <div class="oo-ui-fieldsetLayout-group">
+                            <div class="oo-ui-widget oo-ui-widget-enabled">
+                                <div id="mw-htmlform-reason">
+                                    <div class="mw-htmlform-field-HTMLSelectAndOtherField mw-htmlform-autoinfuse oo-ui-layout oo-ui-fieldLayout oo-ui-fieldLayout-align-top"
+                                         id="ooui-php-19" data-ooui="">
+                                        <div class="oo-ui-fieldLayout-body"><span
+                                                class="oo-ui-fieldLayout-header"><label class="oo-ui-labelElement-label"
+                                                                                        id="ooui-8"></label></span>
+                                            <div class="oo-ui-fieldLayout-field">
+                                                <div class="mw-htmlform-select-and-other-field oo-ui-widget oo-ui-widget-enabled mw-widget-selectWithInputWidget"
+                                                     id="mw-input-wpReason" data-ooui="" aria-labelledby="ooui-8">
+                                                    <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-dropdownInputWidget">
+                                                        <select name="wpReason"
+                                                                class="oo-ui-inputWidget-input oo-ui-indicator-down">
+                                                            <option value="other" selected="">Other</option>
+                                                            <optgroup label="Common block reasons">
+                                                                <option value="Inserting false information">Inserting
+                                                                    false information
+                                                                </option>
+                                                                <option value="Removing content from pages">Removing
+                                                                    content from pages
+                                                                </option>
+                                                                <option value="Spamming links to external sites">
+                                                                    Spamming links to external sites
+                                                                </option>
+                                                                <option value="Inserting nonsense/gibberish into pages">
+                                                                    Inserting nonsense/gibberish into pages
+                                                                </option>
+                                                                <option value="Intimidating behavior/harassment">
+                                                                    Intimidating behavior/harassment
+                                                                </option>
+                                                                <option value="Abusing multiple accounts">Abusing
+                                                                    multiple accounts
+                                                                </option>
+                                                                <option value="Unacceptable username">Unacceptable
+                                                                    username
+                                                                </option>
+                                                            </optgroup>
+                                                        </select>
+                                                        <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-indicatorElement oo-ui-dropdownWidget oo-ui-labelElement">
+                                                            <span tabindex="0" aria-expanded="false"
+                                                                  class="oo-ui-dropdownWidget-handle" role="combobox"
+                                                                  aria-autocomplete="list" aria-haspopup="true"
+                                                                  aria-labelledby="ooui-1"><span
+                                                                    class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                                                    class="oo-ui-labelElement-label" id="ooui-1"
+                                                                    role="textbox"
+                                                                    aria-readonly="true">Other</span><span
+                                                                    class="oo-ui-indicatorElement-indicator oo-ui-indicator-down"></span></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-textInputWidget oo-ui-textInputWidget-type-text">
+                                                        <input type="text" tabindex="0" name="wpReason-other" value=""
+                                                               class="oo-ui-inputWidget-input"><span
+                                                            class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                                            class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="oo-ui-layout oo-ui-panelLayout oo-ui-panelLayout-padded oo-ui-panelLayout-framed">
+                    <fieldset class="oo-ui-layout oo-ui-labelElement oo-ui-fieldsetLayout">
+                        <legend class="oo-ui-fieldsetLayout-header"><span
+                                class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon"></span><span
+                                class="oo-ui-labelElement-label">Additional options:</span></legend>
+                        <div class="oo-ui-fieldsetLayout-group">
+                            <div class="oo-ui-widget oo-ui-widget-enabled">
+                                <div id="mw-htmlform-options">
+                                    <div id="ooui-php-23"
+                                         class="mw-htmlform-field-HTMLCheckField oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-inline"
+                                         data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpAutoBlock&quot;},&quot;align&quot;:&quot;inline&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;label&quot;:{&quot;html&quot;:&quot;Automatically block the last IP address used by this user, and any subsequent IP addresses they try to edit from, for a period of 1 day&quot;},&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLCheckField&quot;]}">
+                                        <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-field"><span
+                                                id="mw-input-wpAutoBlock"
+                                                class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget"
+                                                data-ooui=""><input type="checkbox" tabindex="0" name="wpAutoBlock"
+                                                                    value="1" checked="" id="ooui-php-20"
+                                                                    class="oo-ui-inputWidget-input"><span
+                                                class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert"></span></span></span><span
+                                                class="oo-ui-fieldLayout-header"><label for="ooui-php-20"
+                                                                                        class="oo-ui-labelElement-label">Automatically block the last IP address used by this user, and any subsequent IP addresses they try to edit from, for a period of 1 day</label></span>
+                                        </div>
+                                    </div>
+                                    <div id="ooui-php-24"
+                                         class="mw-htmlform-field-HTMLCheckField oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-inline"
+                                         data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpWatch&quot;},&quot;align&quot;:&quot;inline&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;label&quot;:{&quot;html&quot;:&quot;Watch this user's user and talk pages&quot;},&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLCheckField&quot;]}">
+                                        <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-field"><span
+                                                id="mw-input-wpWatch"
+                                                class="oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget"
+                                                data-ooui=""><input type="checkbox" tabindex="0" name="wpWatch"
+                                                                    value="1" id="ooui-php-21"
+                                                                    class="oo-ui-inputWidget-input"><span
+                                                class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert"></span></span></span><span
+                                                class="oo-ui-fieldLayout-header"><label for="ooui-php-21"
+                                                                                        class="oo-ui-labelElement-label">Watch this user's user and talk pages</label></span>
+                                        </div>
+                                    </div>
+                                    <div id="ooui-php-25"
+                                         class="mw-htmlform-field-HTMLCheckField oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-inline"
+                                         data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpHardBlock&quot;},&quot;align&quot;:&quot;inline&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;label&quot;:{&quot;html&quot;:&quot;Apply block to logged-in users from this IP address&quot;},&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLCheckField&quot;]}">
+                                        <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-field"><span
+                                                id="mw-input-wpHardBlock"
+                                                class="oo-ui-widget oo-ui-inputWidget oo-ui-checkboxInputWidget oo-ui-widget-disabled"
+                                                data-ooui="" aria-disabled="true"><input type="checkbox" tabindex="-1"
+                                                                                         name="wpHardBlock" value="1"
+                                                                                         id="ooui-php-22"
+                                                                                         class="oo-ui-inputWidget-input"
+                                                                                         aria-disabled="true"
+                                                                                         disabled=""><span
+                                                class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-icon-check oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert"></span></span></span><span
+                                                class="oo-ui-fieldLayout-header"><label for="ooui-php-22"
+                                                                                        class="oo-ui-labelElement-label">Apply block to logged-in users from this IP address</label></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="ooui-php-28"
+                     class="mw-htmlform-field-HTMLCheckField mw-block-confirm oo-ui-layout oo-ui-labelElement oo-ui-fieldLayout oo-ui-fieldLayout-align-inline"
+                     data-ooui="{&quot;_&quot;:&quot;mw.htmlform.FieldLayout&quot;,&quot;fieldWidget&quot;:{&quot;tag&quot;:&quot;mw-input-wpConfirm&quot;},&quot;align&quot;:&quot;inline&quot;,&quot;helpInline&quot;:true,&quot;$overlay&quot;:true,&quot;label&quot;:{&quot;html&quot;:&quot;Confirm block&quot;},&quot;classes&quot;:[&quot;mw-htmlform-field-HTMLCheckField&quot;,&quot;mw-block-confirm&quot;]}">
+                    <div class="oo-ui-fieldLayout-body"><span class="oo-ui-fieldLayout-field"><span
+                            id="mw-input-wpConfirm"
+                            class="mw-block-confirm oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-checkboxInputWidget"
+                            data-ooui="{&quot;_&quot;:&quot;OO.ui.CheckboxInputWidget&quot;,&quot;name&quot;:&quot;wpConfirm&quot;,&quot;value&quot;:&quot;1&quot;,&quot;inputId&quot;:&quot;ooui-php-27&quot;,&quot;required&quot;:false,&quot;classes&quot;:[&quot;mw-block-confirm&quot;]}"><input
+                            type="checkbox" tabindex="0" name="wpConfirm" value="1" id="ooui-php-27"
+                            class="oo-ui-inputWidget-input"><span
+                            class="oo-ui-checkboxInputWidget-checkIcon oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement-icon oo-ui-icon-check oo-ui-iconElement oo-ui-labelElement-invisible oo-ui-iconWidget oo-ui-image-invert"></span></span></span><span
+                            class="oo-ui-fieldLayout-header"><label for="ooui-php-27" class="oo-ui-labelElement-label">Confirm block</label></span>
+                    </div>
+                </div>
+                <input id="wpEditToken" type="hidden" value="85f7cf8000eae9bfdafd156c672b4791680cfd99+\"
+                       name="wpEditToken">
+                <input name="redirectparams" type="hidden">
+                <input id="mw-input-wpPreviousTarget" name="wpPreviousTarget" type="hidden" value="Admin">
+                <div class="mw-htmlform-submit-buttons">
+                    <span id="ooui-php-30"
+                          class="mw-htmlform-submit oo-ui-widget oo-ui-widget-enabled oo-ui-inputWidget oo-ui-buttonElement oo-ui-buttonElement-framed oo-ui-labelElement oo-ui-flaggedElement-destructive oo-ui-flaggedElement-primary oo-ui-buttonInputWidget"
+                          data-ooui="{&quot;_&quot;:&quot;OO.ui.ButtonInputWidget&quot;,&quot;type&quot;:&quot;submit&quot;,&quot;value&quot;:&quot;Block this user&quot;,&quot;label&quot;:&quot;Block this user&quot;,&quot;flags&quot;:[&quot;destructive&quot;,&quot;primary&quot;],&quot;classes&quot;:[&quot;mw-htmlform-submit&quot;]}"><button
+                            type="submit" tabindex="0" value="Block this user"
+                            class="oo-ui-inputWidget-input oo-ui-buttonElement-button"><span
+                            class="oo-ui-iconElement-icon oo-ui-iconElement-noIcon oo-ui-image-invert"></span><span
+                            class="oo-ui-labelElement-label">Block this user</span><span
+                            class="oo-ui-indicatorElement-indicator oo-ui-indicatorElement-noIndicator oo-ui-image-invert"></span></button></span>
+                </div>
+            </form>
+        </div>
+        <p class="mw-ipb-conveniencelinks"><a href="/index.php/Special:Contributions/Admin"
+                                              title="Special:Contributions/Admin">Contributions for Admin</a> | <a
+                href="/index.php/Special:Unblock/Admin" title="Special:Unblock/Admin">Unblock Admin</a> | <a
+                href="/index.php/Special:BlockList" title="Special:BlockList">View existing blocks</a> | <a
+                href="/index.php?title=MediaWiki:Ipbreason-dropdown&amp;action=edit"
+                title="MediaWiki:Ipbreason-dropdown">Edit block reasons</a></p>
+        <div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr"
+                                                                      href="http://localhost:8080/index.php/Special:Block/Admin">http://localhost:8080/index.php/Special:Block/Admin</a>"
+        </div>
+    </div>
+    <div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+</div>

@@ -1,0 +1,1160 @@
+<body class="lang-en admincategories" data-base-url="/administrator/index.php"
+      data-token="K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+
+
+<div class="header-toolbar d-print-none">
+
+    <div class="container-fluid">
+
+
+        <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Catalog</li>
+
+                <li class="breadcrumb-item active">
+                    <a href="/administrator/index.php/sell/catalog/categories?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       aria-current="page">Categories</a>
+                </li>
+            </ol>
+        </nav>
+
+
+        <div class="title-row">
+
+            <h1 class="title">
+                Categories </h1>
+
+
+            <div class="toolbar-icons">
+                <div class="wrapper">
+
+                    <a class="btn btn-primary pointer" id="page-header-desc-configuration-add"
+                       href="/administrator/index.php/sell/catalog/categories/new?id_parent=2&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       title="Add new category">
+                        <i class="material-icons">add_circle_outline</i> Add new category
+                    </a>
+
+
+                    <a class="btn btn-outline-secondary btn-help btn-sidebar" href="#" title="Help"
+                       data-toggle="sidebar" data-target="#right-sidebar"
+                       data-url="/administrator/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fen%252Fdoc%252FAdminCategories%253Fversion%253D1.7.8.5%2526country%253Den/Help?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       id="product_form_open_help">
+                        Help
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="btn-floating">
+        <button class="btn btn-primary collapsed" data-toggle="collapse" data-target=".btn-floating-container"
+                aria-expanded="false">
+            <i class="material-icons">add</i>
+        </button>
+        <div class="btn-floating-container collapse">
+            <div class="btn-floating-menu">
+
+                <a class="btn btn-floating-item  pointer" id="page-header-desc-floating-configuration-add"
+                   href="/administrator/index.php/sell/catalog/categories/new?id_parent=2&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                   title="Add new category">
+                    Add new category
+                    <i class="material-icons">add_circle_outline</i> </a>
+
+                <a class="btn btn-floating-item btn-help btn-sidebar" href="#" title="Help" data-toggle="sidebar"
+                   data-target="#right-sidebar"
+                   data-url="/administrator/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fen%252Fdoc%252FAdminCategories%253Fversion%253D1.7.8.5%2526country%253Den/Help?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                    Help
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (undefined !== mbo) {
+            mbo.initialize({
+                translations: {
+                    'Recommended Modules and Services': 'Recommended modules',
+                    'description': "Here\'s a selection of modules,<\strong> compatible with your store<\/strong>, to help you achieve your goals",
+                    'Close': 'Close',
+                },
+                recommendedModulesUrl: '/administrator/index.php/modules/addons/modules/recommended?tabClassName=AdminCategories&_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g',
+                shouldAttachRecommendedModulesAfterContent: 0,
+                shouldAttachRecommendedModulesButton: 0,
+                shouldUseLegacyTheme: 0,
+            });
+        }
+    </script>
+
+
+</div>
+
+<div id="main-div">
+
+    <div class="content-div  ">
+
+
+        <div class="row ">
+            <div class="col-sm-12">
+                <div id="ajax_confirmation" class="alert alert-success" style="display: none;"></div>
+
+
+                <div class="row">
+                    <div class="col">
+
+                        <div id="categoriesShowcaseCard" class="helper-card card">
+                            <div class="helper-card__left helper-card__category shape-one">
+                                <img src="/administrator/themes/new-theme/public/helper-card/category@3x.png?1.7.8.5"
+                                     class="img-fluid img-rtl">
+                            </div>
+                            <div class="helper-card__right">
+                                <h2>Set categories</h2>
+                                <p>Categories are essential, as they enable you to group equivalent products. This helps
+                                    customers find their way through the variety of your catalog.</p>
+                                <a class="btn btn-outline-secondary"
+                                   href="https://docs.prestashop-project.org/1.7-documentation/user-guide/selling/managing-catalog/managing-categories"
+                                   target="_blank">
+                                    Learn more
+                                </a>
+                            </div>
+                            <i class="showcase-card__close material-icons js-remove-helper-block"
+                               data-card-name="categories_card"
+                               data-close-url="/administrator/index.php/configure/showcase-card/close?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                close
+                            </i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="card card-kpis">
+                            <div class="row">
+
+                                <div class="container">
+                                    <div class="kpi-container">
+                                        <div class="row justify-content-around">
+                                            <div>
+
+                                                <div id="box-disabled-categories" class="kpi-container box-stats">
+                                                    <div class="kpi-content -color1" data-original-title=""
+                                                         data-toggle="pstooltip">
+                                                        <i class="material-icons">toggle_off</i>
+                                                        <span class="title">Disabled Categories</span>
+                                                        <div class="kpi-description">
+                                                            <div class="subtitle"></div>
+                                                            <div class="value">0</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function refresh_box_disabled_categories() {
+                                                        $.ajax({
+                                                            url: 'http://localhost:8080/administrator/index.php?controller=AdminStats&ajax=1&action=getKpi&kpi=disabled_categories&token=fc83d9faea3a8be64829cdb51ff01868' + '&rand=' + new Date().getTime(),
+                                                            dataType: 'json',
+                                                            type: 'GET',
+                                                            cache: false,
+                                                            headers: {'cache-control': 'no-cache'},
+                                                            success: function (jsonData) {
+                                                                if (!jsonData.has_errors) {
+                                                                    if (jsonData.value != undefined) {
+                                                                        $('#box-disabled-categories .value').html(jsonData.value);
+                                                                        $('#box-disabled-categories').attr('data-original-title', jsonData.tooltip);
+                                                                    }
+                                                                    if (jsonData.data != undefined) {
+                                                                        $("#box-disabled-categories .boxchart svg").remove();
+                                                                        set_d3_box_disabled_categories(jsonData.data);
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                </script>
+
+
+                                            </div>
+                                            <div>
+
+                                                <a href="/administrator/index.php/sell/catalog/monitoring/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                   id="box-empty-categories" class="kpi-container box-stats">
+                                                    <div class="kpi-content -color2" data-original-title=""
+                                                         data-toggle="pstooltip">
+                                                        <i class="material-icons">bookmark</i>
+                                                        <span class="title">Empty Categories</span>
+                                                        <div class="kpi-description">
+                                                            <div class="subtitle"></div>
+                                                            <div class="value">0</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <script>
+                                                    function refresh_box_empty_categories() {
+                                                        $.ajax({
+                                                            url: 'http://localhost:8080/administrator/index.php?controller=AdminStats&ajax=1&action=getKpi&kpi=empty_categories&token=fc83d9faea3a8be64829cdb51ff01868' + '&rand=' + new Date().getTime(),
+                                                            dataType: 'json',
+                                                            type: 'GET',
+                                                            cache: false,
+                                                            headers: {'cache-control': 'no-cache'},
+                                                            success: function (jsonData) {
+                                                                if (!jsonData.has_errors) {
+                                                                    if (jsonData.value != undefined) {
+                                                                        $('#box-empty-categories .value').html(jsonData.value);
+                                                                        $('#box-empty-categories').attr('data-original-title', jsonData.tooltip);
+                                                                    }
+                                                                    if (jsonData.data != undefined) {
+                                                                        $("#box-empty-categories .boxchart svg").remove();
+                                                                        set_d3_box_empty_categories(jsonData.data);
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                </script>
+
+
+                                            </div>
+                                            <div>
+
+                                                <div id="box-top-category" class="kpi-container box-stats">
+                                                    <div class="kpi-content -color3" data-original-title=""
+                                                         data-toggle="pstooltip">
+                                                        <i class="material-icons">money</i>
+                                                        <span class="title">Top Category</span>
+                                                        <div class="kpi-description">
+                                                            <div class="subtitle">30 days</div>
+                                                            <div class="value">Home Accessories</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function refresh_box_top_category() {
+                                                        $.ajax({
+                                                            url: 'http://localhost:8080/administrator/index.php?controller=AdminStats&ajax=1&action=getKpi&kpi=top_category&token=fc83d9faea3a8be64829cdb51ff01868' + '&rand=' + new Date().getTime(),
+                                                            dataType: 'json',
+                                                            type: 'GET',
+                                                            cache: false,
+                                                            headers: {'cache-control': 'no-cache'},
+                                                            success: function (jsonData) {
+                                                                if (!jsonData.has_errors) {
+                                                                    if (jsonData.value != undefined) {
+                                                                        $('#box-top-category .value').html(jsonData.value);
+                                                                        $('#box-top-category').attr('data-original-title', jsonData.tooltip);
+                                                                    }
+                                                                    if (jsonData.data != undefined) {
+                                                                        $("#box-top-category .boxchart svg").remove();
+                                                                        set_d3_box_top_category(jsonData.data);
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                </script>
+
+
+                                            </div>
+                                            <div>
+
+                                                <div id="box-products-per-category" class="kpi-container box-stats">
+                                                    <div class="kpi-content -color4" data-original-title=""
+                                                         data-toggle="pstooltip">
+                                                        <i class="material-icons">search</i>
+                                                        <span class="title">Average number of products per category</span>
+                                                        <div class="kpi-description">
+                                                            <div class="subtitle"></div>
+                                                            <div class="value">2</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function refresh_box_products_per_category() {
+                                                        $.ajax({
+                                                            url: 'http://localhost:8080/administrator/index.php?controller=AdminStats&ajax=1&action=getKpi&kpi=products_per_category&token=fc83d9faea3a8be64829cdb51ff01868' + '&rand=' + new Date().getTime(),
+                                                            dataType: 'json',
+                                                            type: 'GET',
+                                                            cache: false,
+                                                            headers: {'cache-control': 'no-cache'},
+                                                            success: function (jsonData) {
+                                                                if (!jsonData.has_errors) {
+                                                                    if (jsonData.value != undefined) {
+                                                                        $('#box-products-per-category .value').html(jsonData.value);
+                                                                        $('#box-products-per-category').attr('data-original-title', jsonData.tooltip);
+                                                                    }
+                                                                    if (jsonData.data != undefined) {
+                                                                        $("#box-products-per-category .boxchart svg").remove();
+                                                                        set_d3_box_products_per_category(jsonData.data);
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                </script>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="kpi-refresh">
+                                    <button class="refresh-kpis btn btn-primary" type="button">
+                                        <i class="material-icons">refresh</i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="card">
+                            <div class="card-block">
+                                <nav>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <span>Home</span>
+                                            <a href="/administrator/index.php/sell/catalog/categories/2/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                <i style="font-size: 16px;" class="material-icons">edit</i>
+                                                Edit
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="card js-grid-panel" id="category_grid_panel" data-hook-name="Categories">
+                            <div class="card-header js-grid-header">
+                                <h3 class="d-inline-block card-header-title">
+                                    Categories (3)
+                                </h3>
+                                <div class="d-inline-block float-right">
+
+                                    <div class="dropdown text-right">
+                                        <button class="btn btn-text dropdown-toggle tool-button"
+                                                id="category-grid-actions-button" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false" title="Settings">
+                                            <span class="sr-only">Settings</span>
+                                        </button>
+
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                             aria-labelledby="category-grid-actions-button"
+                                             id="category-grid-actions-dropdown-menu">
+
+
+                                            <a id="category-grid-action-import"
+                                               href="/administrator/index.php/configure/advanced/import/?import_type=categories&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                               class="dropdown-item">
+                                                <i class="material-icons">cloud_upload</i>
+                                                Import
+                                            </a>
+
+
+                                            <a id="category-grid-action-export"
+                                               href="/administrator/index.php/sell/catalog/categories/export?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                               class="dropdown-item">
+                                                <i class="material-icons">cloud_download</i>
+                                                Export
+                                            </a>
+
+
+                                            <button type="button" id="category_grid_action_common_refresh_list"
+                                                    class="dropdown-item js-common_refresh_list-grid-action">
+                                                <i class="material-icons">refresh</i>
+                                                Refresh list
+                                            </button>
+
+
+                                            <button type="button" id="category_grid_action_common_show_query"
+                                                    class="dropdown-item js-common_show_query-grid-action">
+                                                <i class="material-icons">code</i>
+                                                Show SQL query
+                                            </button>
+
+
+                                            <button type="button" id="category_grid_action_common_export_sql_manager"
+                                                    class="dropdown-item js-common_export_sql_manager-grid-action">
+                                                <i class="material-icons">storage</i>
+                                                Export to SQL Manager
+                                            </button>
+
+                                        </div>
+
+                                        <div class="modal fade" id="category_grid_common_show_query_modal"
+                                             tabindex="-1">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">SQL query</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">×
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form method="post"
+                                                              action="/administrator/index.php/configure/advanced/sql-requests/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                              id="category_common_show_query_modal_form">
+                                                            <div class="form-group">
+                                                                <textarea name="sql" rows="10" cols="65" title=""
+                                                                          class="form-control"></textarea>
+                                                                <input type="hidden" name="name" value="">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline-secondary btn-lg"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="button" value="sql_manager"
+                                                                class="btn btn-primary btn-lg btn-sql-submit">
+                                                            Export to SQL Manager
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function () {
+                                                var closable = true;
+                                                $('#category_grid_common_show_query_modal').modal({
+                                                    backdrop: (closable ? true : 'static'),
+                                                    keyboard: closable,
+                                                    closable: closable,
+                                                    show: false
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="row grid js-grid" id="category_grid" data-grid-id="category">
+                                    <div class="col-sm">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="row">
+                                                    <div class="col-sm">
+
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-outline-secondary dropdown-toggle js-bulk-actions-btn"
+                                                                    data-toggle="dropdown" disabled="">
+                                                                Bulk actions
+                                                                <i class="icon-caret-up"></i>
+                                                            </button>
+
+                                                            <div class="dropdown-menu">
+
+                                                                <button id="category_grid_bulk_action_enable_selection"
+                                                                        class="dropdown-item js-bulk-action-submit-btn"
+                                                                        type="button"
+                                                                        data-form-url="/administrator/index.php/sell/catalog/categories/bulk-status-enable?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        data-form-method="POST" data-confirm-message="">
+                                                                    Enable selection
+                                                                </button>
+
+
+                                                                <button id="category_grid_bulk_action_disable_selection"
+                                                                        class="dropdown-item js-bulk-action-submit-btn"
+                                                                        type="button"
+                                                                        data-form-url="/administrator/index.php/sell/catalog/categories/bulk-status-disable?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        data-form-method="POST" data-confirm-message="">
+                                                                    Disable selection
+                                                                </button>
+
+
+                                                                <button id="category_grid_bulk_action_delete_selection"
+                                                                        data-categories-delete-url="/administrator/index.php/sell/catalog/categories/bulk-delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        class="dropdown-item js-delete-categories-bulk-action"
+                                                                        type="button">
+                                                                    Delete selected
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm">
+
+
+                                                <form name="category" method="post"
+                                                      action="/administrator/index.php/sell/catalog/categories/search?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                      id="category_filter_form"
+                                                      class="table-responsive form-horizontal">
+
+                                                    <table class="grid-table js-grid-table table  "
+                                                           id="category_grid_table"
+                                                           data-query="SELECT c.id_category, c.id_parent, c.active, cl.name, cl.description, cs.position FROM ps_category c LEFT JOIN ps_category_lang cl ON c.id_category = cl.id_category AND cl.id_lang = 1 AND cl.id_shop = c.id_shop_default LEFT JOIN ps_category_shop cs ON c.id_category = cs.id_category AND cs.id_shop = 1 WHERE (c.id_category != '1') AND (c.id_parent = '2') AND (c.id_category != '1') AND (c.id_category != '1') ORDER BY position asc LIMIT 50">
+                                                        <thead class="thead-default">
+
+                                                        <tr class="column-headers ">
+                                                            <th scope="col">
+
+
+                                                            </th>
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="id_category"
+                                                                     data-sort-prefix="category">
+                                                                    <span role="columnheader">ID</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="name"
+                                                                     data-sort-prefix="category">
+                                                                    <span role="columnheader">Name</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                Description
+
+                                                            </th>
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="position"
+                                                                     data-sort-prefix="category"
+                                                                     data-sort-is-current="true"
+                                                                     data-sort-direction="asc">
+                                                                    <span role="columnheader">Position</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="active"
+                                                                     data-sort-prefix="category">
+                                                                    <span role="columnheader">Displayed</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+                                                                <div class="grid-actions-header-text">
+                                                                    <span>Actions</span>
+                                                                </div>
+
+                                                            </th>
+                                                        </tr>
+
+
+                                                        <tr class="column-filters">
+                                                            <td>
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox"
+                                                                               class="js-bulk-action-select-all"
+                                                                               id="category_grid_bulk_action_select_all">
+                                                                        <i class="md-checkbox-control grid_bulk_action_select_all"></i>
+                                                                    </label>
+                                                                </div>
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="category_id_category"
+                                                                       name="category[id_category]"
+                                                                       placeholder="Search ID"
+                                                                       aria-label="category_id_category input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="category_name"
+                                                                       name="category[name]" placeholder="Search name"
+                                                                       aria-label="category_name input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="category_description"
+                                                                       name="category[description]"
+                                                                       placeholder="Search description"
+                                                                       aria-label="category_description input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="category_position"
+                                                                       name="category[position]"
+                                                                       placeholder="Search position"
+                                                                       aria-label="category_position input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+                                                                <select id="category_active" name="category[active]"
+                                                                        class="custom-select"
+                                                                        aria-label="category_active input">
+                                                                    <option value=""></option>
+                                                                    <option value="1">Yes</option>
+                                                                    <option value="0">No</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+
+                                                                <button type="submit"
+                                                                        class="btn btn-primary grid-search-button d-block float-right"
+                                                                        title="Search" name="category[actions][search]"
+                                                                        disabled=""><i class="material-icons">search</i>
+                                                                    Search
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr id="tr_2_3_0">
+                                                            <td class="draggable-type column-position_drag">
+
+<span class="draggable-column js-drag-handle">
+  <i class="material-icons">drag_indicator</i>
+</span>
+
+                                                            </td>
+                                                            <td class="identifier-type column-id_category">
+
+                                                                <div class="md-checkbox d-inline-block">
+                                                                    <label>
+                                                                        <input type="checkbox" title="ID"
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="category_id_category[]" value="3">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                                3
+
+
+                                                            </td>
+                                                            <td class="link-type column-name">
+
+
+                                                                <a class="text-primary text-nowrap"
+                                                                   href="/administrator/index.php/sell/catalog/categories/3?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                    <i class="material-icons"></i>
+                                                                    Clothes
+                                                                </a>
+
+                                                            </td>
+                                                            <td class="data-type column-description clickable cursor-pointer">
+
+                                                                Discover our favorites fashionable discoveries, a
+                                                                selection of cool items to integrate in your wardrobe.
+                                                                Compose a unique style with personality which
+
+                                                            </td>
+                                                            <td class="category_position-type column-position">
+
+                                                                <div class="category-position-column">
+                                                                    <div class="js-drag-handle js-category-position text-center"
+                                                                         data-id="3" data-id-parent="2"
+                                                                         data-position="0"
+                                                                         data-position-update-url="/administrator/index.php/sell/catalog/categories/update-positions?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                         data-pagination-offset="">
+    <span class="js-position position">
+      1
+    </span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="toggle-type column-active">
+
+
+                                                                <div class="text-center">
+                                                                    <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center ps-togglable-row"
+                                                                         data-toggle-url="/administrator/index.php/sell/catalog/categories/3/toggle-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                        <input type="radio"
+                                                                               name="input-admin_categories_toggle_status-3"
+                                                                               id="input-false-admin_categories_toggle_status-3"
+                                                                               value="0">
+                                                                        <label for="input-false-admin_categories_toggle_status-3">Off</label>
+                                                                        <input type="radio"
+                                                                               name="input-admin_categories_toggle_status-3"
+                                                                               id="input-true-admin_categories_toggle_status-3"
+                                                                               value="1" checked="">
+                                                                        <label for="input-true-admin_categories_toggle_status-3">On</label>
+                                                                        <span class="slide-button"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-view-row-link"
+                                                                           href="/administrator/index.php/sell/catalog/categories/3?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="View"
+                                                                           data-clickable-row="1">
+                                                                            <i class="material-icons">zoom_in</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                             style="">
+
+
+                                                                            <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                               href="/administrator/index.php/sell/catalog/categories/3/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-confirm-message=""
+                                                                               data-clickable-row="1">
+                                                                                <i class="material-icons">edit</i>
+                                                                                Edit
+                                                                            </a>
+
+
+                                                                            <a class="btn tooltip-link js-delete-category-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#" data-category-id="3"
+                                                                               data-category-delete-url="/administrator/index.php/sell/catalog/categories/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="tr_2_6_1">
+                                                            <td class="draggable-type column-position_drag">
+
+<span class="draggable-column js-drag-handle">
+  <i class="material-icons">drag_indicator</i>
+</span>
+
+                                                            </td>
+                                                            <td class="identifier-type column-id_category">
+
+                                                                <div class="md-checkbox d-inline-block">
+                                                                    <label>
+                                                                        <input type="checkbox" title="ID"
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="category_id_category[]" value="6">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                                6
+
+
+                                                            </td>
+                                                            <td class="link-type column-name">
+
+
+                                                                <a class="text-primary text-nowrap"
+                                                                   href="/administrator/index.php/sell/catalog/categories/6?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                    <i class="material-icons"></i>
+                                                                    Accessories
+                                                                </a>
+
+                                                            </td>
+                                                            <td class="data-type column-description clickable cursor-pointer">
+
+                                                                Items and accessories for your desk, kitchen or living
+                                                                room. Make your house a home with our eye-catching
+                                                                designs.
+
+                                                            </td>
+                                                            <td class="category_position-type column-position">
+
+                                                                <div class="category-position-column">
+                                                                    <div class="js-drag-handle js-category-position text-center"
+                                                                         data-id="6" data-id-parent="2"
+                                                                         data-position="1"
+                                                                         data-position-update-url="/administrator/index.php/sell/catalog/categories/update-positions?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                         data-pagination-offset="">
+    <span class="js-position position">
+      2
+    </span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="toggle-type column-active">
+
+
+                                                                <div class="text-center">
+                                                                    <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center ps-togglable-row"
+                                                                         data-toggle-url="/administrator/index.php/sell/catalog/categories/6/toggle-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                        <input type="radio"
+                                                                               name="input-admin_categories_toggle_status-6"
+                                                                               id="input-false-admin_categories_toggle_status-6"
+                                                                               value="0">
+                                                                        <label for="input-false-admin_categories_toggle_status-6">Off</label>
+                                                                        <input type="radio"
+                                                                               name="input-admin_categories_toggle_status-6"
+                                                                               id="input-true-admin_categories_toggle_status-6"
+                                                                               value="1" checked="">
+                                                                        <label for="input-true-admin_categories_toggle_status-6">On</label>
+                                                                        <span class="slide-button"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-view-row-link"
+                                                                           href="/administrator/index.php/sell/catalog/categories/6?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="View"
+                                                                           data-clickable-row="1">
+                                                                            <i class="material-icons">zoom_in</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+
+
+                                                                            <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                               href="/administrator/index.php/sell/catalog/categories/6/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-confirm-message=""
+                                                                               data-clickable-row="1">
+                                                                                <i class="material-icons">edit</i>
+                                                                                Edit
+                                                                            </a>
+
+
+                                                                            <a class="btn tooltip-link js-delete-category-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#" data-category-id="6"
+                                                                               data-category-delete-url="/administrator/index.php/sell/catalog/categories/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="tr_2_9_2">
+                                                            <td class="draggable-type column-position_drag">
+
+<span class="draggable-column js-drag-handle">
+  <i class="material-icons">drag_indicator</i>
+</span>
+
+                                                            </td>
+                                                            <td class="identifier-type column-id_category">
+
+                                                                <div class="md-checkbox d-inline-block">
+                                                                    <label>
+                                                                        <input type="checkbox" title="ID"
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="category_id_category[]" value="9">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                                9
+
+
+                                                            </td>
+                                                            <td class="link-type column-name">
+
+
+                                                                <a class="text-primary text-nowrap"
+                                                                   href="/administrator/index.php/sell/catalog/categories/9?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                    <i class="material-icons"></i>
+                                                                    Art
+                                                                </a>
+
+                                                            </td>
+                                                            <td class="data-type column-description clickable cursor-pointer">
+
+                                                                Framed poster and vector images, all you need to give
+                                                                personality to your walls or bring your creative
+                                                                projects to life.
+
+                                                            </td>
+                                                            <td class="category_position-type column-position">
+
+                                                                <div class="category-position-column">
+                                                                    <div class="js-drag-handle js-category-position text-center"
+                                                                         data-id="9" data-id-parent="2"
+                                                                         data-position="2"
+                                                                         data-position-update-url="/administrator/index.php/sell/catalog/categories/update-positions?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                         data-pagination-offset="">
+    <span class="js-position position">
+      3
+    </span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="toggle-type column-active">
+
+
+                                                                <div class="text-center">
+                                                                    <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center ps-togglable-row"
+                                                                         data-toggle-url="/administrator/index.php/sell/catalog/categories/9/toggle-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                        <input type="radio"
+                                                                               name="input-admin_categories_toggle_status-9"
+                                                                               id="input-false-admin_categories_toggle_status-9"
+                                                                               value="0">
+                                                                        <label for="input-false-admin_categories_toggle_status-9">Off</label>
+                                                                        <input type="radio"
+                                                                               name="input-admin_categories_toggle_status-9"
+                                                                               id="input-true-admin_categories_toggle_status-9"
+                                                                               value="1" checked="">
+                                                                        <label for="input-true-admin_categories_toggle_status-9">On</label>
+                                                                        <span class="slide-button"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                           href="/administrator/index.php/sell/catalog/categories/9/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="Edit"
+                                                                           data-clickable-row="1">
+                                                                            <i class="material-icons">edit</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right">
+
+
+                                                                            <a class="btn tooltip-link js-delete-category-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#" data-category-id="9"
+                                                                               data-category-delete-url="/administrator/index.php/sell/catalog/categories/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+
+
+                                                    <div class="form-group row type-hidden ">
+
+
+                                                        <label for="category__token" class="form-control-label ">
+
+
+                                                        </label>
+
+                                                        <div class="col-sm">
+
+
+                                                            <input type="hidden" id="category__token"
+                                                                   name="category[_token]" class="form-control"
+                                                                   value="8eXdu_JMyfnZMbs-leeMwhUZvNi1K2DLVJR8Q2rHa9M">
+
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="modal fade" id="category_grid_delete_categories_modal" tabindex="-1">
+                            <div class="modal-dialog ">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">What do you want to do with the products associated with
+                                            this category?</h4>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <form name="delete_categories" method="post"
+                                              action="/administrator/index.php/sell/catalog/categories/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                              class="form-horizontal">
+
+                                            <div class="form-group mb-0">
+                                                <div id="delete_categories_delete_mode">
+                                                    <div class="radio form-check form-check-radio">
+                                                        <label class="required form-check-label"><input type="radio"
+                                                                                                        id="delete_categories_delete_mode_0"
+                                                                                                        name="delete_categories[delete_mode]"
+                                                                                                        required="required"
+                                                                                                        value="associate_and_disable"
+                                                                                                        checked="checked">
+                                                            <i class="form-check-round"></i>
+                                                            If they have no other category, I want to associate them
+                                                            with the parent category and turn them offline.
+                                                            (Recommended)</label>
+                                                    </div>
+                                                    <div class="radio form-check form-check-radio">
+                                                        <label class="required form-check-label"><input type="radio"
+                                                                                                        id="delete_categories_delete_mode_1"
+                                                                                                        name="delete_categories[delete_mode]"
+                                                                                                        required="required"
+                                                                                                        value="associate_only">
+                                                            <i class="form-check-round"></i>
+                                                            If they have no other category, I want to associate them
+                                                            with the parent category.</label>
+                                                    </div>
+                                                    <div class="radio form-check form-check-radio">
+                                                        <label class="required form-check-label"><input type="radio"
+                                                                                                        id="delete_categories_delete_mode_2"
+                                                                                                        name="delete_categories[delete_mode]"
+                                                                                                        required="required"
+                                                                                                        value="remove_associated">
+                                                            <i class="form-check-round"></i>
+                                                            If they have no other category, I want to delete them as
+                                                            well.</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="form-text text-muted">
+        Note that if they have another category, your products will logically remain associated with it.
+      </span>
+                                            <div class="d-none">
+                                                <div id="delete_categories_categories_to_delete"
+                                                     data-prototype="<input type=&quot;hidden&quot; id=&quot;delete_categories_categories_to_delete___name__&quot; name=&quot;delete_categories[categories_to_delete][__name__]&quot; required=&quot;required&quot; class=&quot;form-control&quot; />
+  ">
+                                                </div>
+                                            </div>
+                                            <div class="d-none">
+                                                <input type="hidden" id="delete_categories_categories_to_delete_parent"
+                                                       name="delete_categories[categories_to_delete_parent]"
+                                                       class="form-control" value="2">
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary btn-lg"
+                                                data-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" value=""
+                                                class="btn btn-danger btn-lg js-submit-delete-categories">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

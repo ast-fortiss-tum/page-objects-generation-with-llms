@@ -1,0 +1,54 @@
+<div class="col-lg-10 pt-3 pb-1 h-100">
+
+    <form class="tab-content" id="jsform" method="post" action="" autocomplete="off">
+        <div class="align-middle">
+            <div class="float-right mt-1">
+                <button type="submit" class="btn btn-primary btn-sm" name="save">Save</button>
+                <a class="btn btn-secondary btn-sm" href="/admin/users" role="button">Cancel</a>
+            </div>
+            <h2 class="mt-0 mb-3">
+                <span class="fa fa-user" style="font-size: 0.9em;"></span><span>Add a new user</span>
+            </h2></div>
+
+        <input type="hidden" id="jstokenCSRF" name="tokenCSRF" value="b2edd3cfbc8ae3cd49fb90c2ac5317cc3bcba732">
+        <div class="form-group row">
+            <label for="jsnew_username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+                <input class="form-control " id="jsnew_username" name="new_username" value="" placeholder=""
+                       type="text">
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="jsnew_password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input class="form-control " id="jsnew_password" name="new_password" value="" placeholder=""
+                       type="password">
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="jsconfirm_password" class="col-sm-2 col-form-label">Confirm Password</label>
+            <div class="col-sm-10">
+                <input class="form-control " id="jsconfirm_password" name="confirm_password" value="" placeholder=""
+                       type="password">
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+        <div class="form-group row"><label for="jsrole" class="col-sm-2 col-form-label">Role</label>
+            <div class="col-sm-10"><select id="jsrole" name="role" class="custom-select ">
+                <option value="author">Author</option>
+                <option value="editor">Editor</option>
+                <option value="admin">Administrator</option>
+            </select><small class="form-text text-muted">Author: Can write and edit their own content. Editor: Can write
+                and edit the content of others.</small></div>
+        </div>
+        <div class="form-group row">
+            <label for="jsemail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input class="form-control " id="jsemail" name="email" value="" placeholder="" type="text">
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+    </form>
+</div>

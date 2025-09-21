@@ -1,0 +1,577 @@
+
+<div class="header-toolbar d-print-none">
+
+    <div class="container-fluid">
+
+
+        <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Brands &amp; Suppliers</li>
+
+                <li class="breadcrumb-item active">
+                    <a href="/administrator/index.php/sell/catalog/suppliers/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       aria-current="page">Suppliers</a>
+                </li>
+            </ol>
+        </nav>
+
+
+        <div class="title-row">
+
+            <h1 class="title">
+                Suppliers </h1>
+
+
+            <div class="toolbar-icons">
+                <div class="wrapper">
+
+                    <a class="btn btn-primary pointer" id="page-header-desc-configuration-add"
+                       href="/administrator/index.php/sell/catalog/suppliers/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       title="Add new supplier">
+                        <i class="material-icons">add_circle_outline</i> Add new supplier
+                    </a>
+
+
+                    <a class="btn btn-outline-secondary btn-help btn-sidebar" href="#" title="Help"
+                       data-toggle="sidebar" data-target="#right-sidebar"
+                       data-url="/administrator/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fen%252Fdoc%252FAdminSuppliers%253Fversion%253D1.7.8.5%2526country%253Den/Help?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       id="product_form_open_help">
+                        Help
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="page-head-tabs" id="head_tabs">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="/administrator/index.php/sell/catalog/brands/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                   id="subtab-AdminManufacturers" class="nav-link tab " data-submenu="17">
+                    Brands
+                    <span class="notification-container">
+                        <span class="notification-counter"></span>
+                      </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/administrator/index.php/sell/catalog/suppliers/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                   id="subtab-AdminSuppliers" class="nav-link tab active current" data-submenu="18">
+                    Suppliers
+                    <span class="notification-container">
+                        <span class="notification-counter"></span>
+                      </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+
+<div id="main-div">
+
+    <div class="content-div  with-tabs">
+
+
+        <div class="row ">
+            <div class="col-sm-12">
+                <div id="ajax_confirmation" class="alert alert-success" style="display: none;"></div>
+
+
+                <div class="alert alert-info" role="alert">
+                    <p class="alert-text">
+                        The display of your suppliers is disabled on your store. Go to <a
+                            href="/administrator/index.php/configure/shop/preferences/preferences?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">Shop
+                        Parameters &gt; General</a> to edit settings.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        <div class="card js-grid-panel" id="supplier_grid_panel" data-hook-name="Suppliers">
+                            <div class="card-header js-grid-header">
+                                <h3 class="d-inline-block card-header-title">
+                                    Suppliers (2)
+                                </h3>
+                                <div class="d-inline-block float-right">
+
+                                    <div class="dropdown text-right">
+                                        <button class="btn btn-text dropdown-toggle tool-button"
+                                                id="supplier-grid-actions-button" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false" title="Settings">
+                                            <span class="sr-only">Settings</span>
+                                        </button>
+
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                             aria-labelledby="supplier-grid-actions-button"
+                                             id="supplier-grid-actions-dropdown-menu">
+
+
+                                            <a id="supplier-grid-action-import"
+                                               href="/administrator/index.php/configure/advanced/import/?import_type=suppliers&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                               class="dropdown-item">
+                                                <i class="material-icons">cloud_upload</i>
+                                                Import
+                                            </a>
+
+
+                                            <a id="supplier-grid-action-export"
+                                               href="/administrator/index.php/sell/catalog/suppliers/export?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                               class="dropdown-item">
+                                                <i class="material-icons">cloud_download</i>
+                                                Export
+                                            </a>
+
+
+                                            <button type="button" id="supplier_grid_action_common_refresh_list"
+                                                    class="dropdown-item js-common_refresh_list-grid-action">
+                                                <i class="material-icons">refresh</i>
+                                                Refresh list
+                                            </button>
+
+
+                                            <button type="button" id="supplier_grid_action_common_show_query"
+                                                    class="dropdown-item js-common_show_query-grid-action">
+                                                <i class="material-icons">code</i>
+                                                Show SQL query
+                                            </button>
+
+
+                                            <button type="button" id="supplier_grid_action_common_export_sql_manager"
+                                                    class="dropdown-item js-common_export_sql_manager-grid-action">
+                                                <i class="material-icons">storage</i>
+                                                Export to SQL Manager
+                                            </button>
+
+                                        </div>
+
+                                        <div class="modal fade" id="supplier_grid_common_show_query_modal"
+                                             tabindex="-1">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">SQL query</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">×
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form method="post"
+                                                              action="/administrator/index.php/configure/advanced/sql-requests/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                              id="supplier_common_show_query_modal_form">
+                                                            <div class="form-group">
+                                                                <textarea name="sql" rows="10" cols="65" title=""
+                                                                          class="form-control"></textarea>
+                                                                <input type="hidden" name="name" value="">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline-secondary btn-lg"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="button" value="sql_manager"
+                                                                class="btn btn-primary btn-lg btn-sql-submit">
+                                                            Export to SQL Manager
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(document).ready(function () {
+                                                var closable = true;
+                                                $('#supplier_grid_common_show_query_modal').modal({
+                                                    backdrop: (closable ? true : 'static'),
+                                                    keyboard: closable,
+                                                    closable: closable,
+                                                    show: false
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+
+                                <div class="row grid js-grid" id="supplier_grid" data-grid-id="supplier">
+                                    <div class="col-sm">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="row">
+                                                    <div class="col-sm">
+
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-outline-secondary dropdown-toggle js-bulk-actions-btn"
+                                                                    data-toggle="dropdown" disabled="">
+                                                                Bulk actions
+                                                                <i class="icon-caret-up"></i>
+                                                            </button>
+
+                                                            <div class="dropdown-menu">
+
+                                                                <button id="supplier_grid_bulk_action_suppliers_enable_selection"
+                                                                        class="dropdown-item js-bulk-action-submit-btn"
+                                                                        type="button"
+                                                                        data-form-url="/administrator/index.php/sell/catalog/suppliers/bulk-enable?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        data-form-method="POST" data-confirm-message="">
+                                                                    Enable selection
+                                                                </button>
+
+
+                                                                <button id="supplier_grid_bulk_action_suppliers_disable_selection"
+                                                                        class="dropdown-item js-bulk-action-submit-btn"
+                                                                        type="button"
+                                                                        data-form-url="/administrator/index.php/sell/catalog/suppliers/bulk-disable?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        data-form-method="POST" data-confirm-message="">
+                                                                    Disable selection
+                                                                </button>
+
+
+                                                                <button id="supplier_grid_bulk_action_delete_selection"
+                                                                        class="dropdown-item js-bulk-action-submit-btn"
+                                                                        type="button"
+                                                                        data-form-url="/administrator/index.php/sell/catalog/suppliers/bulk-delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                        data-form-method="POST"
+                                                                        data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                        data-close-button-label="Close"
+                                                                        data-confirm-title="Delete selection"
+                                                                        data-confirm-button-class="btn-danger"
+                                                                        data-confirm-button-label="Delete">
+                                                                    Delete selected
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm">
+
+
+                                                <form name="supplier" method="post" action="" id="supplier_filter_form"
+                                                      class="table-responsive form-horizontal">
+
+                                                    <table class="grid-table js-grid-table table  "
+                                                           id="supplier_grid_table"
+                                                           data-query="SELECT s.`id_supplier`, s.`name`, s.`active`, COUNT(DISTINCT ps.`id_product`) AS `products_count` FROM ps_supplier s INNER JOIN ps_supplier_lang sl ON sl.`id_supplier` = s.`id_supplier` INNER JOIN ps_supplier_shop ss ON ss.`id_supplier` = s.`id_supplier` LEFT JOIN ps_product_supplier ps ON ps.`id_supplier` = s.`id_supplier` WHERE (sl.`id_lang` = 1) AND (ss.`id_shop` IN ('1')) GROUP BY s.`id_supplier` ORDER BY name asc LIMIT 50">
+                                                        <thead class="thead-default">
+
+                                                        <tr class="column-headers ">
+                                                            <th scope="col">
+
+
+                                                            </th>
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="id_supplier"
+                                                                     data-sort-prefix="supplier">
+                                                                    <span role="columnheader">ID</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                Logo
+
+                                                            </th>
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="name"
+                                                                     data-sort-prefix="supplier"
+                                                                     data-sort-is-current="true"
+                                                                     data-sort-direction="asc">
+                                                                    <span role="columnheader">Name</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="products_count"
+                                                                     data-sort-prefix="supplier">
+                                                                    <span role="columnheader">Number of products</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+
+
+                                                                <div class="ps-sortable-column"
+                                                                     data-sort-col-name="active"
+                                                                     data-sort-prefix="supplier">
+                                                                    <span role="columnheader">Enabled</span>
+                                                                    <span role="button" class="ps-sort"
+                                                                          aria-label="Sort by"></span>
+                                                                </div>
+                                                            </th>
+
+
+                                                            <th scope="col">
+                                                                <div class="grid-actions-header-text">
+                                                                    <span>Actions</span>
+                                                                </div>
+
+                                                            </th>
+                                                        </tr>
+
+
+                                                        <tr class="column-filters">
+                                                            <td>
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox"
+                                                                               class="js-bulk-action-select-all"
+                                                                               id="supplier_grid_bulk_action_select_all">
+                                                                        <i class="md-checkbox-control grid_bulk_action_select_all"></i>
+                                                                    </label>
+                                                                </div>
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="supplier_id_supplier"
+                                                                       name="supplier[id_supplier]" placeholder="ID"
+                                                                       aria-label="supplier_id_supplier input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="supplier_name"
+                                                                       name="supplier[name]" placeholder="Name"
+                                                                       aria-label="supplier_name input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+
+                                                                <input type="text" id="supplier_products_count"
+                                                                       name="supplier[products_count]"
+                                                                       placeholder="Number of products"
+                                                                       aria-label="supplier_products_count input"
+                                                                       class="form-control">
+
+
+                                                            </td>
+                                                            <td>
+
+                                                                <select id="supplier_active" name="supplier[active]"
+                                                                        class="custom-select"
+                                                                        aria-label="supplier_active input">
+                                                                    <option value=""></option>
+                                                                    <option value="1">Yes</option>
+                                                                    <option value="0">No</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+
+                                                                <button type="submit"
+                                                                        class="btn btn-primary grid-search-button d-block float-right"
+                                                                        title="Search" name="supplier[actions][search]"
+                                                                        disabled=""><i class="material-icons">search</i>
+                                                                    Search
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="bulk_action-type column-bulk">
+
+                                                                <div class="md-checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" title=""
+                                                                               class="js-bulk-action-checkbox"
+                                                                               name="supplier_bulk[]" value="2">
+                                                                        <i class="md-checkbox-control"></i>
+                                                                    </label>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="data-type column-id_supplier clickable cursor-pointer">
+
+                                                                2
+
+                                                            </td>
+                                                            <td class="image-type column-logo clickable cursor-pointer">
+
+                                                                <img src="">
+
+                                                            </td>
+                                                            <td class="link-type column-name">
+
+
+                                                                <a class="text-primary text-nowrap"
+                                                                   href="/administrator/index.php/sell/catalog/suppliers/2/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                    <i class="material-icons"></i>
+                                                                    Accessories supplier
+                                                                </a>
+
+                                                            </td>
+                                                            <td class="data-type column-products_count clickable cursor-pointer">
+
+                                                                17
+
+                                                            </td>
+                                                            <td class="toggle-type column-active">
+
+
+                                                                <div class="text-center">
+                                                                    <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center ps-togglable-row"
+                                                                         data-toggle-url="/administrator/index.php/sell/catalog/suppliers/2/toggle-status?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                                                        <input type="radio"
+                                                                               name="input-admin_suppliers_toggle_status-2"
+                                                                               id="input-false-admin_suppliers_toggle_status-2"
+                                                                               value="0">
+                                                                        <label for="input-false-admin_suppliers_toggle_status-2">Off</label>
+                                                                        <input type="radio"
+                                                                               name="input-admin_suppliers_toggle_status-2"
+                                                                               id="input-true-admin_suppliers_toggle_status-2"
+                                                                               value="1" checked="">
+                                                                        <label for="input-true-admin_suppliers_toggle_status-2">On</label>
+                                                                        <span class="slide-button"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="action-type column-actions">
+
+
+                                                                <div class="btn-group-action text-right">
+
+                                                                    <div class="btn-group">
+
+
+                                                                        <a class="btn tooltip-link js-link-row-action dropdown-item grid-view-row-link"
+                                                                           href="/administrator/index.php/sell/catalog/suppliers/2/products?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                           data-confirm-message=""
+                                                                           data-toggle="pstooltip" data-placement="top"
+                                                                           data-original-title="View"
+                                                                           data-clickable-row="1">
+                                                                            <i class="material-icons">zoom_in</i>
+                                                                        </a>
+
+
+                                                                        <a class="btn btn-link dropdown-toggle dropdown-toggle-dots dropdown-toggle-split no-rotate"
+                                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                                           aria-expanded="false">
+                                                                        </a>
+
+                                                                        <div class="dropdown-menu dropdown-menu-right"
+                                                                             style="">
+
+
+                                                                            <a class="btn tooltip-link js-link-row-action dropdown-item grid-edit-row-link"
+                                                                               href="/administrator/index.php/sell/catalog/suppliers/2/edit?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-confirm-message=""
+                                                                               data-clickable-row="">
+                                                                                <i class="material-icons">edit</i>
+                                                                                Edit
+                                                                            </a>
+
+
+                                                                            <a class="btn tooltip-link js-submit-row-action dropdown-item grid-delete-row-link"
+                                                                               href="#"
+                                                                               data-confirm-message="Are you sure you want to delete the selected item(s)?"
+                                                                               data-url="/administrator/index.php/sell/catalog/suppliers/2/delete?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                               data-method="DELETE"
+                                                                               data-title="Delete selection"
+                                                                               data-confirm-button-label="Delete"
+                                                                               data-confirm-button-class="btn-danger"
+                                                                               data-close-button-label="Cancel">
+                                                                                <i class="material-icons">delete</i>
+                                                                                Delete
+                                                                            </a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+
+
+                                                    <div class="form-group row type-hidden ">
+
+
+                                                        <label for="supplier__token" class="form-control-label ">
+
+
+                                                        </label>
+
+                                                        <div class="col-sm">
+
+
+                                                            <input type="hidden" id="supplier__token"
+                                                                   name="supplier[_token]" class="form-control"
+                                                                   value="A2fZz29wd5sVuQNva8dH68hXACmmtZennN7RGOdvrAU">
+
+
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>

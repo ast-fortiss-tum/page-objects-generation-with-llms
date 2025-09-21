@@ -1,0 +1,171 @@
+<section class="page">
+    <div class="page-header">
+        <ul>
+
+            <li>
+                <a href="/project/create" class="js-modal-medium" title=""><i class="fa fa-plus fa-fw js-modal-medium"
+                                                                              aria-hidden="true"></i>New project</a>
+            </li>
+
+            <li>
+                <a href="/project/create/private" class="js-modal-medium" title=""><i
+                        class="fa fa-lock fa-fw js-modal-medium" aria-hidden="true"></i>New personal project</a></li>
+
+            <li><a href="/projects/managers" class="" title=""><i class="fa fa-fw fa-user" aria-hidden="true"></i>Users
+                overview</a></li>
+
+        </ul>
+    </div>
+
+    <div class="margin-bottom">
+        <form method="get" action="/" class="search">
+            <input type="hidden" name="controller" id="form-controller" value="ProjectListController"> <input
+                type="hidden" name="action" id="form-action" value="show"> <input type="text" name="search"
+                                                                                  id="form-search" value="" class=""
+                                                                                  placeholder="Search"></form>
+    </div>
+
+    <div class="table-list">
+        <div class="table-list-header">
+            <div class="table-list-header-count">
+                2 projects
+            </div>
+            <div class="table-list-header-menu">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-menu dropdown-menu-link-icon"><strong>Sort <i
+                            class="fa fa-caret-down"></i></strong></a>
+                    <ul>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.id&amp;direction=ASC"
+                               class="js-modal-replace" title="">Project ID</a></li>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.name&amp;direction=ASC"
+                               class="js-modal-replace" title="">Project name</a></li>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.is_active&amp;direction=ASC"
+                               class="js-modal-replace" title="">Status</a></li>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.start_date&amp;direction=ASC"
+                               class="js-modal-replace" title="">Start date</a></li>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.end_date&amp;direction=ASC"
+                               class="js-modal-replace" title="">End date</a></li>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.is_public&amp;direction=ASC"
+                               class="js-modal-replace" title="">Public</a></li>
+                        <li>
+                            <a href="/?controller=ProjectListController&amp;action=show&amp;page=1&amp;order=projects.is_private&amp;direction=ASC"
+                               class="js-modal-replace" title="">Personal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="table-list-row table-border-left">
+            <div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-menu-link-icon dropdown-menu"><strong>#1 <i
+                            class="fa fa-caret-down"></i></strong></a>
+                    <ul>
+                        <li>
+                            <a href="/board/1" class="" title=""><i class="fa fa-fw fa-th" aria-hidden="true"></i>Board</a>
+                        </li>
+                        <li>
+                            <a href="/list/1" class="" title=""><i class="fa fa-fw fa-list" aria-hidden="true"></i>Listing</a>
+                        </li>
+                        <li>
+                            <a href="/project/1/activity" class="js-modal-medium" title=""><i
+                                    class="fa fa-dashboard fa-fw js-modal-medium" aria-hidden="true"></i>Activity</a>
+                        </li>
+
+                        <li>
+                            <a href="/analytics/tasks/1" class="js-modal-large" title=""><i
+                                    class="fa fa-line-chart fa-fw js-modal-large" aria-hidden="true"></i>Analytics</a>
+                        </li>
+
+
+                        <li>
+                            <a href="/project/1" class="" title=""><i class="fa fa-fw fa-cog" aria-hidden="true"></i>Configure
+                                this project</a></li>
+                    </ul>
+                </div>
+
+
+                <span class="table-list-title ">
+        <a href="/board/1" class="" title="">test</a>    </span>
+
+
+            </div>
+
+            <div class="table-list-details table-list-details-with-icons">
+                <ul>
+                    <li>admin</li>
+
+
+                </ul>
+            </div>
+            <div class="table-list-icons">
+                &nbsp;
+
+
+                <span class="tooltip"
+                      data-href="/?controller=ProjectUserOverviewController&amp;action=users&amp;project_id=1"><i
+                        class="fa fa-users"></i></span>
+
+            </div>
+        </div>
+        <div class="table-list-row table-border-left">
+            <div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-menu dropdown-menu-link-icon"><strong>#2 <i
+                            class="fa fa-caret-down"></i></strong></a>
+                    <ul>
+                        <li>
+                            <a href="/board/2" class="" title=""><i class="fa fa-fw fa-th" aria-hidden="true"></i>Board</a>
+                        </li>
+                        <li>
+                            <a href="/list/2" class="" title=""><i class="fa fa-fw fa-list" aria-hidden="true"></i>Listing</a>
+                        </li>
+                        <li>
+                            <a href="/project/2/activity" class="js-modal-medium" title=""><i
+                                    class="fa fa-dashboard fa-fw js-modal-medium" aria-hidden="true"></i>Activity</a>
+                        </li>
+
+                        <li>
+                            <a href="/analytics/tasks/2" class="js-modal-large" title=""><i
+                                    class="fa fa-line-chart fa-fw js-modal-large" aria-hidden="true"></i>Analytics</a>
+                        </li>
+
+
+                        <li>
+                            <a href="/project/2" class="" title=""><i class="fa fa-fw fa-cog" aria-hidden="true"></i>Configure
+                                this project</a></li>
+                    </ul>
+                </div>
+
+
+                <span class="table-list-title ">
+        <a href="/board/2" class="" title="">test2</a>    </span>
+
+
+            </div>
+
+            <div class="table-list-details table-list-details-with-icons">
+                <ul>
+                    <li>admin</li>
+
+
+                </ul>
+            </div>
+            <div class="table-list-icons">
+                &nbsp;
+
+
+                <span class="tooltip"
+                      data-href="/?controller=ProjectUserOverviewController&amp;action=users&amp;project_id=2"><i
+                        class="fa fa-users"></i></span>
+
+            </div>
+        </div>
+    </div>
+
+</section>

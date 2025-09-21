@@ -1,0 +1,20 @@
+<div class="form-login">
+    <form method="post" action="/?controller=AuthController&amp;action=check">
+
+        <input type="hidden" name="csrf_token" value="9835c9ca5ed39b15ff930ae7badfcc67a3c81fcbd68f2472798c252f09d4"/>
+        <label for="form-username">Username</label> <input type="text" name="username" id="form-username" class=""
+                                                           autofocus required><span class="form-required">*</span>
+        <label for="form-password">Password</label> <input type="password" name="password" id="form-password" class=""
+                                                           required><span class="form-required">*</span>
+
+        <label><input type="checkbox" name="remember_me" class="" value="1" checked="checked">&nbsp;Remember
+            Me</label><br>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-blue">Sign in</button>
+        </div>
+        <div class="reset-password">
+            <a href="/forgot-password" class="" title=''>Forgot password?</a></div>
+    </form>
+</div>
+

@@ -1,0 +1,72 @@
+<div class="col-md-5">
+    <div class="card top-marg-15">
+        <div class="card-body">
+            <h5 class="card-title">Customer details</h5>
+            <ul class="list-group bottom-pad-15">
+                <li class="list-group-item">
+                    test test -
+                    test@gmail.com
+                    <span class="float-right"><a href="/checkout/information">Change</a></span>
+                </li>
+            </ul>
+            <ul class="list-group bottom-pad-15">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            International shipping
+                        </div>
+                        <div class="col-md-6">
+                            <span><strong>£25.00</strong></span>
+                            <span class="float-right"><a href="/checkout/shipping">Change</a></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="input-group bottom-pad-15">
+                <input class="form-control" id="discountCode" type="search" placeholder="Discount code" value="">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success" id="addDiscountCode">Apply</button>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-danger" id="removeDiscountCode">
+                        <svg
+                                width="16"
+                                height="16"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-x"
+                        >
+                            <use xlink:href="/dist/feather-sprite.svg#x"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="payment-form" class="payment-form">
+                <ul class="list-group bottom-pad-15">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="stripe-form">
+                                    <script src="https://js.stripe.com/v3/"></script>
+                                    <input type="hidden" id="stripePublicKey" value="pk_test_this_is_not_real">
+                                    <div class="mb-2">Card payment</div>
+                                    <form id="stripe-payment-form">
+                                        <div id="payment-element"></div>
+                                        <button id="submit" class="btn btn-outline-success mt-2">
+                                            <div class="spinner-border d-none" id="spinner"></div>
+                                            <span id="button-text">Process Payment</span>
+                                        </button>
+                                    </form>
+                                    <div class="text-danger" id="payment-message"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

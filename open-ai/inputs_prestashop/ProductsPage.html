@@ -1,0 +1,679 @@
+<body class="lang-en adminproducts" data-base-url="/administrator/index.php">
+<div class="header-toolbar d-print-none">
+    <div class="container-fluid">
+        <div class="title-row">
+            <h1 class="title">
+                Products </h1>
+            <div class="toolbar-icons">
+                <div class="wrapper">
+                    <a class="btn btn-primary pointer" id="page-header-desc-configuration-add"
+                       href="/administrator/index.php/sell/catalog/products/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       title="" data-toggle="pstooltip" data-placement="bottom"
+                       data-original-title="Create a new product: CTRL+P">
+                        <i class="material-icons">add_circle_outline</i> New product
+                    </a>
+                    <a class="btn btn-secondary" id="recommended-modules-button"
+                       href="/administrator/index.php/modules/addons/modules/recommended?tabClassName=AdminProducts&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                       title="Optimize product catalog"><i class="material-icons">extension</i>
+                        Optimize product catalog</a><a class="btn btn-outline-secondary btn-help btn-sidebar" href="#"
+                                                       title="Help" data-toggle="sidebar" data-target="#right-sidebar"
+                                                       data-url="/administrator/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fen%252Fdoc%252FAdminProducts%253Fversion%253D1.7.8.5%2526country%253Den/Help?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                       id="product_form_open_help">
+                    Help
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-floating">
+        <button class="btn btn-primary collapsed" data-toggle="collapse" data-target=".btn-floating-container"
+                aria-expanded="false">
+            <i class="material-icons">add</i>
+        </button>
+        <div class="btn-floating-container collapse">
+            <div class="btn-floating-menu">
+
+                <a class="btn btn-floating-item  pointer" id="page-header-desc-floating-configuration-add"
+                   href="/administrator/index.php/sell/catalog/products/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                   title="" data-toggle="pstooltip" data-placement="bottom"
+                   data-original-title="Create a new product: CTRL+P">
+                    New product
+                    <i class="material-icons">add_circle_outline</i> </a>
+
+                <a class="btn btn-floating-item btn-help btn-sidebar" href="#" title="Help" data-toggle="sidebar"
+                   data-target="#right-sidebar"
+                   data-url="/administrator/index.php/common/sidebar/https%253A%252F%252Fhelp.prestashop.com%252Fen%252Fdoc%252FAdminProducts%253Fversion%253D1.7.8.5%2526country%253Den/Help?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                    Help
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main-div">
+    <div class="content-div  ">
+        <div class="row ">
+            <div class="col-sm-12">
+                <div id="ajax_confirmation" class="alert alert-success" style="display: none;"></div>
+                <div class="products-catalog">
+                    <div class="content container-fluid">
+                        <div class="row align-items-start">
+                            <div class="col-2 text-right">
+                                <div class="dropdown">
+                                    <button class="btn btn-text dropdown-toggle tool-button" id="catalog-tools-button"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            title="Settings">
+                                        <span class="sr-only">Settings</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                         aria-labelledby="catalog-tools-button">
+
+                                        <a id="desc-product-export" class="dropdown-item"
+                                           href="/administrator/index.php/sell/catalog/products/export?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                            Export
+                                        </a>
+                                        <a id="desc-product-import" class="dropdown-item"
+                                           href="/administrator/index.php/configure/advanced/import/?import_type=products&amp;_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                            Import
+                                        </a>
+                                        <a id="desc-product-show-sql" class="dropdown-item" href="javascript:void(0);"
+                                           onclick="showLastSqlQuery();">
+                                            Show SQL query
+                                        </a>
+                                        <a id="desc-product-sql-manager" class="dropdown-item"
+                                           href="javascript:void(0);" onclick="sendLastSqlQuery(createSqlQueryName());">
+                                            Export to SQL Manager
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="catalog-actions" class="col order-first">
+                                <div class="row">
+                                    <div class="col">
+                                        <div id="product_catalog_category_tree_filter"
+                                             class="d-inline-block dropdown dropdown-clickable mr-2">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Filter by categories
+                                            </button>
+                                            <div id="tree-categories" class="dropdown-menu">
+                                                <div class="categories-tree-actions">
+                                                    <a href="#" name="product_catalog_category_tree_filter_expand"
+                                                       onclick="productCategoryFilterExpand($('div#product_catalog_category_tree_filter'), this);"
+                                                       id="product_catalog_category_tree_filter_expand">
+                                                        <i class="material-icons">expand_more</i>
+                                                        Expand
+                                                    </a>
+                                                    <a href="#" name="product_catalog_category_tree_filter_collapse"
+                                                       onclick="productCategoryFilterCollapse($('div#product_catalog_category_tree_filter'), this);"
+                                                       id="product_catalog_category_tree_filter_collapse">
+                                                        <i class="material-icons">expand_less</i>
+                                                        Collapse
+                                                    </a>
+                                                    <a href="#" name="product_catalog_category_tree_filter_reset"
+                                                       onclick="productCategoryFilterReset($('div#product_catalog_category_tree_filter'));"
+                                                       id="product_catalog_category_tree_filter_reset">
+                                                        <i class="material-icons">radio_button_unchecked</i>
+                                                        Unselect
+                                                    </a>
+                                                </div>
+                                                <div id="product_categories">
+                                                    <div class="form-group row "><label
+                                                            class="form-control-label required">Categories
+
+                                                    </label>
+                                                        <div class="col-sm">
+                                                            <div id="product_categories_categories">
+                                                                <ul class="category-tree">
+                                                                    <li class="more">
+                                                                        <div class="radio"><label class="category-label"
+                                                                                                  for="form[product_categories_categories][tree]">Home
+                                                                            <input type="radio"
+                                                                                   name="form[product_categories_categories][tree]"
+                                                                                   value="2"
+                                                                                   class="category float-right"></label>
+                                                                        </div>
+                                                                        <ul style="display: none">
+                                                                            <li class="more">
+                                                                                <div class="radio"><label
+                                                                                        class="category-label"
+                                                                                        for="form[product_categories_categories][tree]">Clothes
+                                                                                    <input type="radio"
+                                                                                           name="form[product_categories_categories][tree]"
+                                                                                           value="3"
+                                                                                           class="category float-right"></label>
+                                                                                </div>
+                                                                                <ul style="display: none">
+                                                                                    <li>
+                                                                                        <div class="radio"><label
+                                                                                                class="category-label"
+                                                                                                for="form[product_categories_categories][tree]">Men
+                                                                                            <input type="radio"
+                                                                                                   name="form[product_categories_categories][tree]"
+                                                                                                   value="4"
+                                                                                                   class="category float-right"></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="radio"><label
+                                                                                                class="category-label"
+                                                                                                for="form[product_categories_categories][tree]">Women
+                                                                                            <input type="radio"
+                                                                                                   name="form[product_categories_categories][tree]"
+                                                                                                   value="5"
+                                                                                                   class="category float-right"></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li class="more">
+                                                                                <div class="radio"><label
+                                                                                        class="category-label"
+                                                                                        for="form[product_categories_categories][tree]">Accessories
+                                                                                    <input type="radio"
+                                                                                           name="form[product_categories_categories][tree]"
+                                                                                           value="6"
+                                                                                           class="category float-right"></label>
+                                                                                </div>
+                                                                                <ul style="display: none">
+                                                                                    <li>
+                                                                                        <div class="radio"><label
+                                                                                                class="category-label"
+                                                                                                for="form[product_categories_categories][tree]">Stationery
+                                                                                            <input type="radio"
+                                                                                                   name="form[product_categories_categories][tree]"
+                                                                                                   value="7"
+                                                                                                   class="category float-right"></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <div class="radio"><label
+                                                                                                class="category-label"
+                                                                                                for="form[product_categories_categories][tree]">Home
+                                                                                            Accessories
+                                                                                            <input type="radio"
+                                                                                                   name="form[product_categories_categories][tree]"
+                                                                                                   value="8"
+                                                                                                   class="category float-right"></label>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="radio"><label
+                                                                                        class="category-label"
+                                                                                        for="form[product_categories_categories][tree]">Art
+                                                                                    <input type="radio"
+                                                                                           name="form[product_categories_categories][tree]"
+                                                                                           value="9"
+                                                                                           class="category float-right"></label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" id="product_categories__token"
+                                                           name="product_categories[_token]" class="form-control"
+                                                           value="-OT0NsKYPy5pvYMOxGzecIC5oj_8dJO8uGbzfb5wr88">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-inline-block"
+                                             bulkurl="/administrator/index.php/sell/catalog/products/bulk/activate_all?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                             massediturl="/administrator/index.php/sell/catalog/products/massedit/sort?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                             redirecturl="/administrator/index.php/sell/catalog/products/0/20/id_product/desc?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                             redirecturlnextpage="/administrator/index.php/sell/catalog/products/20/20/id_product/desc?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+
+
+                                            <div class="btn-group dropdown bulk-catalog">
+
+
+                                                <button id="product_bulk_menu"
+                                                        class="btn btn-outline-secondary dropdown-toggle" disabled=""
+                                                        data-toggle="dropdown">
+                                                    Bulk actions
+                                                    <i class="icon-caret-up"></i>
+                                                </button>
+
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"
+                                                       onclick="bulkProductAction(this, 'activate_all');">
+                                                        <i class="material-icons">radio_button_checked</i>
+                                                        Activate selection
+                                                    </a>
+                                                    <a class="dropdown-item" href="#"
+                                                       onclick="bulkProductAction(this, 'deactivate_all');">
+                                                        <i class="material-icons">radio_button_unchecked</i>
+                                                        Deactivate selection
+                                                    </a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#"
+                                                       onclick="bulkProductAction(this, 'duplicate_all');">
+                                                        <i class="material-icons">content_copy</i>
+                                                        Duplicate selection
+                                                    </a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#"
+                                                       onclick="bulkProductAction(this, 'delete_all');">
+                                                        <i class="material-icons">delete</i>
+                                                        Delete selection
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="md-checkbox">
+                                            <label>
+                                                <input type="checkbox" id="bulk_action_select_all"
+                                                       onclick="$('#product_catalog_list').find('table td.checkbox-column input:checkbox').prop('checked', $(this).prop('checked')); updateBulkMenu();"
+                                                       value="">
+                                                <i class="md-checkbox-control"></i>
+                                                Select all
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <form name="product_catalog_list" id="product_catalog_list" method="post"
+                              action="/administrator/index.php/sell/catalog/products/0/20/id_product/desc?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                              orderingurl="/administrator/index.php/sell/catalog/products/0/300/position_ordering/desc?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                              newproducturl="/administrator/index.php/sell/catalog/products/new?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="hidden" name="filter_category" value="">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table product mt-3"
+                                               redirecturl="/administrator/index.php/sell/catalog/products/0/20/id_product/desc?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                            <thead class="with-filters">
+                                            <tr class="column-headers">
+                                                <th scope="col" style="width: 2rem"></th>
+                                                <th scope="col" style="width: 5rem">
+                                                    <div class="ps-sortable-column" data-sort-col-name="id_product"
+                                                         data-sort-prefix="" data-sort-is-current="true"
+                                                         data-sort-direction="desc">
+                                                        <span role="columnheader">ID</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col">
+                                                    Image
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="ps-sortable-column" data-sort-col-name="name"
+                                                         data-sort-prefix="">
+                                                        <span role="columnheader">Name</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col" style="width: 9%">
+                                                    <div class="ps-sortable-column" data-sort-col-name="reference"
+                                                         data-sort-prefix="">
+                                                        <span role="columnheader">Reference</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col">
+                                                    <div class="ps-sortable-column" data-sort-col-name="name_category"
+                                                         data-sort-prefix="">
+                                                        <span role="columnheader">Category</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col" class="text-center" style="width: 9%">
+                                                    <div class="ps-sortable-column" data-sort-col-name="price"
+                                                         data-sort-prefix="">
+                                                        <span role="columnheader">Price (tax excl.)</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col" class="text-center" style="width: 9%">
+                                                    Price (tax incl.)
+                                                </th>
+
+                                                <th scope="col" class="text-center" style="width: 9%">
+                                                    <div class="ps-sortable-column" data-sort-col-name="sav_quantity"
+                                                         data-sort-prefix="">
+                                                        <span role="columnheader">Quantity</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col" class="text-center">
+                                                    <div class="ps-sortable-column" data-sort-col-name="active"
+                                                         data-sort-prefix="">
+                                                        <span role="columnheader">Status</span>
+                                                        <span role="button" class="ps-sort" aria-label="Sort by"></span>
+                                                    </div>
+                                                </th>
+
+
+                                                <th scope="col" class="text-right"
+                                                    style="width: 3rem; padding-right: 2rem">
+                                                    Actions
+                                                </th>
+                                            </tr>
+
+                                            <tr class="column-filters">
+                                                <th colspan="2">
+                                                    <div id="filter_column_id_product_div">
+                                                        <input type="hidden" id="filter_column_id_product"
+                                                               name="filter_column_id_product" value="" sql="">
+                                                        <input class="form-control form-min-max" type="text"
+                                                               id="filter_column_id_product_min" value=""
+                                                               placeholder="Min"
+                                                               aria-label="filter_column_id_product Minimum Input">
+                                                        <input class="form-control form-min-max" type="text"
+                                                               id="filter_column_id_product_max" value=""
+                                                               placeholder="Max"
+                                                               aria-label="filter_column_id_product Maximum Input">
+                                                    </div>
+                                                </th>
+                                                <th>&nbsp;</th>
+                                                <th>
+                                                    <input type="text" class="form-control" placeholder="Search name"
+                                                           name="filter_column_name" value=""
+                                                           aria-label="filter_column_name input">
+                                                </th>
+                                                <th>
+                                                    <input type="text" class="form-control" placeholder="Search ref."
+                                                           name="filter_column_reference" value=""
+                                                           aria-label="filter_column_reference input">
+                                                </th>
+                                                <th>
+                                                    <input type="text" class="form-control"
+                                                           placeholder="Search category"
+                                                           name="filter_column_name_category" value=""
+                                                           aria-label="filter_column_name_category input">
+                                                </th>
+                                                <th class="text-center">
+                                                    <div id="filter_column_price_div">
+                                                        <input type="hidden" id="filter_column_price"
+                                                               name="filter_column_price" value="" sql="">
+                                                        <input class="form-control form-min-max" type="text"
+                                                               id="filter_column_price_min" value="" placeholder="Min"
+                                                               aria-label="filter_column_price Minimum Input">
+                                                        <input class="form-control form-min-max" type="text"
+                                                               id="filter_column_price_max" value="" placeholder="Max"
+                                                               aria-label="filter_column_price Maximum Input">
+                                                    </div>
+                                                </th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center">
+                                                    <div id="filter_column_sav_quantity_div">
+                                                        <input type="hidden" id="filter_column_sav_quantity"
+                                                               name="filter_column_sav_quantity" value="" sql="">
+                                                        <input class="form-control form-min-max" type="text"
+                                                               id="filter_column_sav_quantity_min" value=""
+                                                               placeholder="Min"
+                                                               aria-label="filter_column_sav_quantity Minimum Input">
+                                                        <input class="form-control form-min-max" type="text"
+                                                               id="filter_column_sav_quantity_max" value=""
+                                                               placeholder="Max"
+                                                               aria-label="filter_column_sav_quantity Maximum Input">
+                                                    </div>
+                                                </th>
+
+                                                <th id="product_filter_column_active" class="text-center">
+                                                    <div class="form-select">
+                                                        <select class="custom-select" name="filter_column_active"
+                                                                aria-label="filter_column_active select">
+                                                            <option value=""></option>
+                                                            <option value="1">Active</option>
+                                                            <option value="0">Inactive</option>
+                                                        </select>
+                                                    </div>
+                                                </th>
+                                                <th class="text-right" style="width: 5rem">
+                                                    <button type="submit" class="btn btn-primary"
+                                                            name="products_filter_submit" title="Search" disabled="">
+                                                        <i class="material-icons">search</i>
+                                                        Search
+                                                    </button>
+                                                    <button type="reset" class="btn btn-link"
+                                                            name="products_filter_reset"
+                                                            onclick="productColumnFilterReset($(this).closest('tr.column-filters'))"
+                                                            title="Reset" style="display: none;">
+                                                        <i class="material-icons">clear</i>
+                                                        Reset
+                                                    </button>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tr data-uniturl="/administrator/index.php/sell/catalog/products/unit/duplicate/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                data-product-id="20">
+                                                <td class="checkbox-column form-group">
+                                                    <div class="md-checkbox md-checkbox-inline">
+                                                        <label>
+                                                            <input type="checkbox" id="bulk_action_selected_products-20"
+                                                                   name="bulk_action_selected_products[]" value="20">
+                                                            <i class="md-checkbox-control"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <label class="form-check-label"
+                                                           for="bulk_action_selected_products-20">
+                                                        20
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="/administrator/index.php/sell/catalog/products/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step1"></a>
+                                                </td>
+                                                <td>
+                                                    <a href="/administrator/index.php/sell/catalog/products/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step1">test</a>
+                                                </td>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    Home
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/administrator/index.php/sell/catalog/products/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step2">$0.00</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/administrator/index.php/sell/catalog/products/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step2">$0.00</a>
+                                                </td>
+
+                                                <td class="product-sav-quantity text-center"
+                                                    data-product-quantity-value="0">
+                                                    <a href="/administrator/index.php/sell/catalog/products/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step3">
+                                                        0
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+
+                                                    <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center"
+                                                         onclick="unitProductAction(this, 'activate');">
+                                                        <input type="radio" name="input-20" id="input-false-20"
+                                                               value="0" checked="" aria-label="Disable test input">
+                                                        <label for="input-false-20">Off</label>
+                                                        <input type="radio" name="input-20" id="input-true-20" value="1"
+                                                               aria-label="Enable test input">
+                                                        <label for="input-true-20">On</label>
+                                                        <span class="slide-button"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right">
+                                                    <div class="btn-group-action">
+
+
+                                                        <div class="btn-group">
+
+                                                            <a href="/administrator/index.php/sell/catalog/products/20?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                               title="" class="btn tooltip-link product-edit">
+                                                                <i class="material-icons">mode_edit</i>
+
+                                                            </a>
+
+                                                            <button class="btn btn-link dropdown-toggle dropdown-toggle-split product-edit no-rotate"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+
+                                                            </button>
+
+                                                            <div class="dropdown-menu dropdown-menu-right" style="">
+                                                                <a class="dropdown-item product-edit"
+                                                                   href="http://localhost:8080/home/20-test.html?adtoken=bbb09b5a84903e1263e64d4a5947bf86&amp;ad=catalog&amp;id_employee=1&amp;preview=1"
+                                                                   target="_blank">
+                                                                    <i class="material-icons">remove_red_eye</i>
+                                                                    Preview
+                                                                </a>
+                                                                <a class="dropdown-item product-edit" href="#"
+                                                                   onclick="unitProductAction(this, 'duplicate');">
+                                                                    <i class="material-icons">content_copy</i>
+                                                                    Duplicate
+                                                                </a>
+                                                                <a class="dropdown-item product-edit" href="#"
+                                                                   onclick="unitProductAction(this, 'delete');">
+                                                                    <i class="material-icons">delete</i>
+                                                                    Delete
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr data-uniturl="/administrator/index.php/sell/catalog/products/unit/duplicate/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                data-product-id="19">
+                                                <td class="checkbox-column form-group">
+                                                    <div class="md-checkbox md-checkbox-inline">
+                                                        <label>
+                                                            <input type="checkbox" id="bulk_action_selected_products-19"
+                                                                   name="bulk_action_selected_products[]" value="19">
+                                                            <i class="md-checkbox-control"></i>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <label class="form-check-label"
+                                                           for="bulk_action_selected_products-19">
+                                                        19
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <a href="/administrator/index.php/sell/catalog/products/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step1"><img
+                                                            src="/img/tmp/product_mini_22.jpg?time=1745760570" alt=""
+                                                            class="imgm img-thumbnail"></a>
+                                                </td>
+                                                <td>
+                                                    <a href="/administrator/index.php/sell/catalog/products/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step1">Customizable
+                                                        mug</a>
+                                                </td>
+                                                <td>
+                                                    demo_14
+                                                </td>
+                                                <td>
+                                                    Home Accessories
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/administrator/index.php/sell/catalog/products/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step2">$13.90</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/administrator/index.php/sell/catalog/products/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step2">$13.90</a>
+                                                </td>
+
+                                                <td class="product-sav-quantity text-center"
+                                                    data-product-quantity-value="300">
+                                                    <a href="/administrator/index.php/sell/catalog/products/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g#tab-step3">
+                                                        300
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+
+                                                    <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center"
+                                                         onclick="unitProductAction(this, 'deactivate');">
+                                                        <input type="radio" name="input-19" id="input-false-19"
+                                                               value="0" aria-label="Disable Customizable mug input">
+                                                        <label for="input-false-19">Off</label>
+                                                        <input type="radio" name="input-19" id="input-true-19" value="1"
+                                                               checked="" aria-label="Enable Customizable mug input">
+                                                        <label for="input-true-19">On</label>
+                                                        <span class="slide-button"></span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right">
+                                                    <div class="btn-group-action">
+
+
+                                                        <div class="btn-group">
+
+                                                            <a href="/administrator/index.php/sell/catalog/products/19?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                               title="" class="btn tooltip-link product-edit">
+                                                                <i class="material-icons">mode_edit</i>
+
+                                                            </a>
+
+                                                            <button class="btn btn-link dropdown-toggle dropdown-toggle-split product-edit no-rotate"
+                                                                    data-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+
+                                                            </button>
+
+                                                            <div class="dropdown-menu dropdown-menu-right"
+                                                                 x-placement="bottom-start">
+                                                                <a class="dropdown-item product-edit"
+                                                                   href="http://localhost:8080/home-accessories/19-customizable-mug.html"
+                                                                   target="_blank">
+                                                                    <i class="material-icons">remove_red_eye</i>
+                                                                    Preview
+                                                                </a>
+                                                                <a class="dropdown-item product-edit" href="#"
+                                                                   onclick="unitProductAction(this, 'duplicate');">
+                                                                    <i class="material-icons">content_copy</i>
+                                                                    Duplicate
+                                                                </a>
+                                                                <a class="dropdown-item product-edit" href="#"
+                                                                   onclick="unitProductAction(this, 'delete');">
+                                                                    <i class="material-icons">delete</i>
+                                                                    Delete
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

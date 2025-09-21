@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg justify-content-between mainNavBar">
+    <a class="navbar-brand" href="/">
+        CLOTH
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-menu"
+        >
+            <use xlink:href="/dist/feather-sprite.svg#menu"/>
+        </svg>
+    </button>
+    <div id="navbarText">
+        <ul class="navbar-nav ml-auto">
+            <div class="dropdown d-none d-sm-block">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <svg
+                            width="16"
+                            height="16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-globe"
+                    >
+                        <use xlink:href="/dist/feather-sprite.svg#globe"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/lang/en">en</a></li>
+                    <li><a class="dropdown-item" href="/lang/it">it</a></li>
+                </div>
+            </div>
+            <div class="dropdown d-none d-sm-block">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <svg
+                            width="16"
+                            height="16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-user"
+                    >
+                        <use xlink:href="/dist/feather-sprite.svg#user"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/customer/account">Account</a></li>
+                    <li><a class="dropdown-item" href="/customer/logout">Logout</a></li>
+                </div>
+            </div>
+            <li class="nav-item"><a href="/checkout/cart" class="btn menu-btn">
+                <svg
+                        width="16"
+                        height="16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-shopping-cart"
+                >
+                    <use xlink:href="/dist/feather-sprite.svg#shopping-cart"/>
+                </svg>
+                Cart <span class="badge badge-danger" id="cart-count">1</span></a></li>
+        </ul>
+    </div>
+</nav>

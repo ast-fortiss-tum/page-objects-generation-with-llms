@@ -1,0 +1,846 @@
+<div class="content-div  with-tabs">
+
+
+    <div class="row ">
+        <div class="col-sm-12">
+            <div id="ajax_confirmation" class="alert alert-success" style="display: none;"></div>
+
+
+            <div class="row justify-content-center">
+                <div class="col">
+
+
+                    <form name="supplier" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        <div class="card">
+                            <h3 class="card-header">
+                                <i class="material-icons">local_shipping</i>
+                                Suppliers
+                            </h3>
+                            <div class="card-block row">
+                                <div class="card-text">
+
+                                    <div class="form-group row text-widget"><label class="form-control-label required"
+                                                                                   for="supplier_name"><span
+                                            class="text-danger">*</span>
+                                        Name
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_name"
+                                                                                   name="supplier[name]"
+                                                                                   required="required"
+                                                                                   aria-label="supplier_name input"
+                                                                                   class="form-control"><small
+                                                class="form-text">Invalid characters: &lt;&gt;;=#{}</small></div>
+                                    </div>
+
+                                    <div class="form-group row"><label class="form-control-label">
+                                        Description
+
+                                    </label>
+                                        <div class="col-sm input-container">
+                                            <div class="translations tabbable" id="supplier_description">
+                                                <div class="translationsFields tab-content">
+                                                    <div data-locale="en"
+                                                         class="translationsFields-supplier_description_1 tab-pane translation-field  show active  translation-label-en">
+                                                        <div id="mceu_15" class="mce-tinymce mce-container mce-panel"
+                                                             hidefocus="1" tabindex="-1" role="application"
+                                                             style="visibility: hidden; border-width: 1px; width: 100%;">
+                                                            <div id="mceu_15-body"
+                                                                 class="mce-container-body mce-stack-layout">
+                                                                <div id="mceu_16"
+                                                                     class="mce-top-part mce-container mce-stack-layout-item mce-first">
+                                                                    <div id="mceu_16-body" class="mce-container-body">
+                                                                        <div id="mceu_17"
+                                                                             class="mce-toolbar-grp mce-container mce-panel mce-first mce-last"
+                                                                             hidefocus="1" tabindex="-1" role="group">
+                                                                            <div id="mceu_17-body"
+                                                                                 class="mce-container-body mce-stack-layout">
+                                                                                <div id="mceu_18"
+                                                                                     class="mce-container mce-toolbar mce-stack-layout-item mce-first mce-last"
+                                                                                     role="toolbar">
+                                                                                    <div id="mceu_18-body"
+                                                                                         class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_19"
+                                                                                             class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                             role="group">
+                                                                                            <div id="mceu_19-body">
+                                                                                                <div id="mceu_0"
+                                                                                                     class="mce-widget mce-btn mce-first"
+                                                                                                     tabindex="-1"
+                                                                                                     role="button"
+                                                                                                     aria-label="Source code">
+                                                                                                    <button id="mceu_0-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">code</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_1"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     role="button"
+                                                                                                     aria-label="Color Picker">
+                                                                                                    <button id="mceu_1-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_color_text</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_2"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Bold">
+                                                                                                    <button id="mceu_2-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_bold</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_3"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Italic">
+                                                                                                    <button id="mceu_3-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_italic</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_4"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Underline">
+                                                                                                    <button id="mceu_4-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_underlined</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_5"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Strikethrough">
+                                                                                                    <button id="mceu_5-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_strikethrough</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_6"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Blockquote">
+                                                                                                    <button id="mceu_6-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_quote</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_7"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Insert/edit link">
+                                                                                                    <button id="mceu_7-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">link</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_8"
+                                                                                                     class="mce-widget mce-btn mce-splitbtn mce-menubtn"
+                                                                                                     role="button"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-haspopup="true">
+                                                                                                    <button type="button"
+                                                                                                            hidefocus="1"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_align_left</i>
+                                                                                                    </button>
+                                                                                                    <button type="button"
+                                                                                                            class="mce-open"
+                                                                                                            hidefocus="1"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="mce-caret"></i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_9"
+                                                                                                     class="mce-widget mce-btn mce-splitbtn mce-menubtn"
+                                                                                                     role="button"
+                                                                                                     aria-pressed="false"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-label="Bullet list"
+                                                                                                     aria-haspopup="true">
+                                                                                                    <button type="button"
+                                                                                                            hidefocus="1"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_list_bulleted</i>
+                                                                                                    </button>
+                                                                                                    <button type="button"
+                                                                                                            class="mce-open"
+                                                                                                            hidefocus="1"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="mce-caret"></i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_10"
+                                                                                                     class="mce-widget mce-btn mce-splitbtn mce-menubtn"
+                                                                                                     role="button"
+                                                                                                     aria-pressed="false"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-label="Numbered list"
+                                                                                                     aria-haspopup="true">
+                                                                                                    <button type="button"
+                                                                                                            hidefocus="1"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">format_list_numbered</i>
+                                                                                                    </button>
+                                                                                                    <button type="button"
+                                                                                                            class="mce-open"
+                                                                                                            hidefocus="1"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="mce-caret"></i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_11"
+                                                                                                     class="mce-widget mce-btn mce-menubtn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-labelledby="mceu_11"
+                                                                                                     role="button"
+                                                                                                     aria-label="Table"
+                                                                                                     aria-haspopup="true">
+                                                                                                    <button id="mceu_11-open"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">grid_on</i>
+                                                                                                        <i class="mce-caret"></i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_12"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Insert/edit image">
+                                                                                                    <button id="mceu_12-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">image</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_13"
+                                                                                                     class="mce-widget mce-btn"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-pressed="false"
+                                                                                                     role="button"
+                                                                                                     aria-label="Insert/edit video">
+                                                                                                    <button id="mceu_13-button"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <i class="material-icons">video_library</i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div id="mceu_14"
+                                                                                                     class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-last mce-btn-has-text"
+                                                                                                     tabindex="-1"
+                                                                                                     aria-labelledby="mceu_14"
+                                                                                                     role="button"
+                                                                                                     aria-haspopup="true">
+                                                                                                    <button id="mceu_14-open"
+                                                                                                            role="presentation"
+                                                                                                            type="button"
+                                                                                                            tabindex="-1">
+                                                                                                        <span class="mce-txt">Paragraph</span>
+                                                                                                        <i class="mce-caret"></i>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="mceu_20"
+                                                                     class="mce-edit-area mce-container mce-panel mce-stack-layout-item mce-last"
+                                                                     hidefocus="1" tabindex="-1" role="group"
+                                                                     style="border-width: 1px 0px 0px; position: relative;">
+                                                                    <iframe id="supplier_description_1_ifr"
+                                                                            frameborder="0" allowtransparency="true"
+                                                                            title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help"
+                                                                            style="width: 100%; height: 60px; display: block;"></iframe>
+                                                                    <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; color: rgb(108, 134, 142); font-style: italic; padding: 1%; width: 98%; overflow: hidden; white-space: normal;"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <textarea id="supplier_description_1"
+                                                                  name="supplier[description][1]"
+                                                                  class="autoload_rte form-control form-control"
+                                                                  counter="21844" style="display: none;"
+                                                                  aria-hidden="true"></textarea><small
+                                                            class="form-text text-muted text-right maxLength maxType"><em><span
+                                                            class="currentLength">0</span> of <span
+                                                            class="currentTotalMax">21844</span> characters allowed
+                                                    </em></small></div>
+                                                </div>
+                                            </div>
+                                            <small class="form-text">Will appear in the list of suppliers.</small></div>
+                                    </div>
+
+                                    <div class="form-group row text-widget"><label class="form-control-label"
+                                                                                   for="supplier_phone">
+                                        Phone
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_phone"
+                                                                                   name="supplier[phone]"
+                                                                                   aria-label="supplier_phone input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row text-widget"><label class="form-control-label"
+                                                                                   for="supplier_mobile_phone">
+                                        Mobile phone
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text"
+                                                                                   id="supplier_mobile_phone"
+                                                                                   name="supplier[mobile_phone]"
+                                                                                   aria-label="supplier_mobile_phone input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row text-widget"><label class="form-control-label required"
+                                                                                   for="supplier_address"><span
+                                            class="text-danger">*</span>
+                                        Address
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_address"
+                                                                                   name="supplier[address]"
+                                                                                   required="required"
+                                                                                   aria-label="supplier_address input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row text-widget"><label class="form-control-label"
+                                                                                   for="supplier_address2">
+                                        Address (2)
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_address2"
+                                                                                   name="supplier[address2]"
+                                                                                   aria-label="supplier_address2 input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row text-widget"><label class="form-control-label"
+                                                                                   for="supplier_post_code">
+                                        Zip/Postal code
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_post_code"
+                                                                                   name="supplier[post_code]"
+                                                                                   aria-label="supplier_post_code input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row text-widget"><label class="form-control-label required"
+                                                                                   for="supplier_city"><span
+                                            class="text-danger">*</span>
+                                        City
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_city"
+                                                                                   name="supplier[city]"
+                                                                                   required="required"
+                                                                                   aria-label="supplier_city input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row country_choice-widget"><label
+                                            class="form-control-label required" for="supplier_id_country"><span
+                                            class="text-danger">*</span>
+                                        Country
+
+                                    </label>
+                                        <div class="col-sm input-container"><select id="supplier_id_country"
+                                                                                    name="supplier[id_country]"
+                                                                                    required="required"
+                                                                                    class="js-supplier-country-select custom-select form-control"
+                                                                                    data-states-url="/administrator/index.php/improve/international/states/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g">
+                                            <option value="">--</option>
+                                            <option value="229">Afghanistan</option>
+                                            <option value="241">Åland Islands</option>
+                                            <option value="228">Albania</option>
+                                            <option value="38">Algeria</option>
+                                            <option value="39">American Samoa</option>
+                                            <option value="40">Andorra</option>
+                                            <option value="41">Angola</option>
+                                            <option value="42">Anguilla</option>
+                                            <option value="230">Antarctica</option>
+                                            <option value="43">Antigua &amp; Barbuda</option>
+                                            <option value="44">Argentina</option>
+                                            <option value="45">Armenia</option>
+                                            <option value="46">Aruba</option>
+                                            <option value="24">Australia</option>
+                                            <option value="2">Austria</option>
+                                            <option value="47">Azerbaijan</option>
+                                            <option value="48">Bahamas</option>
+                                            <option value="49">Bahrain</option>
+                                            <option value="50">Bangladesh</option>
+                                            <option value="51">Barbados</option>
+                                            <option value="52">Belarus</option>
+                                            <option value="3">Belgium</option>
+                                            <option value="53">Belize</option>
+                                            <option value="54">Benin</option>
+                                            <option value="55">Bermuda</option>
+                                            <option value="56">Bhutan</option>
+                                            <option value="34">Bolivia</option>
+                                            <option value="231">Bosnia &amp; Herzegovina</option>
+                                            <option value="57">Botswana</option>
+                                            <option value="58">Brazil</option>
+                                            <option value="232">British Indian Ocean Territory</option>
+                                            <option value="221">British Virgin Islands</option>
+                                            <option value="59">Brunei</option>
+                                            <option value="233">Bulgaria</option>
+                                            <option value="60">Burkina Faso</option>
+                                            <option value="62">Burundi</option>
+                                            <option value="63">Cambodia</option>
+                                            <option value="64">Cameroon</option>
+                                            <option value="4">Canada</option>
+                                            <option value="65">Cape Verde</option>
+                                            <option value="234">Cayman Islands</option>
+                                            <option value="66">Central African Republic</option>
+                                            <option value="67">Chad</option>
+                                            <option value="68">Chile</option>
+                                            <option value="5">China</option>
+                                            <option value="235">Christmas Island</option>
+                                            <option value="236">Cocos (Keeling) Islands</option>
+                                            <option value="69">Colombia</option>
+                                            <option value="70">Comoros</option>
+                                            <option value="72">Congo - Brazzaville</option>
+                                            <option value="71">Congo - Kinshasa</option>
+                                            <option value="237">Cook Islands</option>
+                                            <option value="73">Costa Rica</option>
+                                            <option value="32">Côte d’Ivoire</option>
+                                            <option value="74">Croatia</option>
+                                            <option value="75">Cuba</option>
+                                            <option value="76">Cyprus</option>
+                                            <option value="16">Czechia</option>
+                                            <option value="20">Denmark</option>
+                                            <option value="77">Djibouti</option>
+                                            <option value="78">Dominica</option>
+                                            <option value="79">Dominican Republic</option>
+                                            <option value="81">Ecuador</option>
+                                            <option value="82">Egypt</option>
+                                            <option value="83">El Salvador</option>
+                                            <option value="84">Equatorial Guinea</option>
+                                            <option value="85">Eritrea</option>
+                                            <option value="86">Estonia</option>
+                                            <option value="199">Eswatini</option>
+                                            <option value="87">Ethiopia</option>
+                                            <option value="88">Falkland Islands</option>
+                                            <option value="89">Faroe Islands</option>
+                                            <option value="90">Fiji</option>
+                                            <option value="7">Finland</option>
+                                            <option value="8">France</option>
+                                            <option value="238">French Guiana</option>
+                                            <option value="239">French Polynesia</option>
+                                            <option value="240">French Southern Territories</option>
+                                            <option value="91">Gabon</option>
+                                            <option value="92">Gambia</option>
+                                            <option value="93">Georgia</option>
+                                            <option value="1">Germany</option>
+                                            <option value="94">Ghana</option>
+                                            <option value="97">Gibraltar</option>
+                                            <option value="9">Greece</option>
+                                            <option value="96">Greenland</option>
+                                            <option value="95">Grenada</option>
+                                            <option value="98">Guadeloupe</option>
+                                            <option value="99">Guam</option>
+                                            <option value="100">Guatemala</option>
+                                            <option value="101">Guernsey</option>
+                                            <option value="102">Guinea</option>
+                                            <option value="103">Guinea-Bissau</option>
+                                            <option value="104">Guyana</option>
+                                            <option value="105">Haiti</option>
+                                            <option value="107">Honduras</option>
+                                            <option value="22">Hong Kong SAR China</option>
+                                            <option value="142">Hungary</option>
+                                            <option value="108">Iceland</option>
+                                            <option value="109">India</option>
+                                            <option value="110">Indonesia</option>
+                                            <option value="111">Iran</option>
+                                            <option value="112">Iraq</option>
+                                            <option value="26">Ireland</option>
+                                            <option value="113">Isle of Man</option>
+                                            <option value="29">Israel</option>
+                                            <option value="10">Italy</option>
+                                            <option value="114">Jamaica</option>
+                                            <option value="11">Japan</option>
+                                            <option value="115">Jersey</option>
+                                            <option value="116">Jordan</option>
+                                            <option value="117">Kazakhstan</option>
+                                            <option value="118">Kenya</option>
+                                            <option value="119">Kiribati</option>
+                                            <option value="121">Kuwait</option>
+                                            <option value="122">Kyrgyzstan</option>
+                                            <option value="123">Laos</option>
+                                            <option value="124">Latvia</option>
+                                            <option value="125">Lebanon</option>
+                                            <option value="126">Lesotho</option>
+                                            <option value="127">Liberia</option>
+                                            <option value="128">Libya</option>
+                                            <option value="129">Liechtenstein</option>
+                                            <option value="130">Lithuania</option>
+                                            <option value="12">Luxembourg</option>
+                                            <option value="131">Macao SAR China</option>
+                                            <option value="133">Madagascar</option>
+                                            <option value="134">Malawi</option>
+                                            <option value="135">Malaysia</option>
+                                            <option value="136">Maldives</option>
+                                            <option value="137">Mali</option>
+                                            <option value="138">Malta</option>
+                                            <option value="139">Marshall Islands</option>
+                                            <option value="140">Martinique</option>
+                                            <option value="141">Mauritania</option>
+                                            <option value="35">Mauritius</option>
+                                            <option value="143">Mayotte</option>
+                                            <option value="144" need_dni="1">Mexico</option>
+                                            <option value="145">Micronesia</option>
+                                            <option value="146">Moldova</option>
+                                            <option value="147">Monaco</option>
+                                            <option value="148">Mongolia</option>
+                                            <option value="149">Montenegro</option>
+                                            <option value="150">Montserrat</option>
+                                            <option value="151">Morocco</option>
+                                            <option value="152">Mozambique</option>
+                                            <option value="61">Myanmar (Burma)</option>
+                                            <option value="153">Namibia</option>
+                                            <option value="154">Nauru</option>
+                                            <option value="155">Nepal</option>
+                                            <option value="13">Netherlands</option>
+                                            <option value="156">New Caledonia</option>
+                                            <option value="27">New Zealand</option>
+                                            <option value="157">Nicaragua</option>
+                                            <option value="158">Niger</option>
+                                            <option value="31">Nigeria</option>
+                                            <option value="159">Niue</option>
+                                            <option value="160">Norfolk Island</option>
+                                            <option value="120">North Korea</option>
+                                            <option value="132">North Macedonia</option>
+                                            <option value="161">Northern Mariana Islands</option>
+                                            <option value="23">Norway</option>
+                                            <option value="162">Oman</option>
+                                            <option value="163">Pakistan</option>
+                                            <option value="164">Palau</option>
+                                            <option value="165">Palestinian Territories</option>
+                                            <option value="166">Panama</option>
+                                            <option value="167">Papua New Guinea</option>
+                                            <option value="168">Paraguay</option>
+                                            <option value="169">Peru</option>
+                                            <option value="170">Philippines</option>
+                                            <option value="171">Pitcairn Islands</option>
+                                            <option value="14">Poland</option>
+                                            <option value="15">Portugal</option>
+                                            <option value="172">Puerto Rico</option>
+                                            <option value="173">Qatar</option>
+                                            <option value="174">Réunion</option>
+                                            <option value="36">Romania</option>
+                                            <option value="175">Russia</option>
+                                            <option value="176">Rwanda</option>
+                                            <option value="183">Samoa</option>
+                                            <option value="184">San Marino</option>
+                                            <option value="185">São Tomé &amp; Príncipe</option>
+                                            <option value="186">Saudi Arabia</option>
+                                            <option value="187">Senegal</option>
+                                            <option value="188">Serbia</option>
+                                            <option value="189">Seychelles</option>
+                                            <option value="190">Sierra Leone</option>
+                                            <option value="25">Singapore</option>
+                                            <option value="37">Slovakia</option>
+                                            <option value="191">Slovenia</option>
+                                            <option value="192">Solomon Islands</option>
+                                            <option value="193">Somalia</option>
+                                            <option value="30">South Africa</option>
+                                            <option value="194">South Georgia &amp; South Sandwich Islands</option>
+                                            <option value="28">South Korea</option>
+                                            <option value="6" need_dni="1">Spain</option>
+                                            <option value="195">Sri Lanka</option>
+                                            <option value="177">St. Barthélemy</option>
+                                            <option value="178">St. Kitts &amp; Nevis</option>
+                                            <option value="179">St. Lucia</option>
+                                            <option value="180">St. Martin</option>
+                                            <option value="181">St. Pierre &amp; Miquelon</option>
+                                            <option value="182">St. Vincent &amp; Grenadines</option>
+                                            <option value="196">Sudan</option>
+                                            <option value="197">Suriname</option>
+                                            <option value="198">Svalbard &amp; Jan Mayen</option>
+                                            <option value="18">Sweden</option>
+                                            <option value="19">Switzerland</option>
+                                            <option value="200">Syria</option>
+                                            <option value="201">Taiwan</option>
+                                            <option value="202">Tajikistan</option>
+                                            <option value="203">Tanzania</option>
+                                            <option value="204">Thailand</option>
+                                            <option value="80">Timor-Leste</option>
+                                            <option value="33">Togo</option>
+                                            <option value="205">Tokelau</option>
+                                            <option value="206">Tonga</option>
+                                            <option value="207">Trinidad &amp; Tobago</option>
+                                            <option value="208">Tunisia</option>
+                                            <option value="209">Turkey</option>
+                                            <option value="210">Turkmenistan</option>
+                                            <option value="211">Turks &amp; Caicos Islands</option>
+                                            <option value="212">Tuvalu</option>
+                                            <option value="222">U.S. Virgin Islands</option>
+                                            <option value="213">Uganda</option>
+                                            <option value="214">Ukraine</option>
+                                            <option value="215">United Arab Emirates</option>
+                                            <option value="17">United Kingdom</option>
+                                            <option value="21" selected="selected">United States</option>
+                                            <option value="216">Uruguay</option>
+                                            <option value="217">Uzbekistan</option>
+                                            <option value="218">Vanuatu</option>
+                                            <option value="106">Vatican City</option>
+                                            <option value="219">Venezuela</option>
+                                            <option value="220">Vietnam</option>
+                                            <option value="223">Wallis &amp; Futuna</option>
+                                            <option value="224">Western Sahara</option>
+                                            <option value="225">Yemen</option>
+                                            <option value="226">Zambia</option>
+                                            <option value="227">Zimbabwe</option>
+                                        </select></div>
+                                    </div>
+
+                                    <div class="js-supplier-state">
+                                        <div class="form-group row select-widget"><label
+                                                class="form-control-label required" for="supplier_id_state"><span
+                                                class="text-danger">*</span>
+                                            State
+
+                                        </label>
+                                            <div class="col-sm input-container"><select id="supplier_id_state"
+                                                                                        name="supplier[id_state]"
+                                                                                        class="custom-select form-control">
+                                                <option value="1">AA</option>
+                                                <option value="2">AE</option>
+                                                <option value="4">Alabama</option>
+                                                <option value="5">Alaska</option>
+                                                <option value="3">AP</option>
+                                                <option value="6">Arizona</option>
+                                                <option value="7">Arkansas</option>
+                                                <option value="8">California</option>
+                                                <option value="9">Colorado</option>
+                                                <option value="10">Connecticut</option>
+                                                <option value="11">Delaware</option>
+                                                <option value="56">District of Columbia</option>
+                                                <option value="12">Florida</option>
+                                                <option value="13">Georgia</option>
+                                                <option value="14">Hawaii</option>
+                                                <option value="15">Idaho</option>
+                                                <option value="16">Illinois</option>
+                                                <option value="17">Indiana</option>
+                                                <option value="18">Iowa</option>
+                                                <option value="19">Kansas</option>
+                                                <option value="20">Kentucky</option>
+                                                <option value="21">Louisiana</option>
+                                                <option value="22">Maine</option>
+                                                <option value="23">Maryland</option>
+                                                <option value="24">Massachusetts</option>
+                                                <option value="25">Michigan</option>
+                                                <option value="26">Minnesota</option>
+                                                <option value="27">Mississippi</option>
+                                                <option value="28">Missouri</option>
+                                                <option value="29">Montana</option>
+                                                <option value="30">Nebraska</option>
+                                                <option value="31">Nevada</option>
+                                                <option value="32">New Hampshire</option>
+                                                <option value="33">New Jersey</option>
+                                                <option value="34">New Mexico</option>
+                                                <option value="35">New York</option>
+                                                <option value="36">North Carolina</option>
+                                                <option value="37">North Dakota</option>
+                                                <option value="38">Ohio</option>
+                                                <option value="39">Oklahoma</option>
+                                                <option value="40">Oregon</option>
+                                                <option value="41">Pennsylvania</option>
+                                                <option value="54">Puerto Rico</option>
+                                                <option value="42">Rhode Island</option>
+                                                <option value="43">South Carolina</option>
+                                                <option value="44">South Dakota</option>
+                                                <option value="45">Tennessee</option>
+                                                <option value="46">Texas</option>
+                                                <option value="55">US Virgin Islands</option>
+                                                <option value="47">Utah</option>
+                                                <option value="48">Vermont</option>
+                                                <option value="49">Virginia</option>
+                                                <option value="50">Washington</option>
+                                                <option value="51">West Virginia</option>
+                                                <option value="52">Wisconsin</option>
+                                                <option value="53">Wyoming</option>
+                                            </select></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row text-widget"><label class="form-control-label"
+                                                                                   for="supplier_dni">
+                                        DNI
+
+                                    </label>
+                                        <div class="col-sm input-container"><input type="text" id="supplier_dni"
+                                                                                   name="supplier[dni]"
+                                                                                   aria-label="supplier_dni input"
+                                                                                   class="form-control"></div>
+                                    </div>
+
+                                    <div class="form-group row file-widget"><label class="form-control-label"
+                                                                                   for="supplier_logo">
+                                        Logo
+
+                                    </label>
+                                        <div class="col-sm input-container">
+                                            <style>
+                                                .custom-file-label:after {
+                                                    content: "Browse";
+                                                }
+                                            </style>
+                                            <div class="custom-file"><input type="file" id="supplier_logo"
+                                                                            name="supplier[logo]"
+                                                                            class="custom-file-input form-control-file"
+                                                                            data-multiple-files-text="%count% file(s)"
+                                                                            data-locale="en"><label
+                                                    class="custom-file-label" for="supplier_logo">
+                                                Choose file(s)
+                                            </label></div>
+                                            <small class="form-text">Upload a supplier logo from your computer.</small>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="supplier">
+                                        <div class="form-group row"><label class="form-control-label">
+                                            Meta title
+
+                                        </label>
+                                            <div class="col-sm input-container">
+                                                <div class="input-group locale-input-group js-locale-input-group d-flex">
+                                                    <div class=" js-locale-input js-locale-en" style="flex-grow: 1;">
+                                                        <input type="text" id="supplier_meta_title_1"
+                                                               name="supplier[meta_title][1]"
+                                                               aria-label="supplier_meta_title_1 input"
+                                                               class="form-control"></div>
+                                                </div>
+                                                <small class="form-text">Invalid characters: &lt;&gt;={}</small></div>
+                                        </div>
+                                        <div class="form-group row"><label class="form-control-label">
+                                            Meta description
+
+                                        </label>
+                                            <div class="col-sm input-container">
+                                                <div class="input-group locale-input-group js-locale-input-group d-flex">
+                                                    <div class=" js-locale-input js-locale-en" style="flex-grow: 1;">
+                                                        <textarea id="supplier_meta_description_1"
+                                                                  name="supplier[meta_description][1]"
+                                                                  class="form-control form-control"></textarea></div>
+                                                </div>
+                                                <small class="form-text">Invalid characters: &lt;&gt;={}</small></div>
+                                        </div>
+                                        <div class="form-group row"><label class="form-control-label">
+                                            Meta keywords
+
+                                        </label>
+                                            <div class="col-sm input-container">
+                                                <div class="input-group locale-input-group js-locale-input-group d-flex">
+                                                    <div class="js-taggable-field js-locale-input js-locale-en"
+                                                         style="flex-grow: 1;">
+                                                        <div class="tokenfield form-control"><input type="text"
+                                                                                                    id="supplier_meta_keyword_1"
+                                                                                                    name="supplier[meta_keyword][1]"
+                                                                                                    class="js-taggable-field form-control"
+                                                                                                    placeholder="Add tag"
+                                                                                                    aria-label="supplier_meta_keyword_1 input"
+                                                                                                    tabindex="-1"
+                                                                                                    style="position: absolute; left: -10000px;"><input
+                                                                type="text" tabindex="-1"
+                                                                style="position: absolute; left: -10000px;"><input
+                                                                type="text" class="token-input" autocomplete="off"
+                                                                placeholder="Add tag"
+                                                                id="supplier_meta_keyword_1-tokenfield" tabindex="0"
+                                                                style="min-width: 60px; width: 516.625px;"></div>
+                                                    </div>
+                                                </div>
+                                                <small class="form-text">To add tags, click in the field, write
+                                                    something, and then press the "Enter" key.
+                                                    Invalid characters: &lt;&gt;={}</small></div>
+                                        </div>
+                                        <div class="form-group row switch-widget"><label class="form-control-label"
+                                                                                         for="supplier_is_enabled">
+                                            Enabled
+
+                                        </label>
+                                            <div class="col-sm input-container">
+                                                <div class="input-group"><span class="ps-switch"><input
+                                                        id="supplier_is_enabled_0" class="ps-switch"
+                                                        name="supplier[is_enabled]" value="0" checked=""
+                                                        type="radio"><label for="supplier_is_enabled_0">No</label><input
+                                                        id="supplier_is_enabled_1" class="ps-switch"
+                                                        name="supplier[is_enabled]" value="1" type="radio"><label
+                                                        for="supplier_is_enabled_1">Yes</label><span
+                                                        class="slide-button"></span></span></div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="supplier__token" name="supplier[_token]"
+                                               value="A2fZz29wd5sVuQNva8dH68hXACmmtZennN7RGOdvrAU">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/administrator/index.php/sell/catalog/suppliers/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                   class="btn btn-outline-secondary">
+                                    Cancel
+                                </a>
+                                <button class="btn btn-primary float-right">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <nav id="right-sidebar" role="navigation"
+                 class="col-lg-3 sidebar sidebar-right sidebar-animate text-sm-center">
+                <img src="/administrator/themes/default/img/bundle/dashboard_loading.gif?1.7.8.5"
+                     style="margin-top: 10em;" alt="Loading...">
+            </nav>
+
+
+        </div>
+    </div>
+
+</div>

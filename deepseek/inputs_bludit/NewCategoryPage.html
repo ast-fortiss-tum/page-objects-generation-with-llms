@@ -1,0 +1,28 @@
+<div class="col-lg-10 pt-3 pb-1 h-100">
+    <form class="tab-content" id="jsform" method="post" action="" autocomplete="off">
+        <div class="align-middle">
+            <div class="float-right mt-1">
+                <button type="submit" class="btn btn-primary btn-sm" name="save">Save</button>
+                <a class="btn btn-secondary btn-sm" href="/admin/categories" role="button">Cancel</a>
+            </div>
+            <h2 class="mt-0 mb-3">
+                <span class="fa fa-tag" style="font-size: 0.9em;"></span><span>New category</span>
+            </h2></div>
+
+        <input type="hidden" id="jstokenCSRF" name="tokenCSRF" value="09c216e7e06271f18e287eb29fee4cedf0882c0e">
+        <div class="form-group row">
+            <label for="jsname" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input class="form-control " id="jsname" name="name" value="" placeholder="" type="text">
+                <small class="form-text text-muted"></small>
+            </div>
+        </div>
+        <div class="form-group row"><label for="jsdescription"
+                                           class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10"><textarea class="form-control " id="jsdescription" name="description"
+                                             rows="3" placeholder=""></textarea><small
+                    class="form-text text-muted"></small></div>
+        </div>
+    </form>
+</div>
+

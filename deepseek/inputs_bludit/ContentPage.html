@@ -1,0 +1,111 @@
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-lg-10 pt-3 pb-1 h-100">
+            <div class="tab-content">
+                <div class="tab-pane show active" id="pages" role="tabpanel">
+                    <table class="table mt-3">
+                        <thead>
+                        <tr>
+                            <th class="border-0" scope="col">Title</th>
+                            <th class="border-0 d-none d-lg-table-cell" scope="col">URL</th>
+                            <th class="border-0 text-center d-sm-table-cell" scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="pt-3">
+                                <div>
+                                    <a style="font-size: 1.1em" href="/admin/edit-content/create-your-own-content">Create
+                                        your own content</a>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8em" class="m-0 text-uppercase text-muted">Thu, 24 Apr 2025,
+                                        20:45</p>
+                                </div>
+                            </td>
+                            <td class="pt-3 d-none d-lg-table-cell"><a target="_blank"
+                                                                       href="http://localhost:8080/create-your-own-content">/create-your-own-content</a>
+                            </td>
+                            <td class="contentTools pt-3 text-center d-sm-table-cell">
+                                <a class="text-secondary d-none d-md-inline" target="_blank"
+                                   href="http://localhost:8080/create-your-own-content"><i class="fa fa-desktop"></i>View</a>
+                                <a class="text-secondary d-none d-md-inline ml-2"
+                                   href="/admin/edit-content/create-your-own-content"><i class="fa fa-edit"></i>Edit</a>
+                                <a href="#" class="ml-2 text-danger deletePageButton d-block d-sm-inline"
+                                   data-toggle="modal" data-target="#jsdeletePageModal"
+                                   data-key="create-your-own-content"><i class="fa fa-trash"></i>Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pt-3">
+                                <div>
+                                    <a style="font-size: 1.1em" href="/admin/edit-content/set-up-your-new-site">Set up
+                                        your new site</a>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8em" class="m-0 text-uppercase text-muted">Thu, 24 Apr 2025,
+                                        20:44</p>
+                                </div>
+                            </td>
+                            <td class="pt-3 d-none d-lg-table-cell"><a target="_blank"
+                                                                       href="http://localhost:8080/set-up-your-new-site">/set-up-your-new-site</a>
+                            </td>
+                            <td class="contentTools pt-3 text-center d-sm-table-cell">
+                                <a class="text-secondary d-none d-md-inline" target="_blank"
+                                   href="http://localhost:8080/set-up-your-new-site"><i
+                                        class="fa fa-desktop"></i>View</a>
+                                <a class="text-secondary d-none d-md-inline ml-2"
+                                   href="/admin/edit-content/set-up-your-new-site"><i class="fa fa-edit"></i>Edit</a>
+                                <a href="#" class="ml-2 text-danger deletePageButton d-block d-sm-inline"
+                                   data-toggle="modal" data-target="#jsdeletePageModal" data-key="set-up-your-new-site"><i
+                                        class="fa fa-trash"></i>Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pt-3">
+                                <div>
+                                    <a style="font-size: 1.1em" href="/admin/edit-content/follow-bludit">Follow
+                                        Bludit</a>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8em" class="m-0 text-uppercase text-muted">Thu, 24 Apr 2025,
+                                        20:43</p>
+                                </div>
+                            </td>
+                            <td class="pt-3 d-none d-lg-table-cell"><a target="_blank"
+                                                                       href="http://localhost:8080/follow-bludit">/follow-bludit</a>
+                            </td>
+                            <td class="contentTools pt-3 text-center d-sm-table-cell">
+                                <a class="text-secondary d-none d-md-inline" target="_blank"
+                                   href="http://localhost:8080/follow-bludit"><i class="fa fa-desktop"></i>View</a>
+                                <a class="text-secondary d-none d-md-inline ml-2"
+                                   href="/admin/edit-content/follow-bludit"><i class="fa fa-edit"></i>Edit</a>
+                                <a href="#" class="ml-2 text-danger deletePageButton d-block d-sm-inline"
+                                   data-toggle="modal" data-target="#jsdeletePageModal" data-key="follow-bludit"><i
+                                        class="fa fa-trash"></i>Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- Modal for delete page -->
+                <div id="jsdeletePageModal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3>Delete content</h3>
+                                <p>Are you sure you want to delete this page?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger deletePageModalAcceptButton">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

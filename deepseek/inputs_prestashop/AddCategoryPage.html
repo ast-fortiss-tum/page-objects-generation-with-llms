@@ -1,0 +1,827 @@
+<form name="category" method="post" action="" class="form-horizontal" enctype="multipart/form-data">
+    <div class="card">
+        <h3 class="card-header">
+            Category
+        </h3>
+        <div class="card-block row">
+            <div class="card-text">
+
+
+                <div class="form-group row type-translatable ">
+
+
+                    <label for="category_name" class="form-control-label ">
+                        <span class="text-danger">*</span>
+                        Name
+
+                    </label>
+
+                    <div class="col-sm">
+
+
+                        <div class="input-group locale-input-group js-locale-input-group d-flex">
+                            <div class=" js-locale-input js-locale-en" style="flex-grow: 1;">
+
+                                <input type="text" id="category_name_1" name="category[name][1]"
+                                       aria-label="category_name_1 input" class="form-control">
+
+
+                            </div>
+                        </div>
+
+                        <small class="form-text">Invalid characters: &lt;&gt;;=#{}</small>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="form-control-label ">
+
+                        Displayed
+
+                        <span class="help-box" data-toggle="popover" data-trigger="hover" data-html="true"
+                              data-content="Click on &quot;Displayed&quot; to index the category on your shop."
+                              data-original-title="" title="">
+ </span>
+
+                    </label>
+
+                    <p class="sr-only">Click on "Displayed" to index the category on your shop.</p>
+
+                    <div class="col-sm">
+                        <div class="input-group"><span class="ps-switch"><input id="category_active_0" class="ps-switch"
+                                                                                name="category[active]" value="0"
+                                                                                type="radio" aria-label="No"><label
+                                for="category_active_0">No</label><input id="category_active_1" class="ps-switch"
+                                                                         name="category[active]" value="1" checked=""
+                                                                         type="radio" aria-label="Yes"><label
+                                for="category_active_1">Yes</label><span class="slide-button"></span></span></div>
+
+                        <small class="form-text">
+                            If you want a category to appear in the menu of your shop, go to <a
+                                href="/administrator/index.php/improve/modules/manage?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                target="_blank" rel="noopener noreferrer nofollow">Modules &gt; Module Manager</a> and
+                            configure your menu module.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">
+                        <span class="text-danger">*</span>
+
+                        Parent category
+                    </label>
+                    <div class="col-sm">
+                        <div class="material-choice-tree-container js-choice-tree-container required"
+                             id="category_id_parent">
+                            <div class="choice-tree-actions">
+    <span class="form-control-label js-toggle-choice-tree-action" data-expanded-text="Expand"
+          data-expanded-icon="expand_more" data-collapsed-text="Collapse" data-collapsed-icon="expand_less"
+          data-action="expand">
+      <i class="material-icons">expand_more</i>
+      <span class="js-toggle-text">Expand</span>
+    </span>
+                            </div>
+
+                            <ul class="choice-tree">
+
+                                <li class="collapsed">
+                                    <div class="radio js-input-wrapper form-check form-check-radio">
+                                        <label class="form-check-label">
+                                            <input type="radio" name="category[id_parent]" value="2" checked=""
+                                                   required="">
+                                            <i class="form-check-round"></i>
+                                            Home
+                                        </label>
+                                    </div>
+
+
+                                    <ul>
+
+                                        <li class="collapsed">
+                                            <div class="radio js-input-wrapper form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="category[id_parent]" value="3"
+                                                           required="">
+                                                    <i class="form-check-round"></i>
+                                                    Clothes
+                                                </label>
+                                            </div>
+
+
+                                            <ul>
+
+                                                <li class="">
+                                                    <div class="radio js-input-wrapper form-check form-check-radio">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" name="category[id_parent]" value="4"
+                                                                   required="">
+                                                            <i class="form-check-round"></i>
+                                                            Men
+                                                        </label>
+                                                    </div>
+
+
+                                                </li>
+
+
+                                                <li class="">
+                                                    <div class="radio js-input-wrapper form-check form-check-radio">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" name="category[id_parent]" value="5"
+                                                                   required="">
+                                                            <i class="form-check-round"></i>
+                                                            Women
+                                                        </label>
+                                                    </div>
+
+
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+
+                                        <li class="collapsed">
+                                            <div class="radio js-input-wrapper form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="category[id_parent]" value="6"
+                                                           required="">
+                                                    <i class="form-check-round"></i>
+                                                    Accessories
+                                                </label>
+                                            </div>
+
+
+                                            <ul>
+
+                                                <li class="">
+                                                    <div class="radio js-input-wrapper form-check form-check-radio">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" name="category[id_parent]" value="7"
+                                                                   required="">
+                                                            <i class="form-check-round"></i>
+                                                            Stationery
+                                                        </label>
+                                                    </div>
+
+
+                                                </li>
+
+
+                                                <li class="">
+                                                    <div class="radio js-input-wrapper form-check form-check-radio">
+                                                        <label class="form-check-label">
+                                                            <input type="radio" name="category[id_parent]" value="8"
+                                                                   required="">
+                                                            <i class="form-check-round"></i>
+                                                            Home Accessories
+                                                        </label>
+                                                    </div>
+
+
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+
+                                        <li class="">
+                                            <div class="radio js-input-wrapper form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input type="radio" name="category[id_parent]" value="9"
+                                                           required="">
+                                                    <i class="form-check-round"></i>
+                                                    Art
+                                                </label>
+                                            </div>
+
+
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row type-translatefields ">
+
+
+                    <label for="category_description" class="form-control-label ">
+                        Description
+
+                    </label>
+
+                    <div class="col-sm">
+
+
+                        <div class="translations tabbable" id="category_description">
+
+                            <div class="translationsFields tab-content">
+                                <div data-locale="en"
+                                     class="translationsFields-category_description_1 tab-pane translation-field  show active  translation-label-en">
+
+                                    <div id="mceu_15" class="mce-tinymce mce-container mce-panel" hidefocus="1"
+                                         tabindex="-1" role="application"
+                                         style="visibility: hidden; border-width: 1px; width: 100%;">
+                                        <div id="mceu_15-body" class="mce-container-body mce-stack-layout">
+                                            <div id="mceu_16"
+                                                 class="mce-top-part mce-container mce-stack-layout-item mce-first">
+                                                <div id="mceu_16-body" class="mce-container-body">
+                                                    <div id="mceu_17"
+                                                         class="mce-toolbar-grp mce-container mce-panel mce-first mce-last"
+                                                         hidefocus="1" tabindex="-1" role="group">
+                                                        <div id="mceu_17-body"
+                                                             class="mce-container-body mce-stack-layout">
+                                                            <div id="mceu_18"
+                                                                 class="mce-container mce-toolbar mce-stack-layout-item mce-first mce-last"
+                                                                 role="toolbar">
+                                                                <div id="mceu_18-body"
+                                                                     class="mce-container-body mce-flow-layout">
+                                                                    <div id="mceu_19"
+                                                                         class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                         role="group">
+                                                                        <div id="mceu_19-body">
+                                                                            <div id="mceu_0"
+                                                                                 class="mce-widget mce-btn mce-first"
+                                                                                 tabindex="-1" role="button"
+                                                                                 aria-label="Source code">
+                                                                                <button id="mceu_0-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">code</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_1" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" role="button"
+                                                                                 aria-label="Color Picker">
+                                                                                <button id="mceu_1-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">format_color_text</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_2" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button" aria-label="Bold">
+                                                                                <button id="mceu_2-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">format_bold</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_3" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button" aria-label="Italic">
+                                                                                <button id="mceu_3-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">format_italic</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_4" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button" aria-label="Underline">
+                                                                                <button id="mceu_4-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">format_underlined</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_5" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button"
+                                                                                 aria-label="Strikethrough">
+                                                                                <button id="mceu_5-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">format_strikethrough</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_6" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button" aria-label="Blockquote">
+                                                                                <button id="mceu_6-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">format_quote</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_7" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button"
+                                                                                 aria-label="Insert/edit link">
+                                                                                <button id="mceu_7-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">link</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_8"
+                                                                                 class="mce-widget mce-btn mce-splitbtn mce-menubtn"
+                                                                                 role="button" tabindex="-1"
+                                                                                 aria-haspopup="true">
+                                                                                <button type="button" hidefocus="1"
+                                                                                        tabindex="-1"><i
+                                                                                        class="material-icons">format_align_left</i>
+                                                                                </button>
+                                                                                <button type="button" class="mce-open"
+                                                                                        hidefocus="1" tabindex="-1"><i
+                                                                                        class="mce-caret"></i></button>
+                                                                            </div>
+                                                                            <div id="mceu_9"
+                                                                                 class="mce-widget mce-btn mce-splitbtn mce-menubtn"
+                                                                                 role="button" aria-pressed="false"
+                                                                                 tabindex="-1" aria-label="Bullet list"
+                                                                                 aria-haspopup="true">
+                                                                                <button type="button" hidefocus="1"
+                                                                                        tabindex="-1"><i
+                                                                                        class="material-icons">format_list_bulleted</i>
+                                                                                </button>
+                                                                                <button type="button" class="mce-open"
+                                                                                        hidefocus="1" tabindex="-1"><i
+                                                                                        class="mce-caret"></i></button>
+                                                                            </div>
+                                                                            <div id="mceu_10"
+                                                                                 class="mce-widget mce-btn mce-splitbtn mce-menubtn"
+                                                                                 role="button" aria-pressed="false"
+                                                                                 tabindex="-1"
+                                                                                 aria-label="Numbered list"
+                                                                                 aria-haspopup="true">
+                                                                                <button type="button" hidefocus="1"
+                                                                                        tabindex="-1"><i
+                                                                                        class="material-icons">format_list_numbered</i>
+                                                                                </button>
+                                                                                <button type="button" class="mce-open"
+                                                                                        hidefocus="1" tabindex="-1"><i
+                                                                                        class="mce-caret"></i></button>
+                                                                            </div>
+                                                                            <div id="mceu_11"
+                                                                                 class="mce-widget mce-btn mce-menubtn"
+                                                                                 tabindex="-1" aria-labelledby="mceu_11"
+                                                                                 role="button" aria-label="Table"
+                                                                                 aria-haspopup="true">
+                                                                                <button id="mceu_11-open"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">grid_on</i>
+                                                                                    <i class="mce-caret"></i></button>
+                                                                            </div>
+                                                                            <div id="mceu_12" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button"
+                                                                                 aria-label="Insert/edit image">
+                                                                                <button id="mceu_12-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">image</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_13" class="mce-widget mce-btn"
+                                                                                 tabindex="-1" aria-pressed="false"
+                                                                                 role="button"
+                                                                                 aria-label="Insert/edit video">
+                                                                                <button id="mceu_13-button"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1"><i
+                                                                                        class="material-icons">video_library</i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div id="mceu_14"
+                                                                                 class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-last mce-btn-has-text"
+                                                                                 tabindex="-1" aria-labelledby="mceu_14"
+                                                                                 role="button" aria-haspopup="true">
+                                                                                <button id="mceu_14-open"
+                                                                                        role="presentation"
+                                                                                        type="button" tabindex="-1">
+                                                                                    <span class="mce-txt">Paragraph</span>
+                                                                                    <i class="mce-caret"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="mceu_20"
+                                                 class="mce-edit-area mce-container mce-panel mce-stack-layout-item mce-last"
+                                                 hidefocus="1" tabindex="-1" role="group"
+                                                 style="border-width: 1px 0px 0px; position: relative;">
+                                                <iframe id="category_description_1_ifr" frameborder="0"
+                                                        allowtransparency="true"
+                                                        title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help"
+                                                        style="width: 100%; height: 60px; display: block;"></iframe>
+                                                <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; color: rgb(108, 134, 142); font-style: italic; padding: 1%; width: 98%; overflow: hidden; white-space: normal;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea id="category_description_1" name="category[description][1]"
+                                              class="autoload_rte form-control" counter="21844" style="display: none;"
+                                              aria-hidden="true"></textarea>
+                                    <small class="form-text text-muted text-right maxLength maxType">
+                                        <em>
+                                            <span class="currentLength">0</span> of <span
+                                                class="currentTotalMax">21844</span> characters allowed
+                                        </em>
+                                    </small>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <small class="form-text">Invalid characters: &lt;&gt;;=#{}</small>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="form-control-label">
+                        Category cover image
+                    </label>
+                    <div class="col-sm">
+
+
+                        <style>
+                            .custom-file-label:after {
+                                content: "Browse";
+                            }
+                        </style>
+                        <div class="custom-file">
+
+                            <input type="file" id="category_cover_image" name="category[cover_image]"
+                                   class="custom-file-input" data-multiple-files-text="%count% file(s)"
+                                   data-locale="en">
+
+
+                            <label class="custom-file-label" for="category_cover_image">
+                                Choose file(s)
+                            </label>
+                        </div>
+
+
+                        <small class="form-text">
+                            This is the main image for your category, displayed in the category page. The category
+                            description will overlap this image and appear in its top-left corner.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">
+                        Category thumbnail
+                    </label>
+                    <div class="col-sm">
+
+
+                        <style>
+                            .custom-file-label:after {
+                                content: "Browse";
+                            }
+                        </style>
+                        <div class="custom-file">
+
+                            <input type="file" id="category_thumbnail_image" name="category[thumbnail_image]"
+                                   class="custom-file-input" data-multiple-files-text="%count% file(s)"
+                                   data-locale="en">
+
+
+                            <label class="custom-file-label" for="category_thumbnail_image">
+                                Choose file(s)
+                            </label>
+                        </div>
+
+
+                        <small class="form-text">
+                            Displays a small image in the parent category's page, if the theme allows it.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label">
+                        Menu thumbnails
+                    </label>
+                    <div class="col-sm">
+
+
+                        <style>
+                            .custom-file-label:after {
+                                content: "Browse";
+                            }
+                        </style>
+                        <div class="custom-file">
+
+                            <input type="file" id="category_menu_thumbnail_images"
+                                   name="category[menu_thumbnail_images][]" multiple="multiple"
+                                   class="custom-file-input" data-multiple-files-text="%count% file(s)"
+                                   data-locale="en">
+
+
+                            <label class="custom-file-label" for="category_menu_thumbnail_images">
+                                Choose file(s)
+                            </label>
+                        </div>
+
+                        <small class="form-text">
+                            The category thumbnail appears in the menu as a small image representing the category, if
+                            the theme allows it.
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="form-control-label">SEO preview</label>
+                    <div class="col-sm">
+                        <div data-v-66c4c5ab="" id="serp">
+                            <div data-v-66c4c5ab="" class="serp-preview">
+                                <div data-v-66c4c5ab="" class="serp-title">
+
+                                </div>
+                                <div data-v-66c4c5ab="" class="serp-url">
+                                    http://localhost:8080/-<span data-v-66c4c5ab="" class="serp-arrow"></span></div>
+                                <div data-v-66c4c5ab="" class="serp-description">
+
+                                </div>
+                            </div>
+                        </div>
+                        <small class="form-text">
+                            Here is a preview of how your page will appear in search engine results.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label ">
+
+                        Meta title
+
+                        <span class="help-box" data-toggle="popover" data-trigger="hover" data-html="true"
+                              data-content="Invalid characters: <>;=#{}" data-original-title="" title="">
+ </span>
+
+                    </label>
+
+                    <p class="sr-only">Invalid characters: &lt;&gt;;=#{}</p>
+
+                    <div class="col-sm">
+                        <div class="input-group locale-input-group js-locale-input-group d-flex">
+                            <div class=" js-locale-input js-locale-en" style="flex-grow: 1;">
+                                <input type="text" id="category_meta_title_1" name="category[meta_title][1]"
+                                       maxlength="255"
+                                       placeholder="To have a different title from the category name, enter it here."
+                                       data-recommended-length-counter="#category_meta_title_1_recommended_length_counter"
+                                       class="js-recommended-length-input form-control">
+
+                                <small class="form-text text-muted text-right"
+                                       id="category_meta_title_1_recommended_length_counter">
+                                    <em>
+                                        <span class="js-current-length">0</span> of <span>70</span> characters used
+                                        (recommended)
+                                    </em>
+                                </small>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="form-control-label ">
+
+                        Meta description
+
+                        <span class="help-box" data-toggle="popover" data-trigger="hover" data-html="true"
+                              data-content="Invalid characters: <>;=#{}" data-original-title="" title="">
+ </span>
+
+                    </label>
+
+                    <p class="sr-only">Invalid characters: &lt;&gt;;=#{}</p>
+
+                    <div class="col-sm">
+                        <div class="input-group locale-input-group js-locale-input-group d-flex">
+                            <div class=" js-locale-input js-locale-en" style="flex-grow: 1;">
+                                <textarea id="category_meta_description_1" name="category[meta_description][1]"
+                                          maxlength="512" rows="3"
+                                          placeholder="To have a different description than your category summary in search results page, write it here."
+                                          data-recommended-length-counter="#category_meta_description_1_recommended_length_counter"
+                                          class="js-recommended-length-input form-control"></textarea>
+
+                                <small class="form-text text-muted text-right"
+                                       id="category_meta_description_1_recommended_length_counter">
+                                    <em>
+                                        <span class="js-current-length">0</span> of <span>160</span> characters used
+                                        (recommended)
+                                    </em>
+                                </small>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row type-translatable ">
+
+
+                    <label for="category_meta_keyword" class="form-control-label ">
+                        Meta keywords
+
+                    </label>
+
+                    <div class="col-sm">
+
+
+                        <div class="input-group locale-input-group js-locale-input-group d-flex">
+                            <div class="js-taggable-field js-locale-input js-locale-en" style="flex-grow: 1;">
+
+                                <div class="tokenfield form-control"><input type="text" id="category_meta_keyword_1"
+                                                                            name="category[meta_keyword][1]"
+                                                                            class="js-taggable-field form-control"
+                                                                            placeholder="Add tag"
+                                                                            aria-label="category_meta_keyword_1 input"
+                                                                            tabindex="-1"
+                                                                            style="position: absolute; left: -10000px;"><input
+                                        type="text" tabindex="-1" style="position: absolute; left: -10000px;"><input
+                                        type="text" class="token-input" autocomplete="off" placeholder="Add tag"
+                                        id="category_meta_keyword_1-tokenfield" tabindex="0"
+                                        style="min-width: 60px; width: 474.406px;"></div>
+
+
+                            </div>
+                        </div>
+
+                        <small class="form-text"> To add tags, click in the field, write something, and then press the
+                            "Enter" key.
+                            Invalid characters: &lt;&gt;;=#{}
+                        </small>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row type-translatable ">
+
+
+                    <label for="category_link_rewrite" class="form-control-label ">
+                        <span class="text-danger">*</span>
+                        Friendly URL
+
+                    </label>
+
+                    <div class="col-sm">
+
+
+                        <div class="input-group locale-input-group js-locale-input-group d-flex">
+                            <div class=" js-locale-input js-locale-en" style="flex-grow: 1;">
+
+                                <input type="text" id="category_link_rewrite_1" name="category[link_rewrite][1]"
+                                       aria-label="category_link_rewrite_1 input" class="form-control">
+
+
+                            </div>
+                        </div>
+
+                        <small class="form-text">Only letters, numbers, underscore (_) and the minus (-) character are
+                            allowed.</small>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row type-choice ">
+
+
+                    <label for="category_group_association" class="form-control-label ">
+                        <span class="text-danger">*</span>
+                        Group access
+
+                    </label>
+
+                    <div class="col-sm">
+
+
+                        <div class="choice-table">
+                            <table class="table table-bordered mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="checkbox">
+                                        <div class="md-checkbox"><label><input type="checkbox"
+                                                                               class="js-choice-table-select-all"><i
+                                                class="md-checkbox-control"></i>
+                                            Select all
+                                        </label></div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <div class="md-checkbox md-checkbox-inline"><label><input type="checkbox"
+                                                                                                      id="category_group_association_0"
+                                                                                                      name="category[group_association][]"
+                                                                                                      value="1"
+                                                                                                      checked="checked"><i
+                                                    class="md-checkbox-control"></i>Visitor</label></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <div class="md-checkbox md-checkbox-inline"><label><input type="checkbox"
+                                                                                                      id="category_group_association_1"
+                                                                                                      name="category[group_association][]"
+                                                                                                      value="2"
+                                                                                                      checked="checked"><i
+                                                    class="md-checkbox-control"></i>Guest</label></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <div class="md-checkbox md-checkbox-inline"><label><input type="checkbox"
+                                                                                                      id="category_group_association_2"
+                                                                                                      name="category[group_association][]"
+                                                                                                      value="3"
+                                                                                                      checked="checked"><i
+                                                    class="md-checkbox-control"></i>Customer</label></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <small class="form-text">Mark all of the customer groups which you would like to have access to
+                            this category.</small>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="form-control-label"></label>
+                    <div class="col-sm">
+                        <div class="alert alert-info">
+                            <p class="mb-1">
+                                <strong>You now have three default customer groups.</strong>
+                            </p>
+
+                            <p><strong>Visitor</strong> - All people without a valid customer account.</p>
+                            <p><strong>Guest</strong> - Customer who placed an order with the guest checkout.</p>
+                            <p><strong>Customer</strong> - All people who have created an account on this site.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row type-hidden ">
+
+
+                    <label for="category__token" class="form-control-label ">
+
+
+                    </label>
+
+                    <div class="col-sm">
+
+
+                        <input type="hidden" id="category__token" name="category[_token]" class="form-control"
+                               value="8eXdu_JMyfnZMbs-leeMwhUZvNi1K2DLVJR8Q2rHa9M">
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="/administrator/index.php/sell/catalog/categories?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+               class="btn btn-outline-secondary">
+                Cancel
+            </a>
+            <button class="btn btn-primary float-right" id="save-button">Save</button>
+        </div>
+    </div>
+
+</form>

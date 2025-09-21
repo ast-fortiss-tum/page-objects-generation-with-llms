@@ -1,0 +1,104 @@
+<div>
+    <div class="bootstrap">
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            The name field is required.
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <form id="tag_form" class="defaultForm form-horizontal AdminTags"
+                  action="index.php?controller=AdminTags&amp;token=17beef6ab69e30c9ff8af0596305a5df" method="post"
+                  enctype="multipart/form-data" novalidate="">
+                <input type="hidden" name="submitAddtag" value="1">
+
+                <div class="panel" id="fieldset_0">
+
+                    <div class="panel-heading">
+                        <i class="icon-tag"></i> Tag
+                    </div>
+
+
+                    <div class="form-wrapper">
+
+                        <div class="form-group">
+
+                            <label class="control-label col-lg-4 required">
+                                Name
+                            </label>
+
+
+                            <div class="col-lg-8">
+
+                                <input type="text" name="name" id="name" value="" class="" required="required">
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label class="control-label col-lg-4 required">
+                                Language
+                            </label>
+
+
+                            <div class="col-lg-8">
+
+                                <select name="id_lang" class=" fixed-width-xl" id="id_lang">
+                                    <option value="1" selected="selected">English (English)</option>
+
+                                </select>
+
+
+                            </div>
+                        </div>
+
+
+                    </div><!-- /.form-wrapper -->
+
+
+                    <div class="row">
+                        <label class="control-label col-lg-3">Products</label>
+
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <select multiple="" id="select_left">
+                                        <option value="13">Brown bear - Vector graphics</option>
+                                    </select>
+                                    <a href="#" id="move_to_right"
+                                       class="btn btn-default btn-block multiple_select_add">
+                                        Add <i class="icon-arrow-right"></i>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <select multiple="" id="select_right" name="products[]">
+                                    </select>
+                                    <a href="#" id="move_to_left"
+                                       class="btn btn-default btn-block multiple_select_remove">
+                                        <i class="icon-arrow-left"></i> Remove
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <button type="submit" value="1" id="tag_form_submit_btn" name="submitAddtag"
+                                class="btn btn-default pull-right">
+                            <i class="process-icon-save"></i> Save
+                        </button>
+                        <a class="btn btn-default" id="tag_form_cancel_btn" onclick="javascript:window.history.back();">
+                            <i class="process-icon-cancel"></i> Cancel
+                        </a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

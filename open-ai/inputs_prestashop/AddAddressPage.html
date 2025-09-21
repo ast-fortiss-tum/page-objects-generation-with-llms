@@ -1,0 +1,206 @@
+<div class="card">
+    <div class="card-header">
+        <i class="material-icons">mail_outline</i>
+        Addresses
+    </div>
+
+    <div class="card-block row">
+        <div class="card-text">
+
+
+            <div id="customer_address">
+                <div class="form-group row email-widget"><label class="form-control-label required"
+                                                                for="customer_address_customer_email"><span
+                        class="text-danger">*</span>
+                    Customer email
+
+                </label>
+                    <div class="col-sm input-container"><input type="email" id="customer_address_customer_email"
+                                                               name="customer_address[customer_email]"
+                                                               required="required"
+                                                               data-customer-information-url="/administrator/index.php/sell/customers/customer-information?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label" for="customer_address_dni">
+                    Identification number
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_dni"
+                                                               name="customer_address[dni]"
+                                                               aria-label="customer_address_dni input"
+                                                               class="form-control"><small class="form-text">The
+                        national ID card number of this person, or a unique tax identification number.</small></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label required"
+                                                               for="customer_address_alias"><span
+                        class="text-danger">*</span>
+                    Address alias
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_alias"
+                                                               name="customer_address[alias]" required="required"
+                                                               aria-label="customer_address_alias input"
+                                                               class="form-control"><small class="form-text">Invalid
+                        characters: &lt;&gt;={}</small></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label required"
+                                                               for="customer_address_first_name"><span
+                        class="text-danger">*</span>
+                    First name
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_first_name"
+                                                               name="customer_address[first_name]" required="required"
+                                                               aria-label="customer_address_first_name input"
+                                                               class="form-control"><small class="form-text">Invalid
+                        characters: 0-9!&lt;&gt;,;?=+()@#"�{}_$%:</small></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label required"
+                                                               for="customer_address_last_name"><span
+                        class="text-danger">*</span>
+                    Last name
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_last_name"
+                                                               name="customer_address[last_name]" required="required"
+                                                               aria-label="customer_address_last_name input"
+                                                               class="form-control"><small class="form-text">Invalid
+                        characters: 0-9!&lt;&gt;,;?=+()@#"�{}_$%:</small></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label"
+                                                               for="customer_address_company">
+                    Company
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_company"
+                                                               name="customer_address[company]"
+                                                               aria-label="customer_address_company input"
+                                                               class="form-control"><small class="form-text">Invalid
+                        characters: &lt;&gt;={}</small></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label"
+                                                               for="customer_address_vat_number">
+                    VAT number
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_vat_number"
+                                                               name="customer_address[vat_number]"
+                                                               aria-label="customer_address_vat_number input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label required"
+                                                               for="customer_address_address1"><span
+                        class="text-danger">*</span>
+                    Address
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_address1"
+                                                               name="customer_address[address1]" required="required"
+                                                               aria-label="customer_address_address1 input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label"
+                                                               for="customer_address_address2">
+                    Address (2)
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_address2"
+                                                               name="customer_address[address2]"
+                                                               aria-label="customer_address_address2 input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label required"
+                                                               for="customer_address_postcode"><span
+                        class="text-danger">*</span>
+                    Zip/Postal code
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_postcode"
+                                                               name="customer_address[postcode]" required="required"
+                                                               aria-label="customer_address_postcode input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label required"
+                                                               for="customer_address_city"><span
+                        class="text-danger">*</span>
+                    City
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_city"
+                                                               name="customer_address[city]" required="required"
+                                                               aria-label="customer_address_city input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row country_choice-widget"><label class="form-control-label required"
+                                                                         for="customer_address_id_country"><span
+                        class="text-danger">*</span>
+                    Country
+
+                </label>
+                    <div class="col-sm input-container"><select id="customer_address_id_country"
+                                                                name="customer_address[id_country]" required="required"
+                                                                data-states-url="/administrator/index.php/improve/international/states/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+                                                                class="custom-select form-control">
+                        <option value="">--</option>
+                        <option value="229" need_postcode="1">Afghanistan</option>
+                    </select></div>
+                </div>
+                <div class="form-group row js-address-state-select select-widget"><label
+                        class="form-control-label required" for="customer_address_id_state"><span
+                        class="text-danger">*</span>
+                    State
+
+                </label>
+                    <div class="col-sm input-container"><select id="customer_address_id_state"
+                                                                name="customer_address[id_state]" visible="visible"
+                                                                class="custom-select form-control">
+                        <option value="1">AA</option>
+                    </select></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label" for="customer_address_phone">
+                    Phone
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_phone"
+                                                               name="customer_address[phone]"
+                                                               aria-label="customer_address_phone input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row text-widget"><label class="form-control-label"
+                                                               for="customer_address_phone_mobile">
+                    Mobile phone
+
+                </label>
+                    <div class="col-sm input-container"><input type="text" id="customer_address_phone_mobile"
+                                                               name="customer_address[phone_mobile]"
+                                                               aria-label="customer_address_phone_mobile input"
+                                                               class="form-control"></div>
+                </div>
+                <div class="form-group row textarea-widget"><label class="form-control-label"
+                                                                   for="customer_address_other">
+                    Other
+
+                </label>
+                    <div class="col-sm input-container"><textarea id="customer_address_other"
+                                                                  name="customer_address[other]"
+                                                                  class="form-control form-control"></textarea><small
+                            class="form-text">Invalid characters: &lt;&gt;{}</small></div>
+                </div>
+                <input type="hidden" id="customer_address__token" name="customer_address[_token]"
+                       value="ETycZQU8TIvnAc4qUFvpTc7MSp0qI1I4gW1r9ouYoh4">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <div class="d-inline-flex">
+            <a href="/administrator/index.php/sell/addresses/?_token=K9xUlZQ4GowECQswYjkAKI8I-QCZnG_GUIx3Ghq399g"
+               class="btn btn-outline-secondary">
+                Cancel
+            </a>
+        </div>
+        <div class="d-inline-flex float-right">
+            <button class="btn btn-primary" id="save-button">Save</button>
+        </div>
+    </div>
+</div>

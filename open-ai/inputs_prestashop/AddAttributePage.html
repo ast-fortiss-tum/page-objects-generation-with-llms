@@ -1,0 +1,286 @@
+<div id="content" class="bootstrap with-tabs">
+    <div class="bootstrap">
+        <div class="page-head with-tabs">
+            <div class="wrapper clearfix">
+
+                <ul class="breadcrumb page-breadcrumb">
+                    <li class="breadcrumb-container">
+                        Attributes &amp; Features
+                    </li>
+
+                    <li class="breadcrumb-current">
+                        <a href="http://localhost:8080/administrator/index.php?controller=AdminAttributesGroups&amp;token=da51f97df958e51b220a867d9b02cea3">
+                            Attributes
+                        </a></li>
+
+                </ul>
+
+
+                <h1 class="page-title">
+                    Add New Attribute </h1>
+
+
+                <div class="page-bar toolbarBox">
+                    <div class="btn-toolbar">
+                        <a href="#" class="toolbar_btn dropdown-toolbar navbar-toggle" data-toggle="collapse"
+                           data-target="#toolbar-nav"><i class="process-icon-dropdown"></i>
+                            <div>Menu</div>
+                        </a>
+                        <ul id="toolbar-nav" class="nav nav-pills pull-right collapse navbar-collapse">
+
+                            <li>
+                                <a class="toolbar_btn btn-help"
+                                   href="https://help.prestashop.com/en/doc/AdminAttributesGroups?version=1.7.8.5&amp;country=en"
+                                   title="Help">
+                                    <i class="process-icon-help"></i>
+                                    <div>Help</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="page-head-tabs" id="head_tabs">
+                <ul class="nav">
+                    <li>
+                        <a href="http://localhost:8080/administrator/index.php?controller=AdminAttributesGroups&amp;token=da51f97df958e51b220a867d9b02cea3"
+                           id="subtab-AdminAttributesGroups" class="current" data-submenu="14">
+                            Attributes
+                            <span class="notification-container">
+                          <span class="notification-counter"></span>
+                        </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:8080/administrator/index.php?controller=AdminFeatures&amp;token=64a4f6d7097ad645e9cb158e9d2f9b10"
+                           id="subtab-AdminFeatures" data-submenu="15">
+                            Features
+                            <span class="notification-container">
+                          <span class="notification-counter"></span>
+                        </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modules_list_container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="modal-title">Recommended Modules and Services</h3>
+                </div>
+                <div class="modal-body">
+                    <div id="modules_list_container_tab_modal" style="display:none;"></div>
+                    <div id="modules_list_loader"><i class="icon-refresh icon-spin"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ajax_confirmation" class="alert alert-success hide"></div>
+    <div id="ajaxBox" style="display:none"></div>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <form id="attribute_group_form" class="defaultForm form-horizontal AdminAttributesGroups"
+                  action="index.php?controller=AdminAttributesGroups&amp;token=da51f97df958e51b220a867d9b02cea3"
+                  method="post" enctype="multipart/form-data" novalidate="">
+                <input type="hidden" name="submitAddattribute_group" value="1">
+
+                <div class="panel" id="fieldset_0">
+
+                    <div class="panel-heading">
+                        <i class="icon-info-sign"></i> Attributes
+                    </div>
+
+
+                    <div class="form-wrapper">
+
+
+                        <div class="form-group">
+
+                            <label class="control-label col-lg-4 required">
+																				<span class="label-tooltip"
+                                                                                      data-toggle="tooltip"
+                                                                                      data-html="true" title=""
+                                                                                      data-original-title="													Your internal name for this attribute.&amp;nbsp;Invalid characters: <>;=#{}
+												">
+																				Name
+																				</span>
+                            </label>
+
+
+                            <div class="col-lg-4">
+
+                                <input type="text" id="name_1" name="name_1" class="" value=""
+                                       onkeyup="if (isArrowKey(event)) return ;updateFriendlyURL();"
+                                       required="required">
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label class="control-label col-lg-4 required">
+																				<span class="label-tooltip"
+                                                                                      data-toggle="tooltip"
+                                                                                      data-html="true" title=""
+                                                                                      data-original-title="													The public name for this attribute, displayed to the customers.&amp;nbsp;Invalid characters: <>;=#{}
+												">
+																				Public name
+																				</span>
+                            </label>
+
+
+                            <div class="col-lg-4">
+
+                                <input type="text" id="public_name_1" name="public_name_1" class="" value=""
+                                       onkeyup="if (isArrowKey(event)) return ;updateFriendlyURL();"
+                                       required="required">
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-lg-3">
+                                <span class="label-tooltip" data-toggle="tooltip" data-html="true" title=""
+                                      data-original-title="Invalid characters: <>;=#{}_">URL</span>
+                            </label>
+                            <div class="col-lg-9">
+                                <div class="row">
+                                    <div class="translatable-field lang-1" style="display: block;">
+                                        <div class="col-lg-9">
+                                            <input type="text" size="64" name="url_name_1" value="">
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default dropdown-toggle" tabindex="-1"
+                                                    data-toggle="dropdown">
+                                                en
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:hideOtherLanguage(1);" tabindex="-1">English
+                                                    (English)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <p class="help-block">When the Faceted Search module is enabled, you can get
+                                            more detailed URLs by choosing the word that best represent this attribute.
+                                            By default, PrestaShop uses the attribute's name, but you can change that
+                                            setting using this field.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-3">Meta title</label>
+                            <div class="col-lg-9">
+                                <div class="row">
+                                    <div class="translatable-field lang-1" style="display: block;">
+                                        <div class="col-lg-9">
+                                            <input type="text" size="70" name="meta_title_1" value="">
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default dropdown-toggle" tabindex="-1"
+                                                    data-toggle="dropdown">
+                                                en
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:hideOtherLanguage(1);" tabindex="-1">English
+                                                    (English)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <p class="help-block">When the Faceted Search module is enabled, you can get
+                                            more detailed page titles by choosing the word that best represent this
+                                            attribute. By default, PrestaShop uses the attribute's name, but you can
+                                            change that setting using this field.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-3" for="">Indexable</label>
+                            <div class="col-lg-9">
+		<span class="switch prestashop-switch fixed-width-lg">
+			<input type="radio" name="layered_indexable" id="indexable_on" value="1" checked="checked">
+			<label for="indexable_on" class="radioCheck">
+				<i class="color_success"></i> Yes
+			</label>
+			<input type="radio" name="layered_indexable" id="indexable_off" value="0">
+			<label for="indexable_off" class="radioCheck">
+				<i class="color_danger"></i> No
+			</label>
+			<a class="slide-button btn"></a>
+		</span>
+                            </div>
+                            <div class="col-lg-9 col-lg-push-3">
+                                <p class="help-block">Use this attribute in URL generated by the Faceted Search
+                                    module.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label class="control-label col-lg-4 required">
+																				<span class="label-tooltip"
+                                                                                      data-toggle="tooltip"
+                                                                                      data-html="true" title=""
+                                                                                      data-original-title="													The way the attribute's values will be presented to the customers in the product's page.
+												">
+																				Attribute type
+																				</span>
+                            </label>
+
+
+                            <div class="col-lg-2">
+
+                                <select name="group_type" class=" fixed-width-xl" id="group_type">
+                                    <option value="select">Drop-down list</option>
+
+                                    <option value="radio">Radio buttons</option>
+
+                                    <option value="color">Color or texture</option>
+
+                                </select>
+
+
+                            </div>
+                        </div>
+
+
+                    </div><!-- /.form-wrapper -->
+
+
+                    <div class="panel-footer">
+                        <button type="submit" value="1" id="attribute_group_form_submit_btn"
+                                name="submitAddattribute_group" class="btn btn-default pull-right">
+                            <i class="process-icon-save"></i> Save
+                        </button>
+                        <a class="btn btn-default" id="attribute_group_form_cancel_btn"
+                           onclick="javascript:window.history.back();">
+                            <i class="process-icon-cancel"></i> Cancel
+                        </a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mobile-layer d-none"></div>
+
+</div>
