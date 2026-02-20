@@ -56,6 +56,23 @@ The original evaluation used:
 
 ---
 
+## 📖 Reference
+
+If you use our work in your research, if you extend it, or if you simply like it, please cite it in your publications.
+
+Here is an example BibTeX entry:
+
+```bibtex
+@inproceedings{2026-Karagoz-ICST,
+    author    = {Bet\"ul Karag\"oz and Filippo Ricca and Matteo Biagiola and Andrea Stocco},
+    title     = {Towards Automated Page Object Generation for Web Testing using Large Language Models},
+  	booktitle    = {Proceedings of the 19th IEEE International Conference on Software Testing, Verification and Validation},
+  	series       = {ICST '26},
+  	publisher    = {IEEE},
+  	year         = 2026
+}
+```
+
 ## 📜 License
 
 Distributed under the **MIT License**.
